@@ -1,16 +1,22 @@
 :root {
-  --bs-primary-rgb: 5, 61, 86;
+  --bs-primary-rgb: #053d56;
   --bs-body-font-size: 0.85rem;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: red;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary-rgb) !important;
 }
 
 .w-sidebar {
-  width: 16rem;
+  width: 18rem;
 }
 
 .avatar {
@@ -26,7 +32,7 @@ body {
 }
 
 .f-7 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .pr-1 {

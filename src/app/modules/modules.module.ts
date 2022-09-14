@@ -11,10 +11,11 @@ import { GeologiaModule } from './pages/geologia/geologia.module';
 import { AdministracionModule } from './pages/administracion/administracion.module';
 import { SistemaDeGestionModule } from './pages/sistema-de-gestion/sistema-de-gestion.module';
 import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
+import { DirectorioTelefonicoComponent } from './sidebar/components/directorio-telefonico/directorio-telefonico.component';
 
 @NgModule({
-  declarations: [LoginComponent, MainComponent, SidebarComponent],
-  exports: [LoginComponent, MainComponent],
+  declarations: [LoginComponent, MainComponent, SidebarComponent, DirectorioTelefonicoComponent],
+  exports: [LoginComponent, MainComponent, DirectorioTelefonicoComponent],
   imports: [
     CoreModule,
     RouterModule,
