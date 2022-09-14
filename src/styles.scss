@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #053d56;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wr-14 {
+  width: 14rem;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
