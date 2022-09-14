@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <div class="vw-100 vh-100">
       <div class="d-flex h-100">
-        <div class="wr-14">
+        <div class="w-sidebar">
           <app-sidebar></app-sidebar>
         </div>
         <div class="flex-grow-1">

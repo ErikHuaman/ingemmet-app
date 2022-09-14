@@ -1,5 +1,6 @@
 :root {
-  --primary: #053d56;
+  --bs-primary-rgb: 5, 61, 86;
+  --bs-body-font-size: 0.85rem;
 }
 
 body {
@@ -8,10 +9,30 @@ body {
   overflow: hidden;
 }
 
-.wr-14 {
-  width: 14rem;
+.w-sidebar {
+  width: 16rem;
 }
 
-.bg-primary {
-  background-color: var(--primary) !important;
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  background: white;
+}
+
+.my-05 {
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
+
+.f-7 {
+  font-size: 0.9rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CoreModule } from '../core/core.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
@@ -15,6 +15,16 @@ import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
 @NgModule({
   declarations: [LoginComponent, MainComponent, SidebarComponent],
   exports: [LoginComponent, MainComponent],
-  imports: [CommonModule, RouterModule, InicioModule, InstitucionalModule, MineriaModule, GeologiaModule, AdministracionModule, SistemaDeGestionModule, TecnologiaModule],
+  imports: [
+    CoreModule,
+    RouterModule,
+    InicioModule,
+    InstitucionalModule,
+    MineriaModule,
+    GeologiaModule,
+    AdministracionModule,
+    SistemaDeGestionModule,
+    TecnologiaModule,
+  ],
 })
 export class ModulesModule {}
