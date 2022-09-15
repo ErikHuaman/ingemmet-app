@@ -14,14 +14,38 @@ export class SistemaDeGestionComponent {
 
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
-  rutas = [
+  rutasComp = [
     {
       ruta: 'organigrama',
-      name: 'organigrama',
+      name: 'Organigrama',
     },
     {
       ruta: 'videos',
       name: 'Videos',
+    },
+    {
+      ruta: 'aplicaciones',
+      name: 'Aplicaciones',
+    },
+    {
+      ruta: 'documentos',
+      name: 'Documentos',
+    },
+    {
+      ruta: 'infografia',
+      name: 'Infografía',
+    },
+    {
+      ruta: 'agenda',
+      name: 'Agenda',
+    },
+    {
+      ruta: 'redes-sociales',
+      name: 'Redes Sociales',
+    },
+    {
+      ruta: 'noticias',
+      name: 'Noticias',
     },
   ];
 
