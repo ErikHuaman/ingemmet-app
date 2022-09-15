@@ -33,6 +33,20 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { CarouselModule } from 'primeng/carousel';
 import { AccordionModule } from 'primeng/accordion';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  timeGridPlugin,
+  listPlugin,
+  interactionPlugin,
+]);
+
 const MODULES = [
   CommonModule,
   HttpClientModule,
@@ -41,6 +55,7 @@ const MODULES = [
   CdkScrollableModule,
   FormsModule,
   ReactiveFormsModule,
+  FullCalendarModule,
   ToastModule,
   AvatarModule,
   AvatarGroupModule,
@@ -68,6 +83,7 @@ const MODULES = [
   InputSwitchModule,
   CarouselModule,
   AccordionModule,
+  NgxTwitterTimelineModule,
 ];
 
 @NgModule({
