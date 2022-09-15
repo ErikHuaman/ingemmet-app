@@ -1,28 +1,31 @@
-<div class="py-4 w-full h-full bg-primary text-white">
+<div class="py-4 w-full bg-primary-gradient text-white">
   <div class="flex px-4 justify-center">
     <div class="avatar">
     </div>
   </div>
   <div class="flex justify-center my-4">
-    <h6 class="text-center font-semibold">{{user.name}}</h6>
+    <h6 class="text-center font-bold text-gray-900">{{user.name}}</h6>
   </div>
-  <div class="w-full my-4 px-4">
+  <div class="w-full my-4 pl-8">
     <div class="grid grid-cols-1 text-gray-900">
-      <a routerLink="inicio" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Inicio</a>
-      <a routerLink="institucional" routerLinkActive="active" href="#"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Institucional</a>
+      <a *ngFor="let item of menuOptions" [routerLink]="item.route" routerLinkActive="active"
+        class="flex menu-item items-center my-1 py-1 px-4 w-full font-semibold rounded-l-xl">
+        <!-- <span class="mr-1" [innerHTML]="svg(item.svg)"></span> -->
+        <span>{{item.name}}</span>
+      </a>
+      <!-- <a routerLink="institucional" routerLinkActive="active" href="#"
+        class="flex items-center my-1 py-1 px-4 w-full bg-white text-center rounded-l-xl">Institucional</a>
       <a routerLink="mineria" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Minería</a>
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-l-xl">Minería</a>
       <a routerLink="geologia" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Geología</a>
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-l-xl">Geología</a>
       <a routerLink="administracion" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Administración</a>
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-l-xl">Administración</a>
       <a routerLink="sistema-de-gestion" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Sistema de
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-l-xl">Sistema de
         Gestión</a>
       <a routerLink="tecnologia" routerLinkActive="active"
-        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Tecnología</a>
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-l-lg">Tecnología</a> -->
     </div>
   </div>
   <div class="w-full my-4">

@@ -2269,9 +2269,17 @@ input:checked + .toggle-bg {
 .rounded-none {
   border-radius: 0px;
 }
+.rounded-l-xl {
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
 .rounded-l-lg {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+}
+.rounded-r-xl {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
 }
 .rounded-r-lg {
   border-top-right-radius: 0.5rem;
