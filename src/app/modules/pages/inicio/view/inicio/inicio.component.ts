@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './inicio.component.html',
 })
 export class InicioComponent implements OnInit {
-  products = [1, 2, 3];
+  carousel = [1, 2, 3];
 
   responsiveOptions = [
     {

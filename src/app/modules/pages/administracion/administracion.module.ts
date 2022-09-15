@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { AdministracionComponent } from './view/administracion/administracion.component';
+import { CommonImportModule } from 'src/app/core/common-import.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [AdministracionComponent],
+  exports: [AdministracionComponent],
+  imports: [CommonImportModule],
 })
-export class AdministracionModule { }
+export class AdministracionModule {}

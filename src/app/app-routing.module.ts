@@ -12,6 +12,11 @@ import { OrganigramaComponent } from './modules/pages/sistema-de-gestion/view/co
 import { VideosComponent } from './modules/pages/sistema-de-gestion/view/components/videos/videos.component';
 import { SistemaDeGestionComponent } from './modules/pages/sistema-de-gestion/view/sistema-de-gestion/sistema-de-gestion.component';
 import { AgendaComponent } from './modules/pages/sistema-de-gestion/view/components/agenda/agenda.component';
+import { GeologiaComponent } from './modules/pages/geologia/view/geologia/geologia.component';
+import { AdministracionComponent } from './modules/pages/administracion/view/administracion/administracion.component';
+import { MineriaComponent } from './modules/pages/mineria/view/mineria/mineria.component';
+import { InstitucionalComponent } from './modules/pages/institucional/view/institucional/institucional.component';
+import { TecnologiaComponent } from './modules/pages/tecnologia/view/tecnologia/tecnologia.component';
 
 const routes: Routes = [
   {
@@ -22,26 +27,30 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+      {
+        path: '',
+        redirectTo: 'inicio',
+        pathMatch: 'full',
+      },
       {
         path: 'inicio',
         component: InicioComponent,
       },
       {
         path: 'institucional',
-        component: InicioComponent,
+        component: InstitucionalComponent,
       },
       {
         path: 'mineria',
-        component: InicioComponent,
+        component: MineriaComponent,
       },
       {
         path: 'geologia',
-        component: InicioComponent,
+        component: GeologiaComponent,
       },
       {
         path: 'administracion',
-        component: InicioComponent,
+        component: AdministracionComponent,
       },
       {
         path: 'sistema-de-gestion',
@@ -88,7 +97,7 @@ const routes: Routes = [
       },
       {
         path: 'tecnologia',
-        component: InicioComponent,
+        component: TecnologiaComponent,
       },
     ],
   },

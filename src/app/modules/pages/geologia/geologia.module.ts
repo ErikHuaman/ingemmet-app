@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { GeologiaComponent } from './view/geologia/geologia.component';
+import { CommonImportModule } from 'src/app/core/common-import.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [GeologiaComponent],
+  imports: [CommonImportModule],
+  exports: [GeologiaComponent],
 })
-export class GeologiaModule { }
+export class GeologiaModule {}

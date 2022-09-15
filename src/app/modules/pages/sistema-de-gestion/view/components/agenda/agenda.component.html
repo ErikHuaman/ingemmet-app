@@ -13,13 +13,29 @@
     </ng-template>
     <ng-template pTemplate="body" let-evento>
       <tr>
-        <td>{{evento.codigo}}</td>
-        <td>{{evento.tema}}</td>
-        <td>{{evento.expositor}}</td>
-        <td>{{evento.direccion}}</td>
-        <td>{{evento.evento}}</td>
-        <td>{{evento.lugar}}</td>
-        <td>{{evento.fecha}}</td>
+        <td>
+          <h6 class="text-blue-500 text-center font-bold">
+            {{evento.codigo}}
+          </h6>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.tema}}</h5>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.expositor}}</h5>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.direccion}}</h5>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.evento}}</h5>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.lugar}}</h5>
+        </td>
+        <td>
+          <h5 class="text-gray-500 font-bold">{{evento.fecha}}</h5>
+        </td>
       </tr>
     </ng-template>
   </p-table>

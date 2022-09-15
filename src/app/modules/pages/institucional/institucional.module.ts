@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { InstitucionalComponent } from './view/institucional/institucional.component';
+import { CommonImportModule } from 'src/app/core/common-import.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [InstitucionalComponent],
+  imports: [CommonImportModule],
+  exports: [InstitucionalComponent],
 })
-export class InstitucionalModule { }
+export class InstitucionalModule {}

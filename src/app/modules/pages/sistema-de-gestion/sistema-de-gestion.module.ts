@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SistemaDeGestionComponent } from './view/sistema-de-gestion/sistema-de-gestion.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { TabViewModule } from 'primeng/tabview';
 import { OrganigramaComponent } from './view/components/organigrama/organigrama.component';
 import { DocumentosComponent } from './view/components/documentos/documentos.component';
 import { AplicacionesComponent } from './view/components/aplicaciones/aplicaciones.component';

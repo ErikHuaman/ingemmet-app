@@ -4,6 +4,7 @@
   --bs-primary-active: #bbd3df;
   --bs-gray: #e5e5e5;
   --bs-primary: #053d56;
+  --bg-blue-ingemmet: #1972a4;
   --bs-body-font-size: 0.85rem;
 }
 
@@ -67,14 +68,32 @@ strong {
   background-color: var(--bs-gray);
 }
 
+.bg-gradient-2 {
+  background-color: #053d56;
+  background-image: linear-gradient(
+    0deg,
+    #053d56 0%,
+    #095477 50%,
+    #053d56 100%
+  );
+}
+
 .bg-degrade {
   background-color: #07aadb;
-  background-image: linear-gradient(90deg, #07aadb 0%, #02506f 100%);
+  background-image: linear-gradient(
+    90deg,
+    #07aadb 0%,
+    var(--bg-blue-ingemmet) 100%
+  );
 }
 
 .bg-degrade2 {
   background-color: #324575;
-  background-image: linear-gradient(90deg, #324575 0%, #105a8f 100%);
+  background-image: linear-gradient(
+    90deg,
+    #324575 0%,
+    var(--bg-blue-ingemmet) 100%
+  );
 }
 
 .text-degrade {

@@ -1,4 +1,17 @@
-<div id="default-carousel" class="w-full relative" data-carousel="static">
+<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [showIndicators]="false"
+  [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+  <ng-template let-carousel pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="mb-3">
+          <img src="assets/img/carousel.png" class="w-full" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<!-- <div id="default-carousel" class="w-full relative" data-carousel="static">
 
   <div class="relative h-56 overflow-hidden rounded-lg md:h-92">
     <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20"
@@ -56,7 +69,7 @@
       <span class="sr-only">Next</span>
     </span>
   </button>
-</div>
+</div> -->
 <div class="w-full grid grid-cols-5 gap-8 p-4">
   <div class="col-span-2">
     <div class="grid grid-cols-4 gap-4">
