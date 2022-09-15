@@ -13,8 +13,33 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
+      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
       {
-        path: '',
+        path: 'inicio',
+        component: InicioComponent,
+      },
+      {
+        path: 'institucional',
+        component: InicioComponent,
+      },
+      {
+        path: 'mineria',
+        component: InicioComponent,
+      },
+      {
+        path: 'geologia',
+        component: InicioComponent,
+      },
+      {
+        path: 'administracion',
+        component: InicioComponent,
+      },
+      {
+        path: 'sistema-de-gestion',
+        component: InicioComponent,
+      },
+      {
+        path: 'tecnologia',
         component: InicioComponent,
       },
     ],

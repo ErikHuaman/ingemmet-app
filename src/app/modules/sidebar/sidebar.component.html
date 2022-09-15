@@ -1,27 +1,42 @@
-<div class="bg-primary text-white">
+<div class="p-4 w-full bg-primary text-white">
   <div class="flex justify-center">
     <div class="avatar">
     </div>
   </div>
   <div class="flex justify-center my-4">
-    <h6 class="text-center">Fulanito Menganito Perez Perez</h6>
+    <h6 class="text-center font-semibold">Fulanito Menganito Perez Perez</h6>
   </div>
-  <div class="w-full px-4">
+  <div class="w-full my-4">
     <div class="grid grid-cols-1 text-gray-900">
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Inicio</a>
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Institucional</a>
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Minería</a>
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Geología</a>
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Administración</a>
-      <a href="#" class="my-1 py-1 text-center list-group-item list-group-item-action rounded-lg">Sistema de
+      <a routerLink="inicio" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Inicio</a>
+      <a routerLink="institucional" routerLinkActive="active" href="#"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Institucional</a>
+      <a routerLink="mineria" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Minería</a>
+      <a routerLink="geologia" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Geología</a>
+      <a routerLink="administracion" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Administración</a>
+      <a routerLink="sistema-de-gestion" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Sistema de
         Gestión</a>
-      <a href="#" class="my-05 py-1 text-center list-group-item list-group-item-action rounded-lg">Tecnología</a>
+      <a routerLink="tecnologia" routerLinkActive="active"
+        class="my-1 py-1 px-4 w-full bg-white text-center rounded-lg">Tecnología</a>
     </div>
   </div>
-  <div class="d-flex flex-column flex-grow-1 p-4">
+  <div class="w-full my-4">
     <app-directorio-telefonico></app-directorio-telefonico>
   </div>
-  <div class="d-flex">
-    Buzón de Sugerencias
+  <div class="flex flex-col justify-center items-center">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+      </svg>
+
+    </span>
+    <h4>Buzón de Sugerencias</h4>
   </div>
 </div>
