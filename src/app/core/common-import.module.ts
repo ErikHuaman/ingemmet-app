@@ -30,6 +30,7 @@ import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TabViewModule } from 'primeng/tabview';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { CarouselModule } from 'primeng/carousel';
 
 const MODULES = [
   CommonModule,
@@ -64,6 +65,7 @@ const MODULES = [
   RadioButtonModule,
   TabViewModule,
   InputSwitchModule,
+  CarouselModule,
 ];
 
 @NgModule({

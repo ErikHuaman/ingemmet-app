@@ -22,7 +22,11 @@ body {
 }
 
 .w-sidebar {
-  width: 18rem;
+  width: 18rem !important;
+}
+
+.w-main-container {
+  width: calc(100% - 18rem) !important;
 }
 
 .avatar {
