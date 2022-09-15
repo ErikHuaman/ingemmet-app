@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { InicioComponent } from './modules/pages/inicio/view/inicio/inicio.component';
+import { OrganigramaComponent } from './modules/pages/sistema-de-gestion/view/components/organigrama/organigrama.component';
 import { SistemadegestionComponent } from './modules/pages/sistema-de-gestion/view/sistema-de-gestion/sistema-de-gestion.component';
 
 const routes: Routes = [
@@ -38,6 +39,12 @@ const routes: Routes = [
       {
         path: 'sistema-de-gestion',
         component: SistemadegestionComponent,
+        //   children:[{
+        //     path: 'organigrama',
+        //     component: OrganigramaComponent
+        //   },
+        //   og
+        // ]
       },
       {
         path: 'tecnologia',
