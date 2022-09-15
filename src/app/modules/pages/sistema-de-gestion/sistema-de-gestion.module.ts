@@ -1,3 +1,4 @@
+import { NoticiasComponent } from './view/components/noticias/noticias.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -22,6 +23,7 @@ import { AgendaComponent } from './view/components/agenda/agenda.component';
     RedesSocialesComponent,
     VideosComponent,
     AgendaComponent,
+    NoticiasComponent,
   ],
   imports: [CommonModule, RouterModule, DragDropModule, TabViewModule],
   exports: [
@@ -32,6 +34,7 @@ import { AgendaComponent } from './view/components/agenda/agenda.component';
     RedesSocialesComponent,
     VideosComponent,
     AgendaComponent,
+    NoticiasComponent,
   ],
 })
 export class SistemaDeGestionModule {}
