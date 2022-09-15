@@ -2072,6 +2072,9 @@ input:checked + .toggle-bg {
 .justify-between {
   justify-content: space-between;
 }
+.gap-14 {
+  gap: 4rem;
+}
 .gap-12 {
   gap: 3rem;
 }
