@@ -1,1 +1,55 @@
-<p>documentos works!</p>
+<div class="bg-gray-100 rounded-lg p-4">
+  <div style="text-align: right" class="mb-6">
+    <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
+    <input
+      type="text"
+      pInputText
+      size="50"
+      placeholder="Buscar"
+      style="width: auto"
+    />
+  </div>
+
+  <p-accordion #filter [multiple]="true">
+    <p-accordionTab header="Comité de Control Interno">
+      <p-accordionTab header="Archivos">
+        Contenido
+      </p-accordionTab></p-accordionTab
+    >
+    <p-accordionTab header="Seguridad y Salud en el Trabajo">
+      <p-accordionTab header="Archivos">
+        Contenido
+      </p-accordionTab></p-accordionTab
+    >
+    <p-accordionTab header="Sistema de Gestión de Calidad - ISO 9001-2015">
+      <p-accordionTab header="Archivos"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+    <p-accordionTab
+      header="Sistema de Gestión de Seguridad de la Información - ISO 27001-2013"
+    >
+      <p-accordionTab header="Política de Seguridad de la Información">
+        <p>Contenido</p></p-accordionTab
+      >
+      <p-accordionTab header="Seguridad Digital">
+        <p>Contenido</p></p-accordionTab
+      >
+    </p-accordionTab>
+    <p-accordionTab header="Archivos 2019">
+      <p-accordionTab header="Enero"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+    <p-accordionTab header="Archivos 2020">
+      <p-accordionTab header="Enero"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+    <p-accordionTab header="2021 - Sistema de Gestión Antisoborno - ISO 37001">
+      <p-accordionTab header="Archivos"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+    <p-accordionTab
+      header="Certificado ISO - 37001 - Sistema Gestión Antisoborno"
+    >
+      <p-accordionTab header="Archivos"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+    <p-accordionTab header="2022 - Sistema de Gestión Antisoborno - ISO 37001">
+      <p-accordionTab header="Archivos"> <p>Contenido</p> </p-accordionTab>
+    </p-accordionTab>
+  </p-accordion>
+</div>

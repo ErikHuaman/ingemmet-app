@@ -25,7 +25,7 @@ import { CommonImportModule } from 'src/app/core/common-import.module';
     AgendaComponent,
     NoticiasComponent,
   ],
-  imports: [CommonImportModule, RouterModule, DragDropModule, TabViewModule],
+  imports: [RouterModule, DragDropModule, CommonImportModule],
   exports: [
     OrganigramaComponent,
     DocumentosComponent,
