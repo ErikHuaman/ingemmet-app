@@ -29,6 +29,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { TabViewModule } from 'primeng/tabview';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 const MODULES = [
   CommonModule,
@@ -62,6 +63,7 @@ const MODULES = [
   CardModule,
   RadioButtonModule,
   TabViewModule,
+  InputSwitchModule,
 ];
 
 @NgModule({

@@ -1715,6 +1715,9 @@ input:checked + .toggle-bg {
 .w-96 {
   width: 24rem;
 }
+.w-75p{
+  width: 75%;
+}
 .w-1 {
   width: 0.25rem;
 }
