@@ -5,7 +5,7 @@
 
   <div class="grid grid-cols-6 text-center my-4">
     <a *ngFor="let item of rutasComp" [routerLink]="item.ruta" routerLinkActive="active"
-      class="px-4 menu-item border-r mb-2">
+      class="px-4 p-1 menu-item border-r mb-2">
       {{ item.name }}
     </a>
   </div>

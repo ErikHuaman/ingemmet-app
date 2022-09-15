@@ -1,6 +1,5 @@
 import { NoticiasComponent } from './view/components/noticias/noticias.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SistemaDeGestionComponent } from './view/sistema-de-gestion/sistema-de-gestion.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -12,6 +11,7 @@ import { InfografiaComponent } from './view/components/infografia/infografia.com
 import { VideosComponent } from './view/components/videos/videos.component';
 import { RedesSocialesComponent } from './view/components/redes-sociales/redes-sociales.component';
 import { AgendaComponent } from './view/components/agenda/agenda.component';
+import { CommonImportModule } from 'src/app/core/common-import.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { AgendaComponent } from './view/components/agenda/agenda.component';
     AgendaComponent,
     NoticiasComponent,
   ],
-  imports: [CommonModule, RouterModule, DragDropModule, TabViewModule],
+  imports: [CommonImportModule, RouterModule, DragDropModule, TabViewModule],
   exports: [
     OrganigramaComponent,
     DocumentosComponent,

@@ -1620,10 +1620,10 @@ input:checked + .toggle-bg {
 .h-96 {
   height: 24rem;
 }
-.h-26{
+.h-26 {
   height: 7rem;
 }
-.h-28{
+.h-32 {
   height: 8rem;
 }
 .h-24 {
@@ -3162,6 +3162,14 @@ input:checked + .toggle-bg {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .px-1 {
   padding-left: 0.25rem;
