@@ -7,9 +7,10 @@ import { TabViewModule } from 'primeng/tabview';
 import { OrganigramaComponent } from './view/components/organigrama/organigrama.component';
 import { DocumentosComponent } from './view/components/documentos/documentos.component';
 import { AplicacionesComponent } from './view/components/aplicaciones/aplicaciones.component';
-import { DocumentosSgcComponent } from './view/components/documentos-sgc/documentos-sgc.component';
-import { LuchaContraLaCorrupcionComponent } from './view/components/lucha-contra-la-corrupcion/lucha-contra-la-corrupcion.component';
+import { InfografiaComponent } from './view/components/infografia/infografia.component';
 import { VideosComponent } from './view/components/videos/videos.component';
+import { RedesSocialesComponent } from './view/components/redes-sociales/redes-sociales.component';
+import { AgendaComponent } from './view/components/agenda/agenda.component';
 
 @NgModule({
   declarations: [
@@ -17,18 +18,20 @@ import { VideosComponent } from './view/components/videos/videos.component';
     OrganigramaComponent,
     DocumentosComponent,
     AplicacionesComponent,
-    DocumentosSgcComponent,
-    LuchaContraLaCorrupcionComponent,
+    InfografiaComponent,
+    RedesSocialesComponent,
     VideosComponent,
+    AgendaComponent,
   ],
   imports: [CommonModule, RouterModule, DragDropModule, TabViewModule],
   exports: [
     OrganigramaComponent,
     DocumentosComponent,
     AplicacionesComponent,
-    DocumentosSgcComponent,
-    LuchaContraLaCorrupcionComponent,
+    InfografiaComponent,
+    RedesSocialesComponent,
     VideosComponent,
+    AgendaComponent,
   ],
 })
 export class SistemaDeGestionModule {}

@@ -14,7 +14,12 @@ import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
 import { DirectorioTelefonicoComponent } from './sidebar/components/directorio-telefonico/directorio-telefonico.component';
 
 @NgModule({
-  declarations: [LoginComponent, MainComponent, SidebarComponent, DirectorioTelefonicoComponent],
+  declarations: [
+    LoginComponent,
+    MainComponent,
+    SidebarComponent,
+    DirectorioTelefonicoComponent,
+  ],
   exports: [LoginComponent, MainComponent, DirectorioTelefonicoComponent],
   imports: [
     CoreModule,
