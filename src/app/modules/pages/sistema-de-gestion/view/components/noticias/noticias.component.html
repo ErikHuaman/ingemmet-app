@@ -1,11 +1,15 @@
 <div class="px-4">
   <div class="grid grid-cols-2 gap-4">
-    <div class="flex items-center">
-      <div class="w-32 h-32 bg-gray-800">
-        <img src="" alt="">
+    <div *ngFor="let item of noticias" class="flex">
+      <div class="bg-gray-800">
+        <img class="w-32 h-32" src="" alt="">
       </div>
-      <div class="h-full p-2 grow flex items-start bg-red-500">
-        <h4 class="">Noticia 1</h4>
+      <div class="grow px-4">
+        <h5>{{item.titular}}</h5>
+        <p class="truncate-2">{{item.preview}}</p>
+        <div class="flex justify-end">
+          <button class="border rounded-xl mt-2 py-1 px-4 text-white bg-degrade">Leer más</button>
+        </div>
       </div>
     </div>
   </div>

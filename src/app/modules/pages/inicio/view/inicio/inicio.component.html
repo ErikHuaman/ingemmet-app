@@ -61,7 +61,7 @@
   <div class="col-span-2">
     <div class="grid grid-cols-4 gap-4">
       <span *ngFor="let item of servicios"
-        class="flex flex-col justify-center py-4 lg:py-8 px-4 mb-4 text-center bg-gray-700 rounded-lg text-3xs md:text-2xs lg:text-xs text-white uppercase">
+        class="flex flex-col justify-center py-2 lg:py-4 px-2 lg:px-4 mb-4 text-center bg-gray-700 rounded-lg text-3xs md:text-2xs lg:text-xs text-white uppercase">
         <div class="flex justify-center mb-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-8 h-8">
@@ -69,7 +69,7 @@
               d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
           </svg>
         </div>
-        <h6 class="grow">{{item.title}}</h6>
+        <p class="grow">{{item.title}}</p>
       </span>
     </div>
   </div>
@@ -80,25 +80,10 @@
           REDES SOCIALES
         </h4>
         <div class="grid grid-cols-1 gap-4">
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg font-semibold mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
+          <a *ngFor="let item of redessociales" href="#" class="underline font-semibold">
+            <span class="text-red-500 text-xs font-semibold mr-2">{{item.hora}}</span>
+            {{item.texto}}
           </a>
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg font-semibold mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
-          </a>
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
-          </a>
-
         </div>
       </div>
       <div>
@@ -106,23 +91,9 @@
           ULTIMAS NOTICIAS
         </h4>
         <div class="grid grid-cols-1 gap-4">
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg font-semibold mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
-          </a>
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg font-semibold mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
-          </a>
-          <a href="#" class="underline font-semibold">
-            <span class="text-red-500 text-lg mr-2">7:00</span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci est mollitia accusantium,
-            suscipit necessitatibus quis sit quasi cum sapiente amet ut delectus! Ad possimus laborum, voluptate sed
-            illo est!
+          <a *ngFor="let item of redessociales" href="#" class="underline font-semibold">
+            <span class="text-red-500 text-xs font-semibold mr-2">{{item.hora}}</span>
+            {{item.texto}}
           </a>
 
         </div>

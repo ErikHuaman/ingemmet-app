@@ -49,6 +49,10 @@ strong {
   font-weight: bolder;
 }
 
+.bg-primary {
+  background-color: var(--bs-primary);
+}
+
 .bg-primary-gradient {
   background-color: #053d56;
   background-image: linear-gradient(45deg, #053d56 10%, #80d0c7 100%);
@@ -56,6 +60,10 @@ strong {
 
 .menu-item.active {
   background-color: var(--bs-primary-active) !important;
+}
+
+.bg-gray {
+  background-color: var(--bs-primary-active);
 }
 
 .bg-degrade {
@@ -123,4 +131,13 @@ strong {
 
 .pl-1 {
   padding-left: 0.25rem;
+}
+
+.truncate-2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
