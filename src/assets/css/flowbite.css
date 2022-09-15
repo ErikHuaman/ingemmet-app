@@ -1157,11 +1157,11 @@ input:checked + .toggle-bg {
   left: 0px;
 }
 .top-10 {
- top: 2.5rem;
+  top: 2.5rem;
 }
 .top-12 {
   top: 3rem;
- }
+}
 .top-28 {
   top: 7rem;
 }
@@ -7064,6 +7064,11 @@ input:checked + .toggle-bg {
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .lg\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .lg\:py-16 {

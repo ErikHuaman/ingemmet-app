@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { InicioComponent } from './modules/pages/inicio/view/inicio/inicio.component';
-import { SistemadegestionComponent } from './modules/pages/sistema-de-gestion/view/sistemadegestion/sistemadegestion.component';
+import { SistemadegestionComponent } from './modules/pages/sistema-de-gestion/view/sistema-de-gestion/sistema-de-gestion.component';
 
 const routes: Routes = [
   {
