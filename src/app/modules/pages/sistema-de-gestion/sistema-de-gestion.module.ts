@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SistemadegestionComponent } from './view/sistema-de-gestion/sistema-de-gestion.component';
+import { RouterModule } from '@angular/router';
+import { SistemaDeGestionComponent } from './view/sistema-de-gestion/sistema-de-gestion.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TabViewModule } from 'primeng/tabview';
 import { OrganigramaComponent } from './view/components/organigrama/organigrama.component';
@@ -12,7 +13,7 @@ import { VideosComponent } from './view/components/videos/videos.component';
 
 @NgModule({
   declarations: [
-    SistemadegestionComponent,
+    SistemaDeGestionComponent,
     OrganigramaComponent,
     DocumentosComponent,
     AplicacionesComponent,
@@ -20,7 +21,7 @@ import { VideosComponent } from './view/components/videos/videos.component';
     LuchaContraLaCorrupcionComponent,
     VideosComponent,
   ],
-  imports: [CommonModule, DragDropModule, TabViewModule],
+  imports: [CommonModule, RouterModule, DragDropModule, TabViewModule],
   exports: [
     OrganigramaComponent,
     DocumentosComponent,

@@ -3,7 +3,17 @@
     <h6 class="font-extrabold text-3xl text-white">Sistemas de Gestión</h6>
   </div>
 
-  <div class="h-full mt-4">
+  <div class="grid grid-cols-6">
+    <a *ngFor="let item of rutas" [routerLink]="item.ruta" routerLinkActive="active"
+      class="rounded-lg py-2 px-4 bg-white">
+      {{item.name}}
+    </a>
+
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!-- <div class="h-full mt-4">
     <p-tabView>
       <p-tabPanel header="ORGANIGRAMA">
         <app-organigrama></app-organigrama>
@@ -24,5 +34,5 @@
         <app-videos></app-videos>
       </p-tabPanel>
     </p-tabView>
-  </div>
+  </div> -->
 </div>

@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-main',
   template: `
-    <div class="flex h-auto  w-full">
-      <div class="w-sidebar h-full">
+    <div class="flex w-full">
+      <div class="w-sidebar">
         <app-sidebar></app-sidebar>
       </div>
-      <div class="w-main-container bg-black">
+      <div class="w-main-container overflow-y">
         <router-outlet></router-outlet>
       </div>
     </div>

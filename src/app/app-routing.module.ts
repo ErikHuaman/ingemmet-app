@@ -3,8 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { InicioComponent } from './modules/pages/inicio/view/inicio/inicio.component';
+import { AplicacionesComponent } from './modules/pages/sistema-de-gestion/view/components/aplicaciones/aplicaciones.component';
+import { DocumentosSgcComponent } from './modules/pages/sistema-de-gestion/view/components/documentos-sgc/documentos-sgc.component';
+import { DocumentosComponent } from './modules/pages/sistema-de-gestion/view/components/documentos/documentos.component';
 import { OrganigramaComponent } from './modules/pages/sistema-de-gestion/view/components/organigrama/organigrama.component';
-import { SistemadegestionComponent } from './modules/pages/sistema-de-gestion/view/sistema-de-gestion/sistema-de-gestion.component';
+import { VideosComponent } from './modules/pages/sistema-de-gestion/view/components/videos/videos.component';
+import { SistemaDeGestionComponent } from './modules/pages/sistema-de-gestion/view/sistema-de-gestion/sistema-de-gestion.component';
 
 const routes: Routes = [
   {
@@ -38,13 +42,46 @@ const routes: Routes = [
       },
       {
         path: 'sistema-de-gestion',
-        component: SistemadegestionComponent,
-        //   children:[{
-        //     path: 'organigrama',
-        //     component: OrganigramaComponent
-        //   },
-        //   og
-        // ]
+        component: SistemaDeGestionComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'organigrama',
+          },
+          {
+            path: 'organigrama',
+            component: OrganigramaComponent,
+          },
+          {
+            path: 'videos',
+            component: VideosComponent,
+          },
+          {
+            path: 'aplicaciones',
+            component: AplicacionesComponent,
+          },
+          {
+            path: 'documentos',
+            component: DocumentosComponent,
+          },
+          {
+            path: 'infografia',
+            component: DocumentosSgcComponent,
+          },
+          {
+            path: 'agenda',
+            component: VideosComponent,
+          },
+          {
+            path: 'redes-sociales',
+            component: VideosComponent,
+          },
+          {
+            path: 'noticias',
+            component: VideosComponent,
+          },
+        ],
       },
       {
         path: 'tecnologia',
