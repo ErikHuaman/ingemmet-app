@@ -20,17 +20,14 @@ export class SistemaDeGestionComponent {
       name: 'Organigrama',
     },
     {
-      ruta: 'videos',
-      name: 'Videos',
+      ruta: 'documentos',
+      name: 'Documentos',
     },
     {
       ruta: 'aplicaciones',
       name: 'Aplicaciones',
     },
-    {
-      ruta: 'documentos',
-      name: 'Documentos',
-    },
+
     {
       ruta: 'infografia',
       name: 'Infografía',
@@ -42,6 +39,10 @@ export class SistemaDeGestionComponent {
     {
       ruta: 'redes-sociales',
       name: 'Redes Sociales',
+    },
+    {
+      ruta: 'videos',
+      name: 'Videos',
     },
     {
       ruta: 'noticias',

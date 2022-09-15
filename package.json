@@ -21,6 +21,7 @@
     "@angular/router": "~13.3.0",
     "bootstrap": "4.6",
     "flowbite": "^1.5.3",
+    "jquery": "^3.6.1",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",
     "rxjs": "~7.5.0",

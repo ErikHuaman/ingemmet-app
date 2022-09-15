@@ -2231,6 +2231,9 @@ input:checked + .toggle-bg {
 .overflow-x-auto {
   overflow-x: auto;
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -2256,6 +2259,9 @@ input:checked + .toggle-bg {
 }
 .rounded-lg {
   border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 1.5rem;
 }
 .rounded {
   border-radius: 0.25rem;
