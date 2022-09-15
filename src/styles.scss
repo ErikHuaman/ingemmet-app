@@ -2,6 +2,7 @@
 
 :root {
   --bs-primary-active: #bbd3df;
+  --bs-gray: #e5e5e5;
   --bs-primary: #053d56;
   --bs-body-font-size: 0.85rem;
 }
@@ -63,7 +64,7 @@ strong {
 }
 
 .bg-gray {
-  background-color: var(--bs-primary-active);
+  background-color: var(--bs-gray);
 }
 
 .bg-degrade {
