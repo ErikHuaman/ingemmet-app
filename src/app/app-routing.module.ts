@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { InicioComponent } from './modules/pages/inicio/view/inicio/inicio.component';
+import { SistemadegestionComponent } from './modules/pages/sistema-de-gestion/view/sistemadegestion/sistemadegestion.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
       },
       {
         path: 'sistema-de-gestion',
-        component: InicioComponent,
+        component: SistemadegestionComponent,
       },
       {
         path: 'tecnologia',
