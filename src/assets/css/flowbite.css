@@ -1521,6 +1521,15 @@ input:checked + .toggle-bg {
 .mt-10 {
   margin-top: 2.5rem;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
+.mt-30 {
+  margin-top: 7.5rem;
+}
+.mt-35 {
+  margin-top: 8.5rem;
+}
 .block {
   display: block;
 }
@@ -1610,6 +1619,12 @@ input:checked + .toggle-bg {
 }
 .h-96 {
   height: 24rem;
+}
+.h-26{
+  height: 7rem;
+}
+.h-28{
+  height: 8rem;
 }
 .h-24 {
   height: 6rem;

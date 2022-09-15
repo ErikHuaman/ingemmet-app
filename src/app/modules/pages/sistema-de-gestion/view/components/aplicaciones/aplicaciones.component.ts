@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './aplicaciones.component.html',
 })
 export class AplicacionesComponent implements OnInit {
-  aplicaciones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  aplicaciones = [1, 2, 3, 4];
 
   constructor() {}
 

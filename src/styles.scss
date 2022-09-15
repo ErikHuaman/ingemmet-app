@@ -54,6 +54,11 @@ body {
   left: 0;
 }
 
+.app-degrade {
+  background-color: #066a9e;
+  background-image: linear-gradient(45deg, #066a9e 0%, #10b7e6 100%);
+}
+
 .w-sidebar {
   width: 18rem !important;
 }
