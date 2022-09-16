@@ -8,7 +8,7 @@ import { createEventId } from 'src/app/core/utils';
   templateUrl: './nuevo-evento.component.html',
 })
 export class NuevoEventoComponent implements OnInit {
-  title = null;
+  title: string = '';
 
   allDay = false;
 

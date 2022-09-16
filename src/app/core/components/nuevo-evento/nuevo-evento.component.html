@@ -16,5 +16,5 @@
 
 <div class="grid grid-cols-2 gap-2">
   <p-button (onClick)="cancel()" label="Cancelar" styleClass="w-full p-button-danger"></p-button>
-  <p-button styleClass="w-full button-ingemmet" label="Guardar" (onClick)="save()"></p-button>
+  <p-button [disabled]="title == '' " styleClass="w-full button-ingemmet" label="Guardar" (onClick)="save()"></p-button>
 </div>
