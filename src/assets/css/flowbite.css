@@ -1626,6 +1626,9 @@ input:checked + .toggle-bg {
 .h-96 {
   height: 24rem;
 }
+.h-110 {
+  height: 30rem;
+}
 .h-26 {
   height: 7rem;
 }

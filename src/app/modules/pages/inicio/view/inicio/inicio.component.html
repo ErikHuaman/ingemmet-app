@@ -1,5 +1,13 @@
-<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [showIndicators]="false"
-  [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+<p-carousel
+  [value]="carousel"
+  [numVisible]="1"
+  [numScroll]="1"
+  [circular]="true"
+  [showIndicators]="false"
+  [autoplayInterval]="3000"
+  [responsiveOptions]="responsiveOptions"
+  [showNavigators]="false"
+>
   <ng-template let-carousel pTemplate="item">
     <div class="product-item">
       <div class="product-item-content">
@@ -73,53 +81,100 @@
 <div class="w-full grid grid-cols-5 gap-8 p-4">
   <div class="col-span-2">
     <div class="grid grid-cols-4 gap-4">
-      <span *ngFor="let item of servicios"
-        class="flex flex-col justify-center py-2 lg:py-4 px-2 lg:px-4 mb-4 text-center bg-gray-700 rounded-lg text-3xs md:text-2xs lg:text-xs text-white uppercase">
+      <span
+        *ngFor="let item of servicios"
+        class="flex flex-col justify-center py-2 lg:py-4 px-2 lg:px-4 mb-4 text-center bg-gray-700 rounded-lg text-3xs md:text-2xs lg:text-xs text-white uppercase"
+      >
         <div class="flex justify-center mb-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-8 h-8">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"
+            />
           </svg>
         </div>
-        <p class="grow">{{item.title}}</p>
+        <p class="grow">{{ item.title }}</p>
       </span>
     </div>
   </div>
   <div class="col-span-3">
     <div class="grid grid-cols-3 gap-4">
       <div>
-        <h4 class="text-xl font-bold my-2">
-          REDES SOCIALES
-        </h4>
-        <div class="grid grid-cols-1 gap-4">
-          <a *ngFor="let item of redessociales" href="#" class="underline font-semibold">
-            <span class="text-red-500 text-xs font-semibold mr-2">{{item.hora}}</span>
-            {{item.texto}}
-          </a>
+        <h4 class="text-xl font-bold my-2">REDES SOCIALES</h4>
+        <div class="flex justify-center gap-4">
+          <a href="https://www.facebook.com/INGEMMET " target="_blank"
+            ><img
+              src="https://img.icons8.com/color/32/000000/facebook-circled--v1.png"
+              alt="facebook"
+          /></a>
+          <a href="https://www.instagram.com/ingemmet.peru/" target="_blank"
+            ><img
+              src="https://img.icons8.com/color/32/000000/instagram-new--v1.png"
+              alt="instagram"
+          /></a>
+          <a href="https://twitter.com/ingemmetperu" target="_blank"
+            ><img
+              src="https://img.icons8.com/color/32/000000/twitter-circled--v1.png"
+              alt="twitter"
+          /></a>
+          <a href="https://youtube.com/user/IngemmetTV" target="_blank"
+            ><img
+              src="https://img.icons8.com/fluency/32/000000/youtube-play.png"
+              alt="youtube"
+          /></a>
+          <a
+            href="https://www.linkedin.com/company/ingemmetperu/"
+            target="_blank"
+            ><img
+              src="https://img.icons8.com/color/32/000000/linkedin-circled--v1.png"
+              alt="linkedin"
+          /></a>
+        </div>
+
+        <div class="grid grid-cols-1 mt-3">
+          <ngx-twitter-timeline
+            [data]="{
+              sourceType: 'url',
+              url: 'https://twitter.com/IngemmetPeru'
+            }"
+            [opts]="{
+              tweetLimit: 5,
+              height: 370,
+              borderColor: '#2E88EE'
+            }"
+          >
+          </ngx-twitter-timeline>
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-bold my-2">
-          ULTIMAS NOTICIAS
-        </h4>
+        <h4 class="text-xl font-bold my-2">ULTIMAS NOTICIAS</h4>
         <div class="grid grid-cols-1 gap-4">
-          <a *ngFor="let item of redessociales" href="#" class="underline font-semibold">
-            <span class="text-red-500 text-xs font-semibold mr-2">{{item.hora}}</span>
-            {{item.texto}}
+          <a
+            *ngFor="let item of redessociales"
+            href="#"
+            class="underline font-semibold"
+          >
+            <span class="text-red-500 text-xs font-semibold mr-2">{{
+              item.hora
+            }}</span>
+            {{ item.texto }}
           </a>
-
         </div>
       </div>
       <div>
         <div class="h-96 overflow-hidden">
-          <img class="h-full w-auto" src="assets/img/imagen.jpg" alt="">
+          <img class="h-full w-auto" src="assets/img/imagen.jpg" alt="" />
         </div>
-        <p class="mt-2 text-sm">
-          Ingemmet psrticipó en presentación
-        </p>
+        <p class="mt-2 text-sm">Ingemmet psrticipó en presentación</p>
       </div>
     </div>
   </div>
-
 </div>
