@@ -6,62 +6,12 @@ import {
   EventApi,
 } from '@fullcalendar/angular';
 import { createEventId, INITIAL_EVENTS } from 'src/app/core/utils';
+import { DialogService } from 'primeng/dynamicdialog';
+import { NuevoEventoComponent } from 'src/app/core/components/nuevo-evento/nuevo-evento.component';
 
 @Component({
   selector: 'app-administracion',
   templateUrl: './administracion.component.html',
-  styles: [
-    `
-      h2 {
-        margin: 0;
-        font-size: 16px;
-      }
-
-      ul {
-        margin: 0;
-        padding: 0 0 0 1.5em;
-      }
-
-      li {
-        margin: 1.5em 0;
-        padding: 0;
-      }
-
-      b {
-        /* used for event dates/times */
-        margin-right: 3px;
-      }
-
-      .demo-app {
-        display: flex;
-        min-height: 100%;
-        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-        font-size: 14px;
-      }
-
-      .demo-app-sidebar {
-        width: 300px;
-        line-height: 1.5;
-        background: #eaf9ff;
-        border-right: 1px solid #d3e2e8;
-      }
-
-      .demo-app-sidebar-section {
-        padding: 2em;
-      }
-
-      .demo-app-main {
-        flex-grow: 1;
-        padding: 3em;
-      }
-
-      .fc {
-        /* the calendar root */
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-    `,
-  ],
 })
 export class AdministracionComponent implements OnInit {
   calendarVisible = true;
@@ -89,7 +39,7 @@ export class AdministracionComponent implements OnInit {
   };
   currentEvents: EventApi[] = [];
 
-  constructor() {}
+  constructor(public dialogService: DialogService) {}
 
   ngOnInit(): void {}
 
@@ -103,20 +53,47 @@ export class AdministracionComponent implements OnInit {
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a new title for your event');
+    // const title = prompt('Please enter a new title for your event');
+
+    const ref = this.dialogService.open(NuevoEventoComponent, {
+      header: 'Nuevo Evento',
+      width: '400px',
+      // modal: false,
+      closeOnEscape: true,
+      dismissableMask: true,
+      data: {
+        selectInfo: selectInfo,
+      },
+    });
+
     const calendarApi = selectInfo.view.calendar;
 
     calendarApi.unselect(); // clear date selection
 
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay,
-      });
-    }
+    ref.onClose.subscribe((res: any) => {
+      if (res) {
+        calendarApi.addEvent(res);
+        // this.messageService.add({
+        //   severity: 'info',
+        //   summary: 'Car Selected',
+        //   detail: 'Vin:' + car.vin,
+        // });
+      }
+    });
+
+    // const calendarApi = selectInfo.view.calendar;
+
+    // calendarApi.unselect(); // clear date selection
+
+    // if (title) {
+    //   calendarApi.addEvent({
+    //     id: createEventId(),
+    //     title,
+    //     start: selectInfo.startStr,
+    //     end: selectInfo.endStr,
+    //     allDay: selectInfo.allDay,
+    //   });
+    // }
   }
 
   handleEventClick(clickInfo: EventClickArg) {
