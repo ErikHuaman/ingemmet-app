@@ -1,0 +1,20 @@
+<div class="mb-4">
+  <input class="w-full" type="text" pInputText [(ngModel)]="title" placeholder="Agregar título">
+
+</div>
+<div class="flex justify-between items-center my-4">
+  <label class="ml-2 text-lg" for="allDay">Todo el día</label>
+  <p-inputSwitch class="h-4" id="allDay" [(ngModel)]="allDay"></p-inputSwitch>
+</div>
+<div class="grid grid-cols-2 my-4 gap-2">
+  <label>Inicio</label> <label>Final</label>
+  <p-calendar [disabled]="allDay" appendTo="body" [(ngModel)]="start" [timeOnly]="true" hourFormat="12"
+    inputId="timeonly"></p-calendar>
+  <p-calendar [disabled]="allDay" appendTo="body" [(ngModel)]="end" [timeOnly]="true" hourFormat="12"
+    inputId="timeonly"></p-calendar>
+</div>
+
+<div class="grid grid-cols-2 gap-2">
+  <p-button (onClick)="cancel()" label="Cancelar" styleClass="w-full p-button-danger"></p-button>
+  <p-button [disabled]="title == '' " styleClass="w-full button-ingemmet" label="Guardar" (onClick)="save()"></p-button>
+</div>

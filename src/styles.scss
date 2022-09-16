@@ -4,8 +4,9 @@
   --bs-primary-active: #bbd3df;
   --bs-gray: #e5e5e5;
   --bs-primary: #053d56;
-  --bg-blue-ingemmet: #1972a4;
   --bs-body-font-size: 0.85rem;
+
+  --bg-blue-ingemmet: #1972a4;
 }
 
 body {
@@ -52,7 +53,33 @@ strong {
 }
 
 .bg-primary {
-  background-color: var(--bs-primary);
+  background-color: var(--bs-primary) !important;
+}
+
+.fc-button-primary {
+  background-color: var(--bg-blue-ingemmet) !important;
+  border-color: var(--bs-primary) !important;
+  color: white !important;
+}
+
+.button-ingemmet {
+  color: #ffffff;
+  background: var(--bg-blue-ingemmet);
+  border: 1px solid var(--bg-blue-ingemmet);
+}
+
+.fc.fc-theme-standard
+  .fc-toolbar
+  .fc-button.fc-dayGridMonth-button.fc-button-active,
+.fc.fc-theme-standard
+  .fc-toolbar
+  .fc-button.fc-timeGridWeek-button.fc-button-active,
+.fc.fc-theme-standard
+  .fc-toolbar
+  .fc-button.fc-timeGridDay-button.fc-button-active {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+  color: white !important;
 }
 
 .bg-primary-gradient {

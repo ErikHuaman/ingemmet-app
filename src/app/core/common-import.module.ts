@@ -32,7 +32,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CarouselModule } from 'primeng/carousel';
 import { AccordionModule } from 'primeng/accordion';
-
+import { CalendarModule } from 'primeng/calendar';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -73,6 +73,7 @@ const MODULES = [
   CheckboxModule,
   MenuModule,
   ChipModule,
+  CalendarModule,
   InputNumberModule,
   BadgeModule,
   DividerModule,
