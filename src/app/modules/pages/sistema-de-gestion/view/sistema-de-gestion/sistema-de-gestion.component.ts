@@ -17,36 +17,28 @@ export class SistemaDeGestionComponent {
   rutasComp = [
     {
       ruta: 'organigrama',
-      name: 'Organigrama',
+      name: 'ORGANIGRAMA',
     },
     {
       ruta: 'documentos',
-      name: 'Documentos',
+      name: 'DOCUMENTOS',
     },
     {
       ruta: 'aplicaciones',
-      name: 'Aplicaciones',
+      name: 'APLICACIONES',
     },
 
     {
       ruta: 'infografia',
-      name: 'Infografía',
-    },
-    {
-      ruta: 'agenda',
-      name: 'Agenda',
-    },
-    {
-      ruta: 'redes-sociales',
-      name: 'Redes Sociales',
+      name: 'INFOGRAFÍA',
     },
     {
       ruta: 'videos',
-      name: 'Videos',
+      name: 'VIDEOS',
     },
     {
       ruta: 'noticias',
-      name: 'Noticias',
+      name: 'NOTICIAS',
     },
   ];
 
