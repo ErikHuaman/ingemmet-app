@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
-  --bs-primary-active: #bbd3df;
+  --bs-primary-active: #1972a4;
   --bs-gray: #e5e5e5;
   --bs-primary: #053d56;
   --bs-body-font-size: 0.85rem;
 
   --bs-blue-ingemmet: #1972a4;
+  --bs-blue-birthday: #3584af;
+  --bs-blue-button: #4b6778;
+  --bs-body-gray: #ddded8;
+  --bs-red: #de2f2f;
+  --bs-green: #b4cf2a;
+  --bs-text-color: #186491;
+  --bs-lightblue: #d5edf9;
 
   --bs-blue-ingemmet-rgb: 25, 114, 164;
 }
@@ -55,18 +62,22 @@ strong {
 }
 
 .bg-primary {
-  background-color: var(--bs-primary) !important;
+  background-color: var(--bs-blue-ingemmet) !important;
+}
+
+.bg-prmary-1 {
+  background-color: var(--bs-blue-birthday) !important;
 }
 
 .fc-button-primary {
   background-color: var(--bs-blue-ingemmet) !important;
-  border-color: var(--bs-primary) !important;
+  border-color: var(--bs-blue-ingemmet) !important;
   color: white !important;
 }
 
 .button-ingemmet {
   color: #ffffff;
-  background: var(--bs-blue-ingemmet);
+  background: var(--bs-blue-button);
   border: 1px solid var(--bs-blue-ingemmet);
 }
 
@@ -79,32 +90,49 @@ strong {
 .fc.fc-theme-standard
   .fc-toolbar
   .fc-button.fc-timeGridDay-button.fc-button-active {
-  background-color: var(--bs-primary) !important;
-  border-color: var(--bs-primary) !important;
+  background-color: var(--bs-blue-ingemmet) !important;
+  border-color: var(--bs-blue-ingemmet) !important;
   color: white !important;
 }
 
 .bg-primary-gradient {
-  background-color: #053d56;
-  background-image: linear-gradient(45deg, #053d56 10%, #80d0c7 100%);
+  background-color: var(--bs-blue-ingemmet) !important;
+  background-image: linear-gradient(
+    45deg,
+    var(--bs-blue-ingemmet) 10%,
+    var(--bs-lightblue) 100%
+  );
 }
 
 .menu-item.active {
   background-color: var(--bs-primary-active) !important;
+  color: var(--bs-lightblue);
 }
 
 .bg-gray {
-  background-color: var(--bs-gray);
+  background-color: var(--bs-body-gray);
+}
+
+.bg-text-color {
+  color: var(--bs-text-color);
 }
 
 .bg-gradient-2 {
-  background-color: #053d56;
+  background-color: var(--bs-blue-birthday);
   background-image: linear-gradient(
     0deg,
-    #053d56 0%,
-    #095477 50%,
-    #053d56 100%
+    var(--bs-blue-birthday) 0%,
+    var(--bs-blue-ingemmet) 50%,
+    var(--bs-blue-birthday) 100%
   );
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.bg-color1 {
+  background-color: var(--bs-lightblue);
 }
 
 .bg-degrade {

@@ -2094,6 +2094,9 @@ input:checked + .toggle-bg {
 .gap-2 {
   gap: 0.5rem;
 }
+.gap-1{
+  gap: 0.25rem;
+}
 .gap-6 {
   gap: 1.5rem;
 }
@@ -3478,6 +3481,9 @@ input:checked + .toggle-bg {
 }
 .font-semibold {
   font-weight: 600;
+}
+.font-nbold{
+  font-weight: 500;
 }
 .font-normal {
   font-weight: 400;
