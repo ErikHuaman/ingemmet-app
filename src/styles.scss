@@ -6,7 +6,9 @@
   --bs-primary: #053d56;
   --bs-body-font-size: 0.85rem;
 
-  --bg-blue-ingemmet: #1972a4;
+  --bs-blue-ingemmet: #1972a4;
+
+  --bs-blue-ingemmet-rgb: 25, 114, 164;
 }
 
 body {
@@ -57,15 +59,15 @@ strong {
 }
 
 .fc-button-primary {
-  background-color: var(--bg-blue-ingemmet) !important;
+  background-color: var(--bs-blue-ingemmet) !important;
   border-color: var(--bs-primary) !important;
   color: white !important;
 }
 
 .button-ingemmet {
   color: #ffffff;
-  background: var(--bg-blue-ingemmet);
-  border: 1px solid var(--bg-blue-ingemmet);
+  background: var(--bs-blue-ingemmet);
+  border: 1px solid var(--bs-blue-ingemmet);
 }
 
 .fc.fc-theme-standard
@@ -110,7 +112,7 @@ strong {
   background-image: linear-gradient(
     90deg,
     #07aadb 0%,
-    var(--bg-blue-ingemmet) 100%
+    var(--bs-blue-ingemmet) 100%
   );
 }
 
@@ -119,7 +121,7 @@ strong {
   background-image: linear-gradient(
     90deg,
     #324575 0%,
-    var(--bg-blue-ingemmet) 100%
+    var(--bs-blue-ingemmet) 100%
   );
 }
 
@@ -187,4 +189,61 @@ strong {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
+}
+
+// modificar carousel
+
+app-carousel {
+  .p-carousel-content {
+    position: relative;
+
+    .p-carousel-prev,
+    .p-carousel-next {
+      position: absolute;
+      width: 3rem !important;
+      height: 3rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      // background: rgb(var(--bs-blue-ingemmet-rgb), 0.15) !important;
+      border: 1px solid rgb(var(--bs-blue-ingemmet-rgb), 0.25) !important;
+      bottom: calc(50% - 1.5rem);
+      z-index: +1;
+
+      span {
+        margin-top: 2px;
+        width: 1rem !important;
+        height: 1rem !important;
+        color: white;
+      }
+    }
+
+    .p-carousel-prev {
+      left: 20px;
+    }
+
+    .p-carousel-next {
+      right: 20px;
+    }
+
+    .p-carousel-indicators {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+
+      .p-carousel-indicator {
+        button {
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          border: none !important;
+        }
+        &.p-highlight button {
+          background-color: var(--bs-blue-ingemmet);
+        }
+      }
+    }
+  }
 }

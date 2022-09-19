@@ -1,0 +1,28 @@
+<div>
+  <h4 class="text-xl font-bold my-2">REDES SOCIALES</h4>
+  <div class="flex justify-center gap-4">
+    <a href="https://www.facebook.com/INGEMMET " target="_blank"><img
+        src="https://img.icons8.com/color/32/000000/facebook-circled--v1.png" alt="facebook" /></a>
+    <a href="https://www.instagram.com/ingemmet.peru/" target="_blank"><img
+        src="https://img.icons8.com/color/32/000000/instagram-new--v1.png" alt="instagram" /></a>
+    <a href="https://twitter.com/ingemmetperu" target="_blank"><img
+        src="https://img.icons8.com/color/32/000000/twitter-circled--v1.png" alt="twitter" /></a>
+    <a href="https://youtube.com/user/IngemmetTV" target="_blank"><img
+        src="https://img.icons8.com/fluency/32/000000/youtube-play.png" alt="youtube" /></a>
+    <a href="https://www.linkedin.com/company/ingemmetperu/" target="_blank"><img
+        src="https://img.icons8.com/color/32/000000/linkedin-circled--v1.png" alt="linkedin" /></a>
+  </div>
+
+  <div class="grid grid-cols-1 mt-3">
+    <ngx-twitter-timeline [data]="{
+        sourceType: 'url',
+        url: 'https://twitter.com/IngemmetPeru',
+        screenName: 'IngemmetPeru'
+      }" [opts]="{
+        tweetLimit: 5,
+        height: 370,
+        borderColor: '#2E88EE'
+      }">
+    </ngx-twitter-timeline>
+  </div>
+</div>

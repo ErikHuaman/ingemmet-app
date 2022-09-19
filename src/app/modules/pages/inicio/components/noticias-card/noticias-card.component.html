@@ -1,0 +1,11 @@
+<div>
+  <h4 class="text-xl font-bold my-2">ULTIMAS NOTICIAS</h4>
+  <div class="grid grid-cols-1 gap-4">
+    <a *ngFor="let item of noticias" href="#" class="underline font-semibold">
+      <span class="text-red-500 text-xs font-semibold mr-2">{{
+        item.hora
+      }}</span>
+      {{ item.texto }}
+    </a>
+  </div>
+</div>

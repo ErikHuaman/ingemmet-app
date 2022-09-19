@@ -1,0 +1,31 @@
+<div class="grid grid-cols-3 gap-2 mb-4">
+  <div class="col-span-3 relative">
+    <video id="player" class="w-full max-w-full h-auto rounded-lg border border-gray-500 shadow-lg"
+      poster="assets/videos/preview/1.png">
+      <source src="assets/videos/bajo-la-mesa.mp4" type="video/mp4">
+      Su navegador no soporta la etiqueta de vídeo.
+    </video>
+    <div class="absolute top-1/2 left-1/2">
+      <button id="playBtn" (click)="playVideo()"
+        class="w-14 h-14 rounded-full -translate-x-1/2 -translate-y-1/2 flex justify-center items-center border-2 border-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- <div class="flex flex-col justify-center items-center">
+
+    <video class="w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700 mb-1" controls>
+      <source src="assets/videos/bajo-la-mesa.mp4" type="video/mp4">
+      Su navegador no soporta la etiqueta de vídeo.
+    </video>
+
+    <video class="w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700" controls>
+      <source src="assets/videos/bajo-la-mesa.mp4" type="video/mp4">
+      Su navegador no soporta la etiqueta de vídeo.
+    </video>
+  </div> -->
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $;
+
 @Component({
   selector: 'app-noticias',
   templateUrl: './noticias.component.html',
@@ -50,5 +52,16 @@ export class NoticiasComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    $.get('http://www.flalottery.com/exptkt/ff.html', function (data) {
+      console.log(data);
+    });
+
+    $.ajax({
+      type: 'GET',
+      url: 'https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent',
+    }).done(function (data) {
+      console.log(data);
+    });
+  }
 }
