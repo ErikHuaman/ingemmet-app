@@ -1,13 +1,5 @@
-<p-carousel
-  [value]="carousel"
-  [numVisible]="1"
-  [numScroll]="1"
-  [circular]="true"
-  [showIndicators]="false"
-  [autoplayInterval]="3000"
-  [responsiveOptions]="responsiveOptions"
-  [showNavigators]="false"
->
+<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000"
+  [responsiveOptions]="responsiveOptions">
   <ng-template let-carousel pTemplate="item">
     <div class="product-item">
       <div class="product-item-content">
@@ -173,7 +165,9 @@
         <div class="h-96 overflow-hidden">
           <img class="h-full w-auto" src="assets/img/imagen.jpg" alt="" />
         </div>
-        <p class="mt-2 text-sm">Ingemmet psrticipó en presentación</p>
+        <p class="mt-2 text-sm">
+          Ingemmet participó en presentación
+        </p>
       </div>
     </div>
   </div>
