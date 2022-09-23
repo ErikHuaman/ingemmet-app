@@ -8,4 +8,9 @@ export class VideosComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  getAVideos(): void{
+    
+
+  }
 }

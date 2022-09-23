@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       <div class="w-sidebar">
         <app-sidebar></app-sidebar>
       </div>
-      <div class="w-main-container bg-gray">
+      <div class="w-main-container bg-gray" style="height: 100%;">
         <router-outlet></router-outlet>
       </div>
     </div>
