@@ -40,6 +40,8 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 
+import { TabMenuModule } from 'primeng/tabmenu';
+
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   timeGridPlugin,
@@ -84,6 +86,7 @@ const MODULES = [
   InputSwitchModule,
   CarouselModule,
   AccordionModule,
+  TabMenuModule,
   NgxTwitterTimelineModule,
 ];
 
