@@ -1,5 +1,7 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { ServiceService } from '../../service.service';
 
 declare var $: any;
 
@@ -31,21 +33,30 @@ export class NoticiasCardComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private service: ServiceService) {}
 
   ngOnInit(): void {
-    const api =
-      'https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent';
+    // $.getJSON(
+    //   'https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent',
+    //   function (data) {
+    //     console.log('data -> ', data);
+    //   }
+    // );
 
-    $.get(api, function (data: any) {
-      console.log(data);
+    this.service.getNoticias().subscribe((res) => {
+      console.log('res->', res);
     });
 
-    $.ajax({
-      type: 'GET',
-      url: 'http://www.flalottery.com/exptkt/ff.html',
-    }).done(function (data) {
-      console.log(data);
-    });
+    // async function load() {
+    // const url =
+    //   'https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent';
+    //   let obj = await (await fetch(url)).json();
+    //   console.log(obj);
+    // }
+    // load();
+
+    // axios.get(url).then((data) => {
+    //   console.log(data);
+    // });
   }
 }
