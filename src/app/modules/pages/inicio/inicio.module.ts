@@ -7,6 +7,8 @@ import { VideoCardComponent } from './components/video-card/video-card.component
 import { SocialCardComponent } from './components/social-card/social-card.component';
 import { NoticiasCardComponent } from './components/noticias-card/noticias-card.component';
 import { AplicacionesCardComponent } from './components/aplicaciones-card/aplicaciones-card.component';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { AplicacionesCardComponent } from './components/aplicaciones-card/aplica
     NoticiasCardComponent,
     AplicacionesCardComponent,
   ],
-  imports: [CommonImportModule],
+  imports: [CommonImportModule,CoreModule,RouterModule,],
   exports: [
     InicioComponent,
+     RouterModule,
     CarouselComponent,
     VideoCardComponent,
     SocialCardComponent,

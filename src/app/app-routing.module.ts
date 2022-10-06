@@ -17,6 +17,7 @@ import { AdministracionComponent } from './modules/pages/administracion/view/adm
 import { MineriaComponent } from './modules/pages/mineria/view/mineria/mineria.component';
 import { InstitucionalComponent } from './modules/pages/institucional/view/institucional/institucional.component';
 import { TecnologiaComponent } from './modules/pages/tecnologia/view/tecnologia/tecnologia.component';
+import { AllAplicacionComponent } from './modules/pages/all-aplicacion/all-aplicacion.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
       {
         path: 'administracion',
         component: AdministracionComponent,
+      },
+      {
+        path: 'aplicaciones',
+        component: AllAplicacionComponent,
       },
       {
         path: 'sistema-de-gestion',

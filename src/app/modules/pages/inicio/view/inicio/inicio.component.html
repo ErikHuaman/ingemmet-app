@@ -1,17 +1,147 @@
-<div class="py-2 px-4">
+<div class="p-0">
   <app-carousel></app-carousel>
 
-  <div class="w-full grid grid-cols-5 gap-8 mt-4">
-    <div class="col-span-2">
+  <div class="row mt-3">
+    <div class="col-lg-12">
       <app-aplicaciones-card></app-aplicaciones-card>
     </div>
-    <div class="col-span-3">
-      <app-video-card></app-video-card>
-      <div class="grid grid-cols-2 gap-4">
-        <app-social-card></app-social-card>
-        <app-noticias-card></app-noticias-card>
+    <div class="col-lg-8">
+      <div class="row">
+
+      <div class="col-lg-12">
+        <app-video-card></app-video-card>
+      </div>
+
+        <div class="col-lg-6">
+          <app-noticias-card></app-noticias-card>
+        </div>
+       
+        <div class="col-lg-6">
+          <ngx-twitter-timeline [data]="{
+              sourceType: 'url',
+              url: 'https://twitter.com/IngemmetPeru',
+              screenName: 'IngemmetPeru'
+            }" [opts]="{
+              tweetLimit: 5,
+              height: 470,
+              borderColor: '#2E88EE'
+            }">
+          </ngx-twitter-timeline>
+        </div>
       </div>
     </div>
+    <div class="col-lg-4">
+      
+
+      <!--<div class="card">
+        <div class="row">
+            <div class="col-lg-4 bg_amarillo">
+              <img src="https://cdn.pixabay.com/photo/2020/10/06/21/54/cake-5633461__480.png" alt="birthday" class="birthday">
+            </div>
+            <div class="col-lg-8 bg_negrito">
+              <div class="text ">
+                <h4 class="p-2 text-center letra_cumple">Happy Birthday!</h4>
+                <h5 class="text-center text-white"><i class="bi bi-person-bounding-box"></i> <strong class="ml-3">Jose Luis</strong> </h5>
+                <p  class="text-center  text-white">ASISTENTE TÉCNICO </p>
+                <div class="text-center  text-white">Te desea todo el equipo <span style="color:tomato">❤</span></div>
+              </div>
+            
+            </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+            <div class="col-lg-4 bg_amarillo">
+              <img src="https://cdn.pixabay.com/photo/2020/10/06/21/54/cake-5633461__480.png" alt="birthday" class="birthday">
+            </div>
+            <div class="col-lg-8 bg_negrito">
+              <div class="text ">
+                <h4 class="p-2 text-center letra_cumple">Happy Birthday!</h4>
+                <h5 class="text-center text-white">
+                  <i class="bi bi-person-bounding-box"></i> 
+                  <strong class="ml-3">Alexis Dias</strong> 
+                </h5>
+                <p  class="text-center  text-white">ASISTENTE TÉCNICO </p>
+                <div class="text-center  text-white">Te desea todo el equipo <span style="color:tomato">❤</span></div>
+              </div>
+            
+            </div>
+        </div>
+      </div>-->
+      <div class="row">
+        <div class="col-lg-12">
+              <h4 class="text-xl font-bold my-2 text-center bg_titulos">CUMPLEAÑOS</h4>
+
+              <p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1"  [showNavigators]="false" [circular]="false" [showIndicators]="false" [autoplayInterval]="5000"
+                [responsiveOptions]="responsiveOptions">
+                <ng-template let-carousel pTemplate="item">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="card p-1 shadow-sm " > 
+                        <div class="image d-flex flex-column justify-content-center align-items-center pt-2 pb-4"> 
+                          
+                            <img src="assets/img/profile-img.jpg" style="border-radius: 50%;" height="60" width="60" />
+                          
+                            <span class="name mt-3">Alexis Cisneros</span> 
+                            <span class="idd">Feliz Cumpleaños</span> 
+                          
+                            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
+                              <span><i class="pi pi-twitter"></i></span> 
+                              <span><i class="pi pi-facebook"></i></span>
+                              <span><i class="pi pi-instagram"></i></span> 
+                              <span><i class="pi pi-linkedin"></i></span> 
+                            </div> 
+                            <div class=" px-2 rounded mt-4 date2"> 
+                              <span class="join"> 21 Mayo,2000</span> 
+                            </div> 
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </p-carousel>
+             
+        </div>
+        <div class="col-lg-12">
+          <h4 class="text-xl font-bold my-2 text-center bg_titulos">NUEVO INTEGRANTES</h4>
+
+          <p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [showNavigators]="false" [circular]="false" [showIndicators]="false" [autoplayInterval]="7000"
+            [responsiveOptions]="responsiveOptions">
+            <ng-template let-carousel pTemplate="item">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card p-1 shadow-sm "> 
+                    <div class="image d-flex flex-column justify-content-center align-items-center  pt-2 pb-4"> 
+                      
+                        <img src="assets/img/profile-img.jpg" style="border-radius: 50%;" height="60" width="60" />
+                      
+                        <span class="name mt-3">Eleanor Pena</span> 
+                        <span class="idd">@eleanorpena</span> 
+                      
+                        <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
+                          <span><i class="pi pi-twitter"></i></span> 
+                          <span><i class="pi pi-facebook"></i></span>
+                          <span><i class="pi pi-instagram"></i></span> 
+                          <span><i class="pi pi-linkedin"></i></span> 
+                        </div> 
+                        <div class=" px-2 rounded mt-4 date"> 
+                          <span class="join">Joined May,2021</span> 
+                        </div> 
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </p-carousel>
+         
+    </div>
+      </div>
+      
+    </div>
   </div>
+
+
+ 
 
 </div>

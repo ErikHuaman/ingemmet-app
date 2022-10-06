@@ -1,49 +1,70 @@
-<div class="flex h-full flex-col">
-  <div class="pt-4 w-full bg-primary-gradient text-white">
-    <div class="flex px-4 pb-2 justify-center">
-      <div class="avatar"></div>
-    </div>
-    <div class="flex justify-center px-4 py-2">
-      <h6 class="text-center text-xl font-bold text-gray-900">
-        {{ user.name }}
-      </h6>
-    </div>
-    <div class="w-full py-2 pl-8">
-      <div class="grid grid-cols-1 text-gray-900">
-        <a
-          *ngFor="let item of menuOptions"
-          [routerLink]="item.route"
-          routerLinkActive="active"
-          class="flex menu-item items-center my-1 py-1 px-6 w-full text-lg font-semibold rounded-l-xl"
-        >
-          <!-- <span class="mr-1" [innerHTML]="svg(item.svg)"></span> -->
-          <span>{{ item.name }}</span>
-        </a>
-      </div>
-    </div>
-    <div class="w-full mt-4">
-      <app-directorio-telefonico></app-directorio-telefonico>
-    </div>
-    <div class="bg-primary flex flex-col justify-center items-center p-4">
-      <span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"
-          />
-        </svg>
-      </span>
-      <h4 class="text-xl">Buzón de Sugerencias</h4>
-    </div>
-  </div>
 
-  <div class="grow bg-primary"></div>
-</div>
+
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between"> 
+        <a routerLink="/dashboard" class="logo d-flex align-items-center"> 
+          <span class="d-none d-lg-block">
+            <img src="assets/logo.png" alt="">
+          </span> 
+        </a> 
+        <i (click)="sidebarToggle()" class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+     
+      <nav class="header-nav ms-auto">
+         <ul class="d-flex align-items-center">
+            <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " href="#"> <i class="bi bi-search"></i> </a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown"> 
+                <i class="bi bi-megaphone"></i> <span class="badge bg-success badge-number">3</span> </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                  <li class="dropdown-header">Buzón de Sugerencias</li>
+
+               </ul>
+             
+           </li>
+            <li class="nav-item dropdown pe-3">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> 
+                  <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> 
+                  <span class="d-none d-md-block dropdown-toggle ps-2"> {{ user.name }}</span> 
+                </a>
+               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                  <li class="dropdown-header">
+                     <h6>{{ user.name }}</h6>
+                     <span>Programador</span>
+                  </li>
+                  <li>
+                     <hr class="dropdown-divider">
+                  </li>
+                  <li> <a class="dropdown-item d-flex align-items-center" > <i class="bi bi-person"></i> <span>Mi Perfil</span> </a></li>
+                  <li>
+                     <hr class="dropdown-divider">
+                  </li>
+                 
+                  <li>
+                     <hr class="dropdown-divider">
+                  </li>
+                  <li> <a class="dropdown-item d-flex align-items-center" > <i class="bi bi-box-arrow-right" ></i> <span>Cerrar Sesion</span> </a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+    </header>
+  
+    <aside id="sidebar" class="sidebar">
+    
+      <ul class="sidebar-nav ml-2 mr-2" id="sidebar-nav">
+          <li class="nav-item" *ngFor="let item of menuOptions"> 
+            <a class="nav-link active"  [routerLink]="item.route" routerLinkActive="active"> 
+              <i class="{{item.icono}}"></i> <span>{{ item.name }}</span> 
+            </a>
+          </li>
+      </ul>
+
+      <div class="w-full mt-4" style="display: block;">
+        <div class="">
+          <app-directorio-telefonico></app-directorio-telefonico>
+        </div>
+      </div>
+    </aside>    
+    
+

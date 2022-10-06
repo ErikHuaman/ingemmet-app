@@ -11,9 +11,10 @@ import { AdministracionModule } from './pages/administracion/administracion.modu
 import { SistemaDeGestionModule } from './pages/sistema-de-gestion/sistema-de-gestion.module';
 import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { AllAplicacionComponent } from './pages/all-aplicacion/all-aplicacion.component';
 
 @NgModule({
-  declarations: [LoginComponent, MainComponent],
+  declarations: [LoginComponent, MainComponent, AllAplicacionComponent],
   exports: [LoginComponent, MainComponent],
   imports: [
     CoreModule,
