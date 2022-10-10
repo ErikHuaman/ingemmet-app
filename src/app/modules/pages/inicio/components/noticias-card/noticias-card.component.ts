@@ -25,12 +25,7 @@ export class NoticiasCardComponent implements OnInit {
       hora: '7:00',
       texto:
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, vel tempora impedit eaque ratione doloribus.',
-    },
-    {
-      hora: '7:00',
-      texto:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, vel tempora impedit eaque ratione doloribus.',
-    },
+    }
   ];
 
   constructor(private service: ServiceService) {}

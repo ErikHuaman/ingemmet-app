@@ -11,8 +11,7 @@ export class AplicacionesCardComponent implements OnInit {
     { name: 'Documentación del sistema de gestión de calidad', icon: 'bi bi-columns-gap',route:'' },
     { name: 'Registro de asistencia', icon: 'bi bi-device-ssd',route:'' },
     { name: 'Requerimiento de software', icon: 'bi bi-display',route:'' },
-    { name: 'Mesa de ayuda', icon: 'bi bi-door-open',route:'' },
-    { name: 'Sistema de tramite documentario', icon: 'bi bi-tablet',route:'' },
+ 
     { name: 'Más Aplicaciones', icon: 'bi bi-bookmark-plus',route:'/aplicaciones' },
 
     /*

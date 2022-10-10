@@ -1,20 +1,20 @@
 <div class="relative p-4">
-  <div
-    class="flex border items-center rounded-xl py-2 px-4 lg:px-8 bg-primary-gradient shadow-lg md-4"
-  >
+  <div class="flex border items-center rounded-xl py-2 px-4 lg:px-8 bg-primary-gradient shadow-lg md-4">
     <h6 class="font-extrabold text-3xl text-white">Sistemas de Gestión</h6>
   </div>
 
-  <div class="grid grid-cols-6 text-center my-2 mt-3 mb-1 gap-2">
-    <a
-      *ngFor="let item of rutasComp"
-      [routerLink]="item.ruta"
-      routerLinkActive="active"
-      class="px-2 p-1 menu-item border-r mb-2 font-nbold bg-color1 rounded-lg text-black py-2"
-    >
-      {{ item.name }}
-    </a>
-  </div>
+  <ul class="nav nav-tabs nav-tabs-bordered mt-3 mb-2">
+    <li class="nav-item flex-fill" style="display: flex;">
+        <a
+          *ngFor="let item of rutasComp"
+          [routerLink]="item.ruta"
+          routerLinkActive="active"
+          class="nav-link w-100"
+        >
+          {{ item.name }}
+        </a>
+      </li>
+      </ul>
 
   <router-outlet></router-outlet>
 </div>

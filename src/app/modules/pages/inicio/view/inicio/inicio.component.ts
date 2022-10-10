@@ -6,7 +6,22 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './inicio.component.html',
 })
 export class InicioComponent implements OnInit {
-  carousel = [1, 2, 3];
+  carousel = [
+    {
+      nombre:'Alexis dias',
+      usuario:'alexis',
+      actividad:'Feliz Cumpleaños',
+      dia:"21 Mayo,2000",
+      color:"date2"
+    },
+    {
+      nombre:'Mario vargas',
+      usuario:'mariov',
+      actividad:'bienvenido al equipo',
+      dia:"Joined May,2021",
+      color:"date"
+    }
+  ];
 
   responsiveOptions = [
     {
