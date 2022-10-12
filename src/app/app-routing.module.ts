@@ -76,7 +76,7 @@ const routes: Routes = [
           },
           {
             path: 'aplicaciones',
-            component: AplicacionesComponent,
+            component: AllAplicacionComponent,
           },
           {
             path: 'documentos',

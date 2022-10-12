@@ -368,9 +368,25 @@ app-carousel .p-carousel-content .p-carousel-indicators {
 	color: #4154f1;
 }
 
+.text-3xl{
+	font-size: 15px !important;
+}
+
+.text-xl{
+	font-size: 12px !important;
+}
+.text-2xl{
+	font-size: 15px !important;
+}
+
+.p-accordion-header-text {
+    line-height: 1;
+    font-size: 12px;
+}
+
 .nav-tabs-bordered .nav-link.active {
-	background-color: #fff;
-	color: #4154f1;
+	background-color: #00649b;
+    color: #ffffff;
 	border-bottom: 2px solid #4154f1;
 }
 
@@ -1339,7 +1355,7 @@ hr .new1 {
 }
 
 .date2 {
-	background-color: #ffa600
+	background-color: #00649b
 }
 
 .ponerutilo {
@@ -1361,6 +1377,7 @@ hr .new1 {
 .footer .copyright {
 	text-align: center;
 	color: #012970;
+	font-size: 12px;
 }
 
 .footer .credits {

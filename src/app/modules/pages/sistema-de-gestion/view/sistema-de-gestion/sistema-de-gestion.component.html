@@ -1,6 +1,6 @@
-<div class="relative p-4">
+<div class="relative p-2">
   <div class="flex border items-center rounded-xl py-2 px-4 lg:px-8 bg-primary-gradient shadow-lg md-4">
-    <h6 class="font-extrabold text-3xl text-white">Sistemas de Gestión</h6>
+    <p class="text-3xl text-white">Sistemas de Gestión</p>
   </div>
 
   <ul class="nav nav-tabs nav-tabs-bordered mt-3 mb-2">
@@ -11,7 +11,7 @@
           routerLinkActive="active"
           class="nav-link w-100"
         >
-          {{ item.name }}
+        <i class="{{item.icon}}"></i> <strong class="ml-3">{{ item.name }}</strong>
         </a>
       </li>
       </ul>

@@ -15,28 +15,34 @@ export class SistemaDeGestionComponent {
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
   rutasComp = [
-    {
+    { 
+      icon:"bi bi-bricks",
       ruta: 'organigrama',
       name: 'ORGANIGRAMA',
     },
     {
+      icon:"bi bi-files",
       ruta: 'documentos',
       name: 'DOCUMENTOS',
     },
     {
+      icon:"bi bi-box-fill",
       ruta: 'aplicaciones',
       name: 'APLICACIONES',
     },
 
     {
+      icon:"bi bi-clipboard-minus",
       ruta: 'infografia',
       name: 'INFOGRAFÍA',
     },
     {
+      icon:"bi bi-camera-video",
       ruta: 'videos',
       name: 'VIDEOS',
     },
-    {
+    { 
+      icon:"bi bi-chat-right-text",
       ruta: 'noticias',
       name: 'NOTICIAS',
     },
