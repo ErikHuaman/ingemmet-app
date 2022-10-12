@@ -6,18 +6,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AplicacionesCardComponent implements OnInit {
   aplicaciones: any[] = [
-    { name: 'FERMIN ELABORACIÓN DE DOCUMENTOS', icon: '' },
-    { name: 'VENTANILLA VIRTUAL MESA DE OARTES INTERNA', icon: '' },
-    { name: 'DOCUMENTACIÓN DEL SISTEMA DE GESTIÓN DE CALIDAD', icon: '' },
-    { name: 'REGISTRO DE ASISTENCIA', icon: '' },
-    { name: 'REQUERIMIENTO DE SOFTWARE', icon: '' },
-    { name: 'MESA DE AYUDA', icon: '' },
-    { name: 'SISTEMA DE TRAMITE DOCUMENTARIO', icon: '' },
-    { name: 'SOLICITUD DE SERVICIOS ARCHIVISTICOS UADA', icon: '' },
-    { name: 'FLUJO DE DOCUMENTACIÓN MINERA', icon: '' },
-    { name: 'SISTEMA INTEGRADO DE LABORATORIOS SIL', icon: '' },
-    { name: 'BIENES ASIGNADOS', icon: '' },
-    { name: 'LUCHA CONTRA LA CORRUPCIÓN', icon: '' },
+    { name: 'Fermin elaboración de documentos', icon: 'bi bi-files',route:'' },
+    { name: 'Ventanilla virtual mesa de partes interna', icon: 'bi bi-tablet',route:'' },
+    { name: 'Documentación del sistema de gestión de calidad', icon: 'bi bi-columns-gap',route:'' },
+    { name: 'Registro de asistencia', icon: 'bi bi-device-ssd',route:'' },
+    { name: 'Requerimiento de software', icon: 'bi bi-display',route:'' },
+ 
+    { name: 'Más Aplicaciones', icon: 'bi bi-bookmark-plus',route:'/aplicaciones' },
+
+    /*
+     { name: 'Mesa de ayuda', icon: 'bi bi-door-open' },
+    { name: 'Sistema de tramite documentario', icon: 'bi bi-tablet' },
+    { name: 'Solicitud de servicios archivisticos uada', icon: 'bi bi-tablet' },
+    { name: 'Flujo de documentación minera', icon: 'bi bi-tablet' },
+    { name: 'Sistema integrado de laboratorios sil', icon: 'bi bi-tablet' },
+    { name: 'Bienes asignados', icon: 'bi bi-door-closed' },
+    { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet' },*/
   ];
 
   constructor() {}
