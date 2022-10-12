@@ -14,6 +14,14 @@ export class IntranetService {
     return this.http.get(`${environment.urlApi}/${endpoint}` );
   }
 
+  public getFile(endpoint:string): Observable<any> {
+    return this.http.get(`${environment.urlApi}/${endpoint}` , {
+      reportProgress: true,
+      observe: 'events',
+      responseType: 'blob'
+    }); 
+  }
+
   private convertToFormData(item: any){
     var formData = new FormData();
     for ( var key in item ) {

@@ -40,8 +40,8 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 import { TabMenuModule}  from 'primeng/tabmenu';
-
-import { TabMenuModule } from 'primeng/tabmenu';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TreeModule } from 'primeng/tree';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -89,7 +89,8 @@ const MODULES = [
   AccordionModule,
   TabMenuModule,
   NgxTwitterTimelineModule,
-  TabMenuModule
+  ProgressSpinnerModule,
+  TreeModule
 ];
 
 @NgModule({

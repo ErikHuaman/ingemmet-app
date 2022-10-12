@@ -1,5 +1,5 @@
 <div class="bg-gray-100 rounded-lg p-4">
-  <div style="text-align: right" class="mb-6">
+  <!-- <div style="text-align: right" class="mb-6">
     <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
     <input
       type="text"
@@ -8,9 +8,9 @@
       placeholder="Buscar"
       style="width: auto"
     />
-  </div>
+  </div> -->
 
-  <p-accordion #filter [multiple]="true">
+  <!-- <p-accordion #filter [multiple]="true">
     <p-accordionTab header="Comité de Control Interno">
       <p-accordionTab header="Archivos">
         Contenido
@@ -52,5 +52,25 @@
     <p-accordionTab header="2022 - Sistema de Gestión Antisoborno - ISO 37001">
       <p-accordionTab header="Archivos"> <p>Contenido</p> </p-accordionTab>
     </p-accordionTab>
-  </p-accordion>
+  </p-accordion> -->
+
+    
+  <div  class="row">
+    <div class="col-6">
+      <p-tree class="ml-3" [value]="nodes" selectionMode="single" [(selection)]="selectedNode">
+        <ng-template let-node pTemplate="url">
+          <i > {{node.label}}</i>
+        </ng-template>
+        <ng-template let-node pTemplate="default">
+          <div class="d-flex justify-content-between">
+            
+            <i > {{node.label}}</i> &nbsp; &nbsp; &nbsp; 
+            <i (click)="descargar(node.data.ruta)" *ngIf="!node.data.esCarpeta" class="pi pi-arrow-circle-down" style="font-size: 1rem"></i>
+            
+          </div>
+            
+        </ng-template>
+      </p-tree>
+    </div>
+    </div>
 </div>
