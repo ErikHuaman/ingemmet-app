@@ -18,6 +18,7 @@ import { MineriaComponent } from './modules/pages/mineria/view/mineria/mineria.c
 import { InstitucionalComponent } from './modules/pages/institucional/view/institucional/institucional.component';
 import { TecnologiaComponent } from './modules/pages/tecnologia/view/tecnologia/tecnologia.component';
 import { AllAplicacionComponent } from './modules/pages/all-aplicacion/all-aplicacion.component';
+import { MenuNavegacionComponent } from './modules/pages/menu-navegacion/menu-navegacion.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
       {
         path: 'aplicaciones',
         component: AllAplicacionComponent,
+      },
+      {
+        path: 'pagina-dinamica/:id',
+        component: MenuNavegacionComponent,
       },
       {
         path: 'sistema-de-gestion',

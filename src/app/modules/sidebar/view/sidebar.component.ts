@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Pipe, Sanitizer } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { IntranetService } from 'src/app/services/intranet.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -17,6 +18,11 @@ export class SidebarComponent implements OnInit {
       icono:'bi bi-grid'
     },
     {
+      name: 'Sistema de Gestión',
+      route: 'sistema-de-gestion',
+      icono:'bi bi-easel'
+    }
+    /*{
       name: 'Institucional',
       route: 'institucional',
       icono:'bi bi-menu-button-wide'
@@ -45,12 +51,14 @@ export class SidebarComponent implements OnInit {
       name: 'Tecnología',
       route: 'tecnologia',
       icono:'bi bi-body-text'
-    },
+    },*/
   ];
+  menus:any = [];
+  constructor(private sanitizer: DomSanitizer,@Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
 
-  constructor(private sanitizer: DomSanitizer,@Inject(DOCUMENT) private document: Document) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getMenus();
+  }
 
   svg(html: any) {
     return this.sanitizer.bypassSecurityTrustHtml(html);
@@ -60,4 +68,16 @@ export class SidebarComponent implements OnInit {
     //toggle sidebar function
     this.document.body.classList.toggle('toggle-sidebar');
   }
+
+  getMenus(){
+      this.intranetService.get("menu").subscribe(response => {
+        console.log(response)
+          if (response.code == 201) {
+             console.log(response)
+             this.menus = response.data.menus;
+          }
+      });
+  }
+
+  
 }

@@ -11,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
         <div class="row p-0 m-0">
            <div class="col-lg-4">
              <div class="copyright">
-               <strong><span>AV. Canada 1470, San Borja-Lima 47, Perú</span></strong>
-               <strong><span>Central Telefónico 0062-1-344344</span></strong>
+               <strong style="font-size:22px"><i class="bi bi-megaphone"></i></strong><br>
+               <strong>Buzón de Sugerencias </strong>
              </div>
            </div>  
            <div class="col-lg-4">

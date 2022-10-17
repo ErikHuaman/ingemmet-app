@@ -13,6 +13,7 @@
       <nav class="header-nav ms-auto">
          <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " href="#"> <i class="bi bi-search"></i> </a></li>
+            <!--
             <li class="nav-item dropdown">
               <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown"> 
                 <i class="bi bi-megaphone"></i> <span class="badge bg-success badge-number">3</span> </a>
@@ -21,7 +22,7 @@
 
                </ul>
              
-           </li>
+           </li>-->
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> 
                   <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> 
@@ -53,11 +54,36 @@
     <aside id="sidebar" class="sidebar">
     
       <ul class="sidebar-nav ml-2 mr-2" id="sidebar-nav">
+          
           <li class="nav-item" *ngFor="let item of menuOptions"> 
-            <a class="nav-link active"  [routerLink]="item.route" routerLinkActive="active"> 
-              <i class="{{item.icono}}"></i> <span>{{ item.name }}</span> 
-            </a>
+              <a class="nav-link active"  [routerLink]="item.route" routerLinkActive="active"> 
+                <i class="{{item.icono}}"></i> <span>{{ item.name }}</span> 
+              </a>
           </li>
+          <li class="nav-item" *ngFor="let menu of  menus; index as i" > 
+              <ng-container *ngIf="menu.submenus.length != 0">
+                  <a class="nav-link collapsed" [attr.data-bs-target]="'#forms-nav'+i"  data-bs-toggle="collapse" href="#"> 
+                      <i class="bi bi-journal-text"></i>
+                      <span>{{menu.descModulo}} </span>
+                      <i class="bi bi-chevron-down ms-auto"></i> 
+                  </a>
+                  <ul id="forms-nav{{i}}"  class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                      <li *ngFor="let submenus of  menu.submenus"> 
+                        <a routerLink="/pagina-dinamica/{{submenus.id}}"> 
+                            <i class="bi bi-circle"></i>
+                            <span>{{submenus.nombre}}</span>
+                        </a>
+                      </li>
+                  </ul>
+              </ng-container>
+
+              <ng-container *ngIf="menu.submenus.length == 0">
+                <a class="nav-link active"  [routerLink]="menu.route" routerLinkActive="active"> 
+                   <i class="{{menu.icono}}"></i> <span>{{menu.descModulo}}</span> 
+                </a>
+              </ng-container>
+              
+         </li>
       </ul>
 
       <div class="w-full mt-4" style="display: block;">

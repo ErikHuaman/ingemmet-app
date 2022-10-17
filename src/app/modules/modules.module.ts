@@ -12,9 +12,10 @@ import { SistemaDeGestionModule } from './pages/sistema-de-gestion/sistema-de-ge
 import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { AllAplicacionComponent } from './pages/all-aplicacion/all-aplicacion.component';
+import { MenuNavegacionComponent } from './pages/menu-navegacion/menu-navegacion.component';
 
 @NgModule({
-  declarations: [LoginComponent, MainComponent, AllAplicacionComponent],
+  declarations: [LoginComponent, MainComponent, AllAplicacionComponent, MenuNavegacionComponent],
   exports: [LoginComponent, MainComponent],
   imports: [
     CoreModule,

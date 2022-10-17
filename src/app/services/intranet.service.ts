@@ -31,4 +31,8 @@ export class IntranetService {
 
     return formData;
   }
+
+  public getAll(controller:string): Observable<any> {
+    return this.http.get(`${environment.urlApi}/${controller}`);
+  }
 }

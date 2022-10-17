@@ -1,0 +1,23 @@
+<section class="section" >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{subObjectMenus.nombre}}
+                    </h5>
+
+                    <div class="ql-snow">
+                        <div [innerHTML]="subObjectMenus.textohtml"></div>
+                        <p-tabView class="px-8" *ngIf="listaSubHijos.length !=0">
+                            <p-tabPanel *ngFor="let itemHijo of listaSubHijos" header="{{itemHijo.nombre}}">
+                              <div [innerHTML]="itemHijo.textohtml"></div>
+                            </p-tabPanel>
+                        </p-tabView>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
