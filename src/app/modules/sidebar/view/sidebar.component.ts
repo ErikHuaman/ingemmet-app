@@ -2,6 +2,8 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Pipe, Sanitizer } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { IntranetService } from 'src/app/services/intranet.service';
+declare var $;
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -21,13 +23,13 @@ export class SidebarComponent implements OnInit {
       name: 'Sistema de Gestión',
       route: 'sistema-de-gestion',
       icono:'bi bi-easel'
-    }
-    /*{
+    },
+   /*  {
       name: 'Institucional',
       route: 'institucional',
       icono:'bi bi-menu-button-wide'
     },
-    {
+   {
       name: 'Minería',
       route: 'mineria',
       icono:'bi bi-minecart-loaded'
@@ -52,12 +54,28 @@ export class SidebarComponent implements OnInit {
       route: 'tecnologia',
       icono:'bi bi-body-text'
     },*/
+
+    
   ];
   menus:any = [];
   constructor(private sanitizer: DomSanitizer,@Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
 
   ngOnInit(): void {
     this.getMenus();
+ /*
+    var settings = {
+      "url": "https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
+        "Access-Control-Allow-Origin": "*"
+      },
+    };
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });*/
   }
 
   svg(html: any) {

@@ -56,7 +56,7 @@
       <ul class="sidebar-nav ml-2 mr-2" id="sidebar-nav">
           
           <li class="nav-item" *ngFor="let item of menuOptions"> 
-              <a class="nav-link active"  [routerLink]="item.route" routerLinkActive="active"> 
+              <a class="nav-link "  [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
                 <i class="{{item.icono}}"></i> <span>{{ item.name }}</span> 
               </a>
           </li>

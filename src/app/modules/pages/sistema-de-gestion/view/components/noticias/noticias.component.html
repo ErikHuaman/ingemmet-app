@@ -1,16 +1,25 @@
-<div class="px-4 mt-3">
-  <div class="grid grid-cols-2 gap-4">
-    <div *ngFor="let item of noticias" class="flex">
-      <div class="bg-gray-800">
-        <img class="w-32 h-32" src="" alt="">
+<div class="container">
+  <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+
+      <h1 class="display-6 mt-5 mb-3">Instituto Geológico, Minero y Metalúrgico</h1>
+  </div>
+  <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-12 wow fadeInUp" *ngFor="let item of noticias" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+          <div class="causes-item d-flex flex-column  shadow-sm rounded-top overflow-hidden h-100">
+              <div class="text-center p-4 pt-1">
+                  
+                  <h5 class="mt-3 mb-3" [innerHTML]="item.url"></h5>
+                  <div class="position-relative mt-auto">
+                    <img class="img-fluid" src="https://cdn.www.gob.pe/uploads/document/file/3760212/standard_NP_%20Ingemmet%20y%20DDC%20investigan%20Saqsaywuaman-02.jpg.jpg" alt="">                  
+                  </div>
+                  <p class="mt-2">{{item.content}}</p>
+                  
+              </div>
+              <small class="text-right pb-2 pr-4">{{item.publication}}</small> 
+          </div>
       </div>
-      <div class="grow px-4">
-        <h5>{{item.titular}}</h5>
-        <p class="truncate-2">{{item.preview}}</p>
-        <div class="flex justify-end">
-          <button class="border rounded-xl mt-2 py-1 px-4 text-white bg-degrade">Leer más</button>
-        </div>
-      </div>
-    </div>
+     
   </div>
 </div>
+
+

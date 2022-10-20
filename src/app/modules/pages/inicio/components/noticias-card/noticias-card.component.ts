@@ -37,10 +37,10 @@ export class NoticiasCardComponent implements OnInit {
     //     console.log('data -> ', data);
     //   }
     // );
-
+/*
     this.service.getNoticias().subscribe((res) => {
       console.log('res->', res);
-    });
+    });*/
 
     // async function load() {
     // const url =

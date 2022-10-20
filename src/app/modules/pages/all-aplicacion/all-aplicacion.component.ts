@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
   selector: 'app-all-aplicacion',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
  
 })
 export class AllAplicacionComponent implements OnInit {
-  aplicaciones: any[] = [
+  aplicacioness: any[] = [
     { name: 'Fermin elaboración de documentos', icon: 'bi bi-files',route:'' },
     { name: 'Ventanilla virtual mesa de partes interna', icon: 'bi bi-tablet',route:'' },
     { name: 'Documentación del sistema de gestión de calidad', icon: 'bi bi-columns-gap',route:'' },
@@ -21,10 +22,18 @@ export class AllAplicacionComponent implements OnInit {
     { name: 'Bienes asignados', icon: 'bi bi-door-closed',route:'' },
     { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet',route:'' }
   ];
-
-  constructor() { }
-
+  aplicaciones: any[] = [];
+  constructor(private intranetService: IntranetService) {}
   ngOnInit(): void {
+    this.mostraAplicacion();
   }
 
+  mostraAplicacion(): void {
+    this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
+        if (response.code == 201) {
+           console.log(response)
+           this.aplicaciones = response.data.aplicaciones;
+        }
+    });
+  }
 }

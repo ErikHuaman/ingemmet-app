@@ -1,24 +1,32 @@
 <section class="section dashboard">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+      <h1 class="display-6 mt-5 mb-3">Aplicaciones de Ingemmet</h1>
+    </div>
     <div class="row mt-3">
       <div class="col-xxl-3 col-md-3" *ngFor="let app of aplicaciones">
-        <div class="card info-card sales-card p-2">
+        <div class="card info-card sales-card p-2" pTooltip="{{app.descSistema}}"  tooltipPosition="Bottom">
   
           <div class="card-body">
-  
+            <a href="{{app.urlSistema}}" target="_blank">
               <div class="row" >
                   <div class="col-lg-12">
-                    <div class="align-items-center" [routerLink]="app.route" >
-                      <div   class="card-icon rounded-circle d-flex align-items-center justify-content-center"  style="margin: auto"> 
-                          <i  class="{{app.icon}}"></i>
+                    <div class="align-items-center" >
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"  
+                           style="margin: auto"> 
+                          <!--<i  class="{{app.icon}}"></i> <i class="bi bi-app"></i>-->
+                          <img src="https://cdn-icons-png.flaticon.com/512/4795/4795825.png" width="50" alt="">
+                          
                       </div>
                     </div>
-                    <strong class="text-center mt-2" style="display:block ;">{{app.name}}</strong>
+                    <strong class="text-center mt-2" style="display:block ;">{{app.codSistema}}</strong>
                   </div>
               </div>
-        
+            </a>
              
           </div>
         </div>
     </div>
     </div>
-  </section>
+  </div>
+</section>

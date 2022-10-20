@@ -1,20 +1,20 @@
-<div class="relative p-2">
+<section class="section dashboard">
+  <!--
   <div class="flex border items-center rounded-xl py-2 px-4 lg:px-8 bg-primary-gradient shadow-lg md-4">
     <p class="text-3xl text-white">Sistemas de Gestión</p>
+  </div>-->
+  <div class="card">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" style="display: flex;">
+          <a *ngFor="let item of rutasComp" [routerLink]="item.ruta" routerLinkActive="active"
+            class="nav-link"
+          >
+          <i class="{{item.icon}}"></i> <strong class="ml-3">{{ item.name }}</strong>
+          </a>
+        </li>
+    </ul>
+ 
+
+       <router-outlet></router-outlet>
   </div>
-
-  <ul class="nav nav-tabs nav-tabs-bordered mt-3 mb-2">
-    <li class="nav-item flex-fill" style="display: flex;">
-        <a
-          *ngFor="let item of rutasComp"
-          [routerLink]="item.ruta"
-          routerLinkActive="active"
-          class="nav-link w-100"
-        >
-        <i class="{{item.icon}}"></i> <strong class="ml-3">{{ item.name }}</strong>
-        </a>
-      </li>
-      </ul>
-
-  <router-outlet></router-outlet>
-</div>
+</section>

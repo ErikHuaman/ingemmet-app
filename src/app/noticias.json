@@ -1,16 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { IntranetService } from 'src/app/services/intranet.service';
-
-declare var $;
-
-@Component({
-  selector: 'app-noticias',
-  templateUrl: './noticias.component.html',
-})
-export class NoticiasComponent implements OnInit {
-  noticias:any = [];
-
-  noticiaAll:any = {
+{
     "data": {
         "id": "303695436",
         "type": "search",
@@ -744,30 +732,4 @@ export class NoticiasComponent implements OnInit {
             ]
         }
     }
-  }
-
-  constructor(private _intranetService:IntranetService) {}
-
-  ngOnInit(): void {
-     this.noticias = this.noticiaAll.data.attributes.results;
-
-     this.noticias.forEach(element => {
-        element.url= element.url.replaceAll('href="/','href="https://www.gob.pe/');
-     });
-
-  }
-
-  async file_get_contents(uri, callback) {
-    let res = await fetch(uri),
-    ret = await res.text(); 
-   
-    return callback ? callback(ret) : ret;
-  }
-
-  stringToHTML = function (str) {
-    var dom = document.createElement('div');
-    dom.innerHTML = str;
-    return dom;
-  
-  };
 }

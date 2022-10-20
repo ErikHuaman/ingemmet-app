@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
      <main id="main" class="main">
        <router-outlet></router-outlet>
      </main>
+
+     
       <footer id="footer" class="footer">
         <div class="row p-0 m-0">
            <div class="col-lg-4">
