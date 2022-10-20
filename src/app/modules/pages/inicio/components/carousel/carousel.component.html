@@ -1,13 +1,21 @@
-<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000"
-  [responsiveOptions]="responsiveOptions">
+<p-carousel [value]="carousel"  styleClass="custom-carousel" [numVisible]="1" [numScroll]="1"  [circular]="true" [autoplayInterval]="7000"
+  >
   <ng-template let-carousel pTemplate="item">
-    <div class="product-item border_top">
+    <div class="product-item border_top banner_inicio" style="background-image: url('assets/img/carousel1.jpg')">
       <div class="product-item-content">
-        <div class="mb-3 relative">
-          <img src="assets/img/carousel1.jpg" class="w-full" />
-          <span class="absolute top-0 bottom-0 left-0 right-0 bg-gray-500"></span>
+        <div class="mb-3 relative text-center">
+          <h4 class="p-mb-1 mt-2">{{carousel.nombre}}</h4>
+         
+          <span class=" top-0 bottom-0 left-0 right-0 bg-gray-500"></span>
+
+          <h6 class="p-mt-0 p-mb-3" *ngIf="carousel.enlace !=null">
+               
+            <a href="{{carousel.enlace.enlace}}" target="_blank"> {{carousel.enlace.nombre}}</a>
+
+          </h6>
         </div>
       </div>
     </div>
   </ng-template>
+  
 </p-carousel>

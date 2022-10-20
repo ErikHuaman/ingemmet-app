@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
   selector: 'app-aplicaciones-card',
-  templateUrl: './aplicaciones-card.component.html',
+  templateUrl: './aplicaciones-card.component.html', 
 })
 export class AplicacionesCardComponent implements OnInit {
   aplicaciones: any[] = [
@@ -23,8 +24,23 @@ export class AplicacionesCardComponent implements OnInit {
     { name: 'Bienes asignados', icon: 'bi bi-door-closed' },
     { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet' },*/
   ];
+  listApp:any = [];
+  constructor(private intranetService: IntranetService) {}
+  ngOnInit(): void {
+    this.mostraAplicacion();
+  }
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  mostraAplicacion(): void {
+    this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
+        if (response.code == 201) {
+        
+            this.aplicaciones = response.data.aplicaciones;
+            for (var i = 0; i < 5; i++) {
+              this.listApp.push(this.aplicaciones[i]);
+            } 
+            this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
+            console.log(this.listApp)
+        }
+    });
+  }
 }

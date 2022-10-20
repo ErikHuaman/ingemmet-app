@@ -15,16 +15,13 @@
         </div>
        
         <div class="col-lg-3">
-          <ngx-twitter-timeline [data]="{
-              sourceType: 'url',
+         
+          <ngx-twitter-timeline 
+              [data]="{ sourceType: 'url',
               url: 'https://twitter.com/IngemmetPeru',
-              screenName: 'IngemmetPeru'
-            }" [opts]="{
-              tweetLimit: 5,
-              height: 380,
-              borderColor: '#2E88EE'
-            }">
-          </ngx-twitter-timeline>
+              screenName: 'IngemmetPeru'}"
+              [opts]="{tweetLimit: 2}" 
+          ></ngx-twitter-timeline>
         </div>
 
         <div class="col-lg-6">

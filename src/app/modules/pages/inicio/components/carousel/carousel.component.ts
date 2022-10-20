@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
+import { Endpoint } from 'src/app/core/utils/endpointEnum';
+import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
 })
 export class CarouselComponent implements OnInit {
-  carousel = [1, 2, 3];
+  carousel = [];
 
   responsiveOptions = [
     {
@@ -25,7 +28,30 @@ export class CarouselComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(
+    private intranetService: IntranetService, 
+    private confirmationService: ConfirmationService, 
+    private primengConfig: PrimeNGConfig,
+    private messageService: MessageService) {
 
-  ngOnInit(): void {}
+  }
+  
+  ngOnInit(): void {
+    this.mostrarSlider();
+  }
+
+  mostrarSlider(){
+      this.carousel = [];
+      this.intranetService.get(Endpoint.Banner).subscribe(response => {
+        console.log(response)
+        if(response.code==201){
+            response.data.banners.forEach(element => {
+                this.carousel.push(element);
+            });
+        }
+        console.log(this.carousel);
+      }, error=>{
+        
+      });
+  }
 }

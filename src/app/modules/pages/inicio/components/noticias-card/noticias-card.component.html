@@ -1,21 +1,18 @@
 
 <h4 class="text-xl font-bold my-2">ULTIMAS NOTICIAS</h4>
-<nav class="header-nav ms-auto">
-  <ul class="align-items-center">
-      <li  *ngFor="let item of noticias" class="message-item mb-2" >
-        <a class="row shadow-sm bg-white rounded pb-2" href="#">
-          <div class="col-lg-4">
-             <img  src="https://images.unsplash.com/photo-1546422904-90eab23c3d7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" alt="" class="img-fluid">
+
+<div class="row g-4 justify-content-center">
+  <div class="col-lg-12 col-md-12 wow fadeInUp" *ngFor="let item of noticias" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+      <div class="causes-item d-flex flex-column  shadow-sm rounded-top overflow-hidden h-100">
+          <div class="text-center pl-2 pr-2">
+              <small class="mt-3 mb-1 " [innerHTML]="item.url"></small>
+              <div class="position-relative mt-auto">
+                <img class="img-fluid" src="https://cdn.www.gob.pe/uploads/document/file/3760212/standard_NP_%20Ingemmet%20y%20DDC%20investigan%20Saqsaywuaman-02.jpg.jpg" alt="">                  
+              </div>
           </div>
-          <div class="col-lg-8">
-              <strong>Noticias</strong> <br>
-              
-          </div>
-          <div class="col-lg-12">
-            <small> {{ item.texto }}</small>
-            <small class="text-left"> {{item.hora}}</small>
-          </div>
-        </a>
-      </li>
-  </ul>
-</nav>
+          <small class="text-right mt-2 pb-2 pr-4">{{item.publication}}</small> 
+      </div>
+  </div>
+ 
+</div>
+
