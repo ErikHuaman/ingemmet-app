@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 import { Endpoint } from 'src/app/core/utils/endpointEnum';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { IntranetService } from 'src/app/services/intranet.service';
   templateUrl: './carousel.component.html',
 })
 export class CarouselComponent implements OnInit {
-  carousel = [];
+  carousel:any;
 
   responsiveOptions = [
     {
@@ -32,6 +33,7 @@ export class CarouselComponent implements OnInit {
     private intranetService: IntranetService, 
     private confirmationService: ConfirmationService, 
     private primengConfig: PrimeNGConfig,
+    public msj: GlobalMessageService,
     private messageService: MessageService) {
 
   }
@@ -41,17 +43,19 @@ export class CarouselComponent implements OnInit {
   }
 
   mostrarSlider(){
+      this.msj.loading(true);
       this.carousel = [];
       this.intranetService.get(Endpoint.Banner).subscribe(response => {
-        console.log(response)
+     
         if(response.code==201){
             response.data.banners.forEach(element => {
                 this.carousel.push(element);
             });
+            this.msj.loading(false);
         }
-        console.log(this.carousel);
-      }, error=>{
         
+      }, error=>{
+        this.msj.loading(false);
       });
   }
 }

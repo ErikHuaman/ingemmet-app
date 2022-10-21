@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService, PrimeNGConfig, TreeNode } from 'primeng/api';
 import { Endpoint } from 'src/app/core/utils/endpointEnum';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class DocumentosComponent implements OnInit {
 
   constructor(private intranetService: IntranetService, 
     private confirmationService: ConfirmationService, 
+    public msj: GlobalMessageService,
     private primengConfig: PrimeNGConfig,
     private messageService: MessageService) {}
 
@@ -25,11 +27,13 @@ export class DocumentosComponent implements OnInit {
   }
 
   getDirectorios(){
+    this.msj.loading(true);
     this.intranetService.get(Endpoint.DocumentoDigitales).subscribe(response => {
       this.nodes = response.data.directorios.map(function(x:any) {return {...x}});
-      console.log(this.nodes)
+      this.msj.loading(false);
     }, error=>{
       console.log(error)
+      this.msj.loading(false);
       this.showError("Ocurrio error al cargar datos");
     });
   }

@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Pipe, Sanitizer } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 declare var $;
 
@@ -63,7 +64,9 @@ export class SidebarComponent implements OnInit {
     
   ];
   menus:any = [];
-  constructor(private sanitizer: DomSanitizer,@Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
+  constructor(private sanitizer: DomSanitizer,
+    public msj: GlobalMessageService,
+    @Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
 
   ngOnInit(): void {
     this.getMenus();
@@ -93,11 +96,11 @@ export class SidebarComponent implements OnInit {
   }
 
   getMenus(){
+      this.msj.loading(true);
       this.intranetService.get("menu").subscribe(response => {
-        console.log(response)
           if (response.code == 201) {
-             console.log(response)
              this.menus = response.data.menus;
+             this.msj.loading(false);
           }
       });
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
@@ -23,16 +24,23 @@ export class AllAplicacionComponent implements OnInit {
     { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet',route:'' }
   ];
   aplicaciones: any[] = [];
-  constructor(private intranetService: IntranetService) {}
+  constructor(
+    private intranetService: IntranetService,
+    public msj: GlobalMessageService,
+    
+    ) {}
   ngOnInit(): void {
     this.mostraAplicacion();
   }
 
   mostraAplicacion(): void {
+    this.msj.loading(true);
     this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
         if (response.code == 201) {
            console.log(response)
+           
            this.aplicaciones = response.data.aplicaciones;
+           this.msj.loading(false);
         }
     });
   }

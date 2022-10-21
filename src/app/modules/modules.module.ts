@@ -13,6 +13,7 @@ import { TecnologiaModule } from './pages/tecnologia/tecnologia.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { AllAplicacionComponent } from './pages/all-aplicacion/all-aplicacion.component';
 import { MenuNavegacionComponent } from './pages/menu-navegacion/menu-navegacion.component';
+import { ComponentsModule } from '../core/components/components.module';
 
 @NgModule({
   declarations: [LoginComponent, MainComponent, AllAplicacionComponent, MenuNavegacionComponent],
@@ -28,6 +29,8 @@ import { MenuNavegacionComponent } from './pages/menu-navegacion/menu-navegacion
     SistemaDeGestionModule,
     TecnologiaModule,
     SidebarModule,
+    ComponentsModule
+    
   ],
 })
 export class ModulesModule {}

@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 
 @Component({
   selector: 'app-main',
   template: `
      <app-sidebar></app-sidebar>
+
      <main id="main" class="main">
+
+       <app-ingemmet-loading [loading]="this.loading" ></app-ingemmet-loading>
+
        <router-outlet></router-outlet>
      </main>
 
@@ -13,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
         <div class="row p-0 m-0">
            <div class="col-lg-4">
              <div class="copyright">
-               <strong style="font-size:22px"><i class="bi bi-megaphone"></i></strong><br>
+               <strong style="font-size:3em"><i class="bi bi-megaphone"></i></strong><br>
                <strong>Buzón de Sugerencias </strong>
              </div>
            </div>  
@@ -48,7 +54,25 @@ import { Component, OnInit } from '@angular/core';
   styles: [``],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
+  loading: boolean = false;
+  private _unsubscribeAll: Subject<any> = new Subject();
+  private serviceMessages: GlobalMessageService;
+  constructor(private injector: Injector) {
+    this.serviceMessages =
+    this.injector.get<GlobalMessageService>(GlobalMessageService);
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subLoading();
+  }
+
+  private subLoading() {
+    this.serviceMessages
+      .subsLoading()
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe(
+        (loading) => (this.loading = loading),
+        (e) => console.log('Error al mostrar el loading', e)
+      );
+  }
 }

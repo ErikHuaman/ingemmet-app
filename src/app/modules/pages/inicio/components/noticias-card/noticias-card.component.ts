@@ -15,7 +15,7 @@ export class NoticiasCardComponent implements OnInit {
   noticias:any = [];
   noticiaAll:any = {
     "data": {
-        "id": "303695436",
+        "id": "304125013",
         "type": "search",
         "attributes": {
             "suggestions": [
@@ -25,11 +25,11 @@ export class NoticiasCardComponent implements OnInit {
             "tupas": null,
             "filters": {
                 "content_types": {
-                    "todos": 4906,
+                    "todos": 4913,
                     "servicios": 48,
-                    "noticias": 517,
-                    "normas": 2474,
-                    "publicaciones": 1810,
+                    "noticias": 520,
+                    "normas": 2476,
+                    "publicaciones": 1812,
                     "campañas": 26,
                     "instituciones": 0,
                     "servidores": 27,
@@ -192,8 +192,74 @@ export class NoticiasCardComponent implements OnInit {
                     }
                 ]
             },
-            "total_count": 517,
+            "total_count": 520,
             "results": [
+                {
+                    "id": "3046937",
+                    "document_type": false,
+                    "expired_campaign": false,
+                    "publication": "20 de octubre de 2022 - 10:21 p. m.",
+                    "subject": null,
+                    "name_with_parent": "Imarc 2022: Ingemmet asistió a la presentación de la delegación peruana",
+                    "collections": [],
+                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-662737\" href=\"/institucion/ingemmet/noticias/662737-imarc-2022-ingemmet-asistio-a-la-presentacion-de-la-delegacion-peruana\">Imarc 2022: Ingemmet asistió a la presentación de la delegación peruana</a>",
+                    "searchable_type": "Feed",
+                    "official_document_type": null,
+                    "page_kind": null,
+                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
+                    "content": "El ing. Henry Luna, presidente ejecutivo del Instituto Geológico, Minero y Metalúrgico (Ingemmet), participó en la presentación de la delegación peruana con miras a l ...",
+                    "image_url": null,
+                    "action_url": null,
+                    "children_pages": null,
+                    "fake_type": null,
+                    "disabled": null,
+                    "score": 60.0,
+                    "last_week_visits": 0
+                },
+                {
+                    "id": "3045587",
+                    "document_type": false,
+                    "expired_campaign": false,
+                    "publication": "20 de octubre de 2022 - 12:43 p. m.",
+                    "subject": null,
+                    "name_with_parent": "Cajamarca: San Juan de Tacabamba, La Chamana y El Verde son consideradas zonas críticas y de muy alto peligro",
+                    "collections": [],
+                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-662554\" href=\"/institucion/ingemmet/noticias/662554-cajamarca-san-juan-de-tacabamba-la-chamana-y-el-verde-son-consideradas-zonas-criticas-y-de-muy-alto-peligro\">Cajamarca: San Juan de Tacabamba, La Chamana y El Verde son consideradas zonas críticas y de muy alto peligro</a>",
+                    "searchable_type": "Feed",
+                    "official_document_type": null,
+                    "page_kind": null,
+                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
+                    "content": "Tras la evaluación de peligros geológicos por movimientos en masa en las localidades de San Juan de Tacabamba, La Chamana y El Verde, en el distrito Tacabamba, provin ...",
+                    "image_url": null,
+                    "action_url": null,
+                    "children_pages": null,
+                    "fake_type": null,
+                    "disabled": null,
+                    "score": 60.0,
+                    "last_week_visits": 0
+                },
+                {
+                    "id": "3041106",
+                    "document_type": false,
+                    "expired_campaign": false,
+                    "publication": "19 de octubre de 2022 -  3:33 p. m.",
+                    "subject": null,
+                    "name_with_parent": "Cajamarca: Ingemmet capacitó a estudiantes de nivel primario por el Día Internacional para la reducción de riesgos de desastres",
+                    "collections": [],
+                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-662228\" href=\"/institucion/ingemmet/noticias/662228-cajamarca-ingemmet-capacito-a-estudiantes-de-nivel-primario-por-el-dia-internacional-para-la-reduccion-de-riesgos-de-desastres\">Cajamarca: Ingemmet capacitó a estudiantes de nivel primario por el Día Internacional para la reducción de riesgos de desastres</a>",
+                    "searchable_type": "Feed",
+                    "official_document_type": null,
+                    "page_kind": null,
+                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
+                    "content": "El Instituto Geológico, Minero y Metalúrgico (Ingemmet), a través de su órgano desconcentrado de Cajamarca, y en conmemoración por el Día Internacional para la reducc ...",
+                    "image_url": null,
+                    "action_url": null,
+                    "children_pages": null,
+                    "fake_type": null,
+                    "disabled": null,
+                    "score": 60.0,
+                    "last_week_visits": 2
+                },
                 {
                     "id": "3031116",
                     "document_type": false,
@@ -258,7 +324,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 242
+                    "last_week_visits": 61
                 },
                 {
                     "id": "3019212",
@@ -280,7 +346,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 17
+                    "last_week_visits": 3
                 },
                 {
                     "id": "3000145",
@@ -302,7 +368,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 11
+                    "last_week_visits": 7
                 },
                 {
                     "id": "2999339",
@@ -346,7 +412,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 6
+                    "last_week_visits": 2
                 },
                 {
                     "id": "2984918",
@@ -478,7 +544,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 2
+                    "last_week_visits": 3
                 },
                 {
                     "id": "2923959",
@@ -566,7 +632,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 5
+                    "last_week_visits": 8
                 },
                 {
                     "id": "2857642",
@@ -654,7 +720,7 @@ export class NoticiasCardComponent implements OnInit {
                     "fake_type": null,
                     "disabled": null,
                     "score": 60.0,
-                    "last_week_visits": 3
+                    "last_week_visits": 1
                 },
                 {
                     "id": "2840577",
@@ -677,72 +743,6 @@ export class NoticiasCardComponent implements OnInit {
                     "disabled": null,
                     "score": 60.0,
                     "last_week_visits": 1
-                },
-                {
-                    "id": "2845759",
-                    "document_type": false,
-                    "expired_campaign": false,
-                    "publication": "19 de agosto de 2022 - 10:34 a. m.",
-                    "subject": null,
-                    "name_with_parent": "Ingemmet capacitó a estudiantes de la UNSAAC sobre el desarrollo sostenible de la actividad minera y la prevención de riesgos de desastres",
-                    "collections": [],
-                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-642564\" href=\"/institucion/ingemmet/noticias/642564-ingemmet-capacito-a-estudiantes-de-la-unsaac-sobre-el-desarrollo-sostenible-de-la-actividad-minera-y-la-prevencion-de-riesgos-de-desastres\">Ingemmet capacitó a estudiantes de la UNSAAC sobre el desarrollo sostenible de la actividad minera y la prevención de riesgos de desastres</a>",
-                    "searchable_type": "Feed",
-                    "official_document_type": null,
-                    "page_kind": null,
-                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
-                    "content": "El Instituto Geológico Minero y Metalúrgico, a través del Órgano Desconcentrado (OD) de Cusco, y en conmemoración por sus 43 años y sus 170 años de historia, llevó a  ...",
-                    "image_url": null,
-                    "action_url": null,
-                    "children_pages": null,
-                    "fake_type": null,
-                    "disabled": null,
-                    "score": 60.0,
-                    "last_week_visits": 2
-                },
-                {
-                    "id": "2845782",
-                    "document_type": false,
-                    "expired_campaign": false,
-                    "publication": "18 de agosto de 2022 -  7:33 p. m.",
-                    "subject": null,
-                    "name_with_parent": "Ingemmet suscribe convenio con el Colegio de Ingenieros del Perú para promover y difundir el conocimiento geológico en favor del país",
-                    "collections": [],
-                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-642409\" href=\"/institucion/ingemmet/noticias/642409-ingemmet-suscribe-convenio-con-el-colegio-de-ingenieros-del-peru-para-promover-y-difundir-el-conocimiento-geologico-en-favor-del-pais\">Ingemmet suscribe convenio con el Colegio de Ingenieros del Perú para promover y difundir el conocimiento geológico en favor del país</a>",
-                    "searchable_type": "Feed",
-                    "official_document_type": null,
-                    "page_kind": null,
-                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
-                    "content": "El Instituto  Geológico, Minero y Metalúrgico (Ingemmet) firmó un Convenio Marco de Cooperación Interinstitucional con el Colegio de Ingenieros del Perú-Consejo Depar ...",
-                    "image_url": null,
-                    "action_url": null,
-                    "children_pages": null,
-                    "fake_type": null,
-                    "disabled": null,
-                    "score": 60.0,
-                    "last_week_visits": 1
-                },
-                {
-                    "id": "2831875",
-                    "document_type": false,
-                    "expired_campaign": false,
-                    "publication": "17 de agosto de 2022 -  5:12 p. m.",
-                    "subject": null,
-                    "name_with_parent": "Minem: El Ingemmet es un aliado importante para la exploración del litio y de nuevos recursos minerales y energéticos en el Perú",
-                    "collections": [],
-                    "url": "<a class=\"track-ga-click\" data-origin=\"result-feed-641899\" href=\"/institucion/ingemmet/noticias/641899-minem-el-ingemmet-es-un-aliado-importante-para-la-exploracion-del-litio-y-de-nuevos-recursos-minerales-y-energeticos-en-el-peru\">Minem: El Ingemmet es un aliado importante para la exploración del litio y de nuevos recursos minerales y energéticos en el Perú</a>",
-                    "searchable_type": "Feed",
-                    "official_document_type": null,
-                    "page_kind": null,
-                    "content_sub_title_card": "Instituto Geológico, Minero y Metalúrgico",
-                    "content": "La titular del Ministerio de Energía y Minas (Minem), Alessandra Herrera Jara, destacó, durante la ceremonia por los 43 años y los 170 años de historia del Instituto  ...",
-                    "image_url": null,
-                    "action_url": null,
-                    "children_pages": null,
-                    "fake_type": null,
-                    "disabled": null,
-                    "score": 60.0,
-                    "last_week_visits": 8
                 }
             ]
         }

@@ -10,7 +10,8 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { NuevoEventoComponent } from 'src/app/core/components/nuevo-evento/nuevo-evento.component';
 import { IntranetService } from 'src/app/services/intranet.service';
 import { Endpoint } from 'src/app/core/utils/endpointEnum';
-
+import esLocale from '@fullcalendar/core/locales/es';
+import { GlobalMessageService } from 'src/app/services/global-message.service';
 @Component({
   selector: 'app-administracion',
   templateUrl: './administracion.component.html',
@@ -25,59 +26,31 @@ export class AdministracionComponent implements OnInit {
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
     },
     initialView: 'dayGridMonth',
+    locale: esLocale,
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     weekends: true,
     editable: true,
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
+    
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this),
-    /* you can update a remote database when these fire:
-    eventAdd:
-    eventChange:
-    eventRemove:
-    */
+
   };
   currentEvents: EventApi[] = [];
 
   constructor(
+    public msj: GlobalMessageService,
     public dialogService: DialogService,
     private intranetService: IntranetService, 
     ) {}
 
   ngOnInit(): void {
-    this.Events = [
-      {
-        title: "Evento 1",
-        start: new Date(),
-        description: "Evento 1"
-      },
-      {
-        title: "Evento 2",
-        start: new Date(new Date().getTime() + 86400000 ),
-        description: "Evento 3"
-      },
-      {
-        title: "Evento 3",
-        start: new Date(new Date().getTime() + (86400000 * 2) ),
-        end: new Date(new Date().getTime() + (86400000 * 3) ),
-        description: "Evento 3"
-      },
-    ]
-    
-    this.getDirectorios();
 
-    console.log(this.Events)
-
-    setTimeout(() => {
-      this.calendarOptions = {
-        initialView: 'dayGridMonth',
-        dateClick: this.onDateClick.bind(this),
-        events: this.Events,
-      };
-    }, 2500);
+    this.getEventos();
+   
   }
   
   onDateClick(res: any) {
@@ -85,8 +58,9 @@ export class AdministracionComponent implements OnInit {
     alert('Tenias un evento el día  : ' + res.dateStr);
   }
    
-  getDirectorios(){
+  getEventos(){
     let eventos = [];
+    this.msj.loading(true);
     this.intranetService.get(Endpoint.Evento).subscribe(response => {
       response.data.eventos.forEach(element => {
          eventos.push({
@@ -99,10 +73,17 @@ export class AdministracionComponent implements OnInit {
 
       setTimeout(() => {
         this.calendarOptions = {
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+          },
           initialView: 'dayGridMonth',
+          locale: esLocale,
           dateClick: this.onDateClick.bind(this),
           events: eventos,
         };
+        this.msj.loading(false);
       }, 2500);
 
     }, error=>{
