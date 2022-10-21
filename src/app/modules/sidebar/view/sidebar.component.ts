@@ -24,6 +24,11 @@ export class SidebarComponent implements OnInit {
       route: 'sistema-de-gestion',
       icono:'bi bi-easel'
     },
+    {
+      name: 'Eventos',
+      route: 'administracion',
+      icono:'bi bi-file-person'
+    }
    /*  {
       name: 'Institucional',
       route: 'institucional',

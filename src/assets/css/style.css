@@ -28,6 +28,7 @@ h4,
 h5,
 h6 {
 	font-family: "Nunito", sans-serif;
+	color: #00649b;
 }
 
 .active {
@@ -43,6 +44,14 @@ app-carousel .p-carousel-content .p-carousel-indicators .p-carousel-indicator bu
 app-carousel .p-carousel-content .p-carousel-indicators {
 	bottom: 0px !important;
 }
+
+.label a {
+	color: #00649b;
+}
+.label a:hover {
+	color: #00649b;
+}
+
 
 /*--------------------------------------------------------------
   # Main
@@ -945,6 +954,11 @@ strong {
 }
 .css-1dbjc4n{
   border: none !important
+}
+
+.form-control{
+	border-color: #ccc !important;
+	line-height: 0px !important;
 }
 
 .css-901oao {
