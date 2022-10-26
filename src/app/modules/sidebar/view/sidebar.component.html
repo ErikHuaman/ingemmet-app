@@ -54,12 +54,32 @@
     <aside id="sidebar" class="sidebar">
     
       <ul class="sidebar-nav ml-2 mr-2" id="sidebar-nav">
-          
-          <li class="nav-item" *ngFor="let item of menuOptions"> 
+          <!--MENU EN DURO -->
+          <li class="nav-item" *ngFor="let item of menuOptions">
+            <ng-container *ngIf="item.submenus.length != 0">
+              <a class="nav-link collapsed" [attr.data-bs-target]="'#forms-nav'+item.route"  data-bs-toggle="collapse" href="#"> 
+                  <i class="bi bi-journal-text"></i>
+                  <span>{{item.name}} </span>
+                  <i class="bi bi-chevron-down ms-auto"></i> 
+              </a>
+              <ul id="forms-nav{{item.route}}"  class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li *ngFor="let submenus of  item.submenus"> 
+                    <a routerLink="{{submenus.ruta}}" routerLinkActive="active"> 
+                        <i class="bi bi-circle"></i>
+                        <span>{{submenus.name}}</span>
+                    </a>
+                  </li>
+              </ul>
+          </ng-container> 
+
+            <ng-container *ngIf="item.submenus.length == 0">
               <a class="nav-link "  [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
                 <i class="{{item.icono}}"></i> <span>{{ item.name }}</span> 
               </a>
+            </ng-container>
           </li>
+
+          <!--MENU DINAMICO-->
           <li class="nav-item" *ngFor="let menu of  menus; index as i" > 
               <ng-container *ngIf="menu.submenus.length != 0">
                   <a class="nav-link collapsed" [attr.data-bs-target]="'#forms-nav'+i"  data-bs-toggle="collapse" href="#"> 
@@ -69,7 +89,7 @@
                   </a>
                   <ul id="forms-nav{{i}}"  class="nav-content collapse " data-bs-parent="#sidebar-nav">
                       <li *ngFor="let submenus of  menu.submenus"> 
-                        <a routerLink="/pagina-dinamica/{{submenus.id}}"> 
+                        <a routerLink="/pagina-dinamica/{{submenus.id}}" routerLinkActive="active"> 
                             <i class="bi bi-circle"></i>
                             <span>{{submenus.nombre}}</span>
                         </a>
@@ -82,7 +102,6 @@
                    <i class="{{menu.icono}}"></i> <span>{{menu.descModulo}}</span> 
                 </a>
               </ng-container>
-              
          </li>
       </ul>
 

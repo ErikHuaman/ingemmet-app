@@ -1048,15 +1048,16 @@ strong {
     Arial, sans-serif !important;
 }
 .track-ga-click {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 0 !important;
-  font-weight: 800;
+  font-weight: 500;
   color: #00649b;
+  --bs-body-font-family: var(--bs-font-sans-serif);
 }
 .track-ga-click:hover {
   font-size: 16px;
   line-height: 0 !important;
-  font-weight: 800;
+  font-weight: 500;
   color: #00649b !important;
 }
 

@@ -24,6 +24,8 @@ export class AllAplicacionComponent implements OnInit {
     { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet',route:'' }
   ];
   aplicaciones: any[] = [];
+  aplicacionesAux:any[] = [];
+  nombreBuscar:string = '';
   constructor(
     private intranetService: IntranetService,
     public msj: GlobalMessageService,
@@ -40,8 +42,13 @@ export class AllAplicacionComponent implements OnInit {
            console.log(response)
            
            this.aplicaciones = response.data.aplicaciones;
+           this.aplicacionesAux =  this.aplicaciones;
            this.msj.loading(false);
         }
     });
+  }
+
+  buscar(): void{
+    this.aplicaciones = this.nombreBuscar == "" ? this.aplicacionesAux : this.aplicacionesAux.filter(x => x.codSistema.toUpperCase().includes(this.nombreBuscar.toUpperCase()));
   }
 }

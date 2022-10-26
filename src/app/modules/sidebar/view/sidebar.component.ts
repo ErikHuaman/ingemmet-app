@@ -18,19 +18,55 @@ export class SidebarComponent implements OnInit {
     {
       name: 'Inicio',
       route: 'inicio',
-      icono:'bi bi-grid'
+      icono:'bi bi-grid',
+      submenus:[]
     },
     {
       name: 'Sistema de Gestión',
       route: 'sistema-de-gestion',
-      icono:'bi bi-easel'
+      icono:'bi bi-easel',
+      submenus:[
+        { 
+          icon:"bi bi-bricks",
+          ruta: 'sistema-de-gestion/organigrama',
+          name: 'Organigrama',
+        },
+        {
+          icon:"bi bi-files",
+          ruta: 'sistema-de-gestion/documentos',
+          name: 'Documentos',
+        },
+        {
+          icon:"bi bi-box-fill",
+          ruta: 'sistema-de-gestion/aplicaciones',
+          name: 'Aplicaciones',
+        },
+    
+        {
+          icon:"bi bi-clipboard-minus",
+          ruta: 'sistema-de-gestion/infografia',
+          name: 'Infografia',
+        },
+        {
+          icon:"bi bi-camera-video",
+          ruta: 'sistema-de-gestion/videos',
+          name: 'Videos',
+        },
+        { 
+          icon:"bi bi-chat-right-text",
+          ruta: 'sistema-de-gestion/noticias',
+          name: 'Noticias',
+        }
+      ]
     },
-    {
+  {
       name: 'Eventos',
       route: 'administracion',
-      icono:'bi bi-file-person'
+      icono:'bi bi-file-person',
+      submenus:[]
+      
     }
-   /*  {
+   /*    {
       name: 'Institucional',
       route: 'institucional',
       icono:'bi bi-menu-button-wide'
@@ -69,21 +105,7 @@ export class SidebarComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
 
   ngOnInit(): void {
-    this.getMenus();
- /*
-    var settings = {
-      "url": "https://www.gob.pe/busquedas.json?contenido%5B%5D=noticias&institucion%5B%5D=ingemmet&sort_by=recent",
-      "method": "GET",
-      "timeout": 0,
-      "headers": {
-        "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
-        "Access-Control-Allow-Origin": "*"
-      },
-    };
-    
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-    });*/
+     this.getMenus();
   }
 
   svg(html: any) {
@@ -96,11 +118,11 @@ export class SidebarComponent implements OnInit {
   }
 
   getMenus(){
-      this.msj.loading(true);
+     
       this.intranetService.get("menu").subscribe(response => {
           if (response.code == 201) {
              this.menus = response.data.menus;
-             this.msj.loading(false);
+            
           }
       });
   }

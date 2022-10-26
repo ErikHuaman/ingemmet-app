@@ -25,6 +25,8 @@ export class AplicacionesCardComponent implements OnInit {
     { name: 'Lucha contra la corrupción', icon: 'bi bi-tablet' },*/
   ];
   listApp:any = [];
+  nombreBuscar:string = '';
+  aplicacionesAux:any[] = [];
   constructor(private intranetService: IntranetService) {}
   ngOnInit(): void {
     this.mostraAplicacion();
@@ -35,7 +37,7 @@ export class AplicacionesCardComponent implements OnInit {
         if (response.code == 201) {
         
             this.aplicaciones = response.data.aplicaciones;
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 8; i++) {
               this.listApp.push(this.aplicaciones[i]);
             } 
             this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
