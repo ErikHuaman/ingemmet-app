@@ -28,7 +28,7 @@ export class CarouselComponent implements OnInit {
       numScroll: 1,
     },
   ];
-
+  loadingNoticias:boolean = true;
   constructor(
     private intranetService: IntranetService, 
     private confirmationService: ConfirmationService, 
@@ -45,6 +45,7 @@ export class CarouselComponent implements OnInit {
   mostrarSlider(){
       this.msj.loading(true);
       this.carousel = [];
+      this.loadingNoticias=true;
       this.intranetService.get(Endpoint.Banner).subscribe(response => {
      
         if(response.code==201){
@@ -52,6 +53,7 @@ export class CarouselComponent implements OnInit {
                 this.carousel.push(element);
             });
             this.msj.loading(false);
+            this.loadingNoticias=false;
         }
         
       }, error=>{

@@ -11,7 +11,13 @@ declare var $;
 })
 export class NoticiasComponent implements OnInit {
   noticias:any = [];
-
+  p: number = 1;
+  total:number = 0;
+  public maxSize: number = 7;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public responsive: boolean = true;
+  loadingNoticias:boolean = true;
   constructor(
     private _intranetService:IntranetService,
     public msj: GlobalMessageService,){}
@@ -23,20 +29,34 @@ export class NoticiasComponent implements OnInit {
 
     mostrarNoticias(): void {
         this.msj.loading(true);
+        this.loadingNoticias=true;
         this._intranetService.get(Endpoint.Evento+"/GetNoticias").subscribe(response => {
            console.log(response)
           if(response.code==201){
             this.noticias = response.data;
+            this.total = this.noticias.length;
             this.noticias.forEach(element => {
-                element.url= element.url.replaceAll('href="/','href="https://www.gob.pe/');
+                 let thishref = this.stringToHTML(element.url);
+              
+                  element.titulos = thishref.children[0].textContent;
+                  element.rutaNoticias= 'https://www.gob.pe' +thishref.children[0].getAttribute('href');
             });
      
             this.msj.loading(false);
+            this.loadingNoticias=false;
+          
           }
           
         }, error=>{
          this.msj.loading(false);
+         this.loadingNoticias=false;
+      
         });
     }
-
+    
+    stringToHTML = function (str) {
+      var dom = document.createElement('div');
+      dom.innerHTML = str;
+      return dom;
+    };
 }

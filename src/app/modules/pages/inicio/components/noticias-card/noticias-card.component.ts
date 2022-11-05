@@ -28,12 +28,14 @@ export class NoticiasCardComponent implements OnInit {
   mostrarNoticias(): void {
         this.loadingNoticias=true;
         this._intranetService.get(Endpoint.Evento+"/GetNoticias").subscribe(response => {
-           console.log(response)
             if(response.code==201){
                 this.noticiasList = response.data;
                 this.noticiasList.forEach(element => {
-                    element.url= element.url.replaceAll('href="/','href="https://www.gob.pe/');
+                  let thishref = this.stringToHTML(element.url);
+                  element.titulos = thishref.children[0].textContent;
+                  element.rutaNoticias= 'https://www.gob.pe' +thishref.children[0].getAttribute('href');
                 });
+
                 for (var i = 0; i < 3; i++) {
                   this.noticias.push(this.noticiasList[i]);
                 }
@@ -44,4 +46,10 @@ export class NoticiasCardComponent implements OnInit {
             this.loadingNoticias=false;
         });
   }
+
+  stringToHTML = function (str) {
+    var dom = document.createElement('div');
+    dom.innerHTML = str;
+    return dom;
+  };
 }

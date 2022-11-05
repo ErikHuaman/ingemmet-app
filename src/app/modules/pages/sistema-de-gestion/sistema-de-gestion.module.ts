@@ -11,6 +11,7 @@ import { VideosComponent } from './view/components/videos/videos.component';
 import { RedesSocialesComponent } from './view/components/redes-sociales/redes-sociales.component';
 import { AgendaComponent } from './view/components/agenda/agenda.component';
 import { CommonImportModule } from 'src/app/core/common-import.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { CommonImportModule } from 'src/app/core/common-import.module';
     VideosComponent,
     AgendaComponent,
     NoticiasComponent,
+    
   ],
-  imports: [RouterModule, DragDropModule, CommonImportModule],
+  imports: [RouterModule, DragDropModule, CommonImportModule,NgxPaginationModule],
   exports: [
     OrganigramaComponent,
     DocumentosComponent,

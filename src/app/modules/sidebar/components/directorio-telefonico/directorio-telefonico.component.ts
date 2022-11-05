@@ -20,11 +20,8 @@ export class DirectorioTelefonicoComponent implements OnInit {
 
   getDirectorios(){
     this.intranetService.get(Endpoint.EnlaceInteres).subscribe(response => {
-       console.log(response);
        this.listEnlaces = response.data.enlaces;
     }, error=>{
-      console.log(error)
-      
     });
   }
 

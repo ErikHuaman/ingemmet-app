@@ -1070,6 +1070,8 @@ strong {
   flex-grow: 0;
 }
 
+
+
 .dashboard .sales-card .card-icon {
   color: #4154f1;
   background: #f6f6fe;
@@ -1603,4 +1605,19 @@ h1 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+/************************************************************************************************
+               -- PARA CELULARES
+*************************************************************************************************/
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+    .banner_inicio {
+      background-size: cover;
+      height: 265px;
+  }
 }
