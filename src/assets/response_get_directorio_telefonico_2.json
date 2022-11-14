@@ -1,0 +1,20 @@
+{
+  "code": 201,
+  "message": "ok",
+  "data": [
+    {
+      "nombre": "MARCO",
+      "apellido": "CHUMPITAZ RAMIREZ",
+      "unidadOrganica": "GEOLOGÍA REGIONAL",
+      "nroAnexo": "171",
+      "sede": "CANADA"
+    },
+    {
+      "nombre": "",
+      "apellido": "CONSULTA LEGAL",
+      "unidadOrganica": "Unidad Técnico Normativa",
+      "nroAnexo": "343",
+      "sede": "LENGUAJE"
+    }
+  ]
+}

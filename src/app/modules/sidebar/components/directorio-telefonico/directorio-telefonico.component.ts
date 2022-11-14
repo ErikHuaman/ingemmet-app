@@ -9,6 +9,7 @@ import { IntranetService } from 'src/app/services/intranet.service';
 })
 export class DirectorioTelefonicoComponent implements OnInit {
   listEnlaces:any = [];
+  directorio=[];
   constructor(private intranetService: IntranetService, 
     private confirmationService: ConfirmationService, 
     private primengConfig: PrimeNGConfig,
@@ -16,6 +17,7 @@ export class DirectorioTelefonicoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDirectorios();
+    this.getDirectorio();
   }
 
   getDirectorios(){
@@ -24,5 +26,13 @@ export class DirectorioTelefonicoComponent implements OnInit {
     }, error=>{
     });
   }
+
+  getDirectorio(){
+      this.intranetService.get(Endpoint.DirectorioTelefonico).subscribe(response => {
+         this.directorio = response.data;
+      }, error=>{
+      });
+  }
+  
 
 }

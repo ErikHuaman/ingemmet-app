@@ -1,0 +1,41 @@
+{
+  "code": 201,
+  "message": "ok",
+  "data": [
+    {
+      "nombre": "MARCO",
+      "apellido": "CHUMPITAZ RAMIREZ",
+      "unidadOrganica": "GEOLOGÍA REGIONAL",
+      "nroAnexo": "171",
+      "sede": "CANADA"
+    },
+    {
+      "nombre": "EBER",
+      "apellido": "CUEVA TINTAYA",
+      "unidadOrganica": "GEOLOGÍA REGIONAL",
+      "nroAnexo": "167",
+      "sede": "CANADA"
+    },
+    {
+      "nombre": "NELIDA VICTORIA",
+      "apellido": "MANRIQUE LLERENA",
+      "unidadOrganica": "OVI -AREQUIPA",
+      "nroAnexo": "156",
+      "sede": "AREQUIPA"
+    },
+    {
+      "nombre": "",
+      "apellido": "CONSULTA LEGAL",
+      "unidadOrganica": "Unidad Técnico Normativa",
+      "nroAnexo": "343",
+      "sede": "LENGUAJE"
+    },
+    {
+      "nombre": "GESTIÓN DEL RENDIMIENTO",
+      "apellido": "",
+      "unidadOrganica": "UNIDAD DE PERSONAL",
+      "nroAnexo": "262",
+      "sede": "CANADA"
+    }
+  ]
+}

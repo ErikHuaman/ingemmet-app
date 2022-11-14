@@ -35,11 +35,12 @@ export class AplicacionesCardComponent implements OnInit {
   mostraAplicacion(): void {
     this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
         if (response.code == 201) {
-        
+             console.log(response)
             this.aplicaciones = response.data.aplicaciones;
-            for (var i = 0; i < 8; i++) {
+            this.listApp = this.aplicaciones;
+            /*for (var i = 0; i < 8; i++) {
               this.listApp.push(this.aplicaciones[i]);
-            } 
+            } */
             this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
             console.log(this.listApp)
         }

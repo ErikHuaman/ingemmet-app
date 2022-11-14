@@ -1,28 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { Endpoint } from 'src/app/core/utils/endpointEnum';
+import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
 })
 export class InicioComponent implements OnInit {
-  carousel = [
-    {
-      nombre:'Alexis dias',
-      usuario:'alexis',
-      actividad:'Feliz Cumpleaños',
-      dia:"21 Mayo,2000",
-      color:"date2"
-    },
-    {
-      nombre:'Mario vargas',
-      usuario:'mariov',
-      actividad:'bienvenido al equipo',
-      dia:"Joined May,2021",
-      color:"date"
-    }
-  ];
 
+  listCumpleanio = [];
+  listTrabajoArray = [];
+  loadingNoticias:boolean = true;
   responsiveOptions = [
     {
       breakpoint: '1024px',
@@ -41,7 +30,21 @@ export class InicioComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private intranetService: IntranetService, ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+     this.getCumpleano();
+  }
+
+  getCumpleano(){
+      this.loadingNoticias=true;
+      this.intranetService.get(Endpoint.Felicitaciones).subscribe(response => {
+         this.listCumpleanio = response.data.cumpleanios;
+         this.listTrabajoArray = response.data.nuevosTrabajadores;
+         this.loadingNoticias=false;
+         console.log(response)
+      }, error=>{
+        console.log(error)
+      });
+  }
 }

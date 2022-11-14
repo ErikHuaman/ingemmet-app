@@ -1,0 +1,100 @@
+{
+  "code": 201,
+  "message": "ok",
+  "data": {
+    "cumpleanios": [
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      },
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      }
+    ],
+    "nuevosTrabajadores": [
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      },
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      }
+    ],
+    "proximoCumpleanios": [
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      },
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      },
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      },
+      {
+        "nombre": "JESUS FRANS",
+        "apellido": "CCONOVILCA PARAGUAY",
+        "fecha": "14/11/83",
+        "cargo": "ASISTENTE",
+        "departamento": "DIRECCION DE LABORATORIOS",
+        "correo": "jcconovilca @ingemmet.gob.pe",
+        "anexo": "",
+        "idPpiCodigo": "821012",
+        "foto": "\\\\srvfile01\\aplicaciones1$\\ingeadmin\\IMG\\821012.BMP"
+      }
+    ]
+  }
+}

@@ -34,14 +34,27 @@
 
 <div class="mt-5 ml-2 mr-2" >
   <div class="card pt-2 bg_blanco">
-   
+    <div class="col-lg-12 label mt-1">
+      <h6 class="ml-3 pb-2" style="font-weight: 600;"><i class="bi bi-telephone-fill"></i> Directorio Telefónico</h6>
+    </div>
 
     <div class="row p-2 justify-content-center">
-        <div class="col-lg-10 label">
+      <p-listbox [options]="directorio"  [filter]="true" [listStyle]="{'max-height':'250px'}"  optionLabel="unidadOrganica">
+        <ng-template let-country pTemplate="item">
+            <div class="country-item">
+             
+                <p class="ml-3" style="line-height: 11px;"> <strong>{{country.unidadOrganica}}: </strong>  <small class="small">{{country.nombre}} {{country.apellido}}</small></p>
+                <p class="ml-3" style="line-height: 11px;"> <strong>Sede: {{country.sede}}:   N° Anexo:  </strong>  <small class="small"> {{country.nroAnexo}} </small></p>
+            </div>
+        </ng-template>
+    </p-listbox>
+
+
+      <!--<div class="col-lg-10 label">
           <div class="input-group mb-2">
             <input type="text" class="form-control form-control-sm" >
             <span class="input-group-text" ><i class="bi bi-search"></i></span> 
-        </div>
+        </div> 
         </div>
         <div class="col-lg-12 label">
           <h6 class="ml-3 pb-2" style="font-weight: 600;"><i class="bi bi-telephone-fill"></i> Directorio Telefónico</h6>
@@ -51,7 +64,7 @@
         </div>
         <div class="col-lg-12 label">
           <p class="ml-3"><strong>MINEM</strong>  Directorio telefónico</p>
-        </div>
+        </div>-->
     </div>
     <div class="row p-2 justify-content-center">
       <div class="col-lg-12 label">
@@ -62,6 +75,8 @@
       </div>
      
     </div>
+
+
   </div>
 </div>
 

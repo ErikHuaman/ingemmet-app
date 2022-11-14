@@ -19,5 +19,7 @@ export enum Endpoint {
     SubMenu = 'Submenu',
     SubMenuHijo = 'Submenuhijo',
     Usuario = 'Usuario', 
-    Video = 'DocumentoVideo', 
+    Video = 'DocumentoVideo',
+    DirectorioTelefonico = 'DirectorioTelefonico',
+    Felicitaciones = 'Felicitaciones'
 }

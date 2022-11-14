@@ -26,8 +26,8 @@ export class NoticiasCardComponent implements OnInit {
   }
 
   mostrarNoticias(): void {
-        this.loadingNoticias=true;
-        this._intranetService.get(Endpoint.Evento+"/GetNoticias").subscribe(response => {
+      this.loadingNoticias=true;
+      this._intranetService.get(Endpoint.Evento+"/GetNoticias").subscribe(response => {
             if(response.code==201){
                 this.noticiasList = response.data;
                 this.noticiasList.forEach(element => {
@@ -44,7 +44,7 @@ export class NoticiasCardComponent implements OnInit {
           
         }, error=>{
             this.loadingNoticias=false;
-        });
+      });
   }
 
   stringToHTML = function (str) {
