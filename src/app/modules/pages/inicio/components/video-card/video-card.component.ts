@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Endpoint } from 'src/app/core/utils/endpointEnum';
+import { IntranetService } from 'src/app/services/intranet.service';
 
 declare var $: any;
 
@@ -9,9 +11,18 @@ declare var $: any;
 export class VideoCardComponent implements OnInit {
   // player = document.getElementById('player') as HTMLVideoElement;
 
-  constructor() {}
+  constructor( private _intranetService:IntranetService,) {
 
-  ngOnInit(): void {}
+
+  }
+
+  ngOnInit(): void {
+    
+      this._intranetService.get(Endpoint.Video).subscribe(response => {
+        console.log(response)
+    })
+
+  }
 
   playVideo() {
     var player = document.getElementById('player') as HTMLVideoElement;

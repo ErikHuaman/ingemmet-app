@@ -26,6 +26,7 @@ export class VideosComponent implements OnInit {
   getVideos(){
     this.intranetService.get(Endpoint.DocumentoVideo).subscribe(response => {
       this.videos = response.data.directorios;
+      console.log(this.videos)
     }, error=>{
       console.log(error)
       this.showError("Ocurrio error al cargar datos");

@@ -64,10 +64,14 @@
               </a>
               <ul id="forms-nav{{item.route}}"  class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li *ngFor="let submenus of  item.submenus"> 
-                    <a routerLink="{{submenus.ruta}}" routerLinkActive="active"> 
+                    <a *ngIf="!submenus.href" routerLink="{{submenus.ruta}}" routerLinkActive="active"> 
                         <i class="bi bi-circle"></i>
                         <span>{{submenus.name}}</span>
                     </a>
+                    <a *ngIf="submenus.href" href="https://catalogobiblioteca.ingemmet.gob.pe/" target="_blank"> 
+                      <i class="bi bi-circle"></i>
+                      <span>{{submenus.name}}</span>
+                  </a>
                   </li>
               </ul>
           </ng-container> 

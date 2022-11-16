@@ -746,7 +746,12 @@ app-carousel .p-carousel-content .p-carousel-indicators {
 .header-nav .profile .dropdown-item:hover {
   background-color: #f6f9ff;
 }
-
+#CelularTable {
+  display: none;
+}
+#CompuTable{
+  display: block;
+}
 /*--------------------------------------------------------------
   # Sidebar
   --------------------------------------------------------------*/
@@ -769,6 +774,15 @@ app-carousel .p-carousel-content .p-carousel-indicators {
 @media (max-width: 1199px) {
   .sidebar {
     left: -300px;
+  }
+}
+
+@media (max-width: 768px) {
+  #CelularTable {
+    display: block;
+  }
+  #CompuTable{
+    display: none;
   }
 }
 

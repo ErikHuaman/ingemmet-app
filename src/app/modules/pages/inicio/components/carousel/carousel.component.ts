@@ -49,9 +49,16 @@ export class CarouselComponent implements OnInit {
       this.intranetService.get(Endpoint.Banner).subscribe(response => {
      
         if(response.code==201){
+          var today = Date.parse(new Date().toString())/1000;
             response.data.banners.forEach(element => {
-                this.carousel.push(element);
+               var tt_inicio = Date.parse(element.fechacaducidad + "T00:00:00") /1000;
+               this.carousel.push(element);
+               if(today > tt_inicio){
+                 
+               }
+               
             });
+            console.log(this.carousel)
             this.msj.loading(false);
             this.loadingNoticias=false;
         }

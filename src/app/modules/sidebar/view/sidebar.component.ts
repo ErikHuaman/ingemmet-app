@@ -26,36 +26,38 @@ export class SidebarComponent implements OnInit {
       route: 'sistema-de-gestion',
       icono:'bi bi-easel',
       submenus:[
-        { 
-          icon:"bi bi-bricks",
-          ruta: 'sistema-de-gestion/organigrama',
-          name: 'Organigrama',
-        },
         {
-          icon:"bi bi-files",
-          ruta: 'sistema-de-gestion/documentos',
-          name: 'Documentos',
+          icon:"bi bi-camera-video",
+          ruta: 'sistema-de-gestion/videos',
+          name: 'Videos',
+          href:false
         },
         {
           icon:"bi bi-box-fill",
           ruta: 'sistema-de-gestion/aplicaciones',
           name: 'Aplicaciones',
+          href:false
         },
+        {
+          icon:"bi bi-files",
+          ruta: 'sistema-de-gestion/documentos',
+          name: 'Documentos',
+          href:false
+        },
+      
     
         {
           icon:"bi bi-clipboard-minus",
           ruta: 'sistema-de-gestion/infografia',
-          name: 'Infografia',
+          name: 'Biblioteca',
+          href:true
         },
-        {
-          icon:"bi bi-camera-video",
-          ruta: 'sistema-de-gestion/videos',
-          name: 'Videos',
-        },
+       
         { 
           icon:"bi bi-chat-right-text",
           ruta: 'sistema-de-gestion/noticias',
           name: 'Noticias',
+          href:false
         }
       ]
     },
