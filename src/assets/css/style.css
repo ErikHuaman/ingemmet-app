@@ -749,7 +749,7 @@ app-carousel .p-carousel-content .p-carousel-indicators {
 #CelularTable {
   display: none;
 }
-#CompuTable{
+#CompuTable {
   display: block;
 }
 /*--------------------------------------------------------------
@@ -781,7 +781,7 @@ app-carousel .p-carousel-content .p-carousel-indicators {
   #CelularTable {
     display: block;
   }
-  #CompuTable{
+  #CompuTable {
     display: none;
   }
 }
@@ -1011,13 +1011,6 @@ strong {
   background-color: #00709f;
   color: #fff !important;
 }
-.p-tree {
-  border: 0px solid #dee2e6 !important;
-}
-.p-tree-container {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-  background: #eef2ff !important;
-}
 .dashboard .info-card h6 {
   font-size: 28px;
   color: #012970;
@@ -1083,8 +1076,6 @@ strong {
   flex-shrink: 0;
   flex-grow: 0;
 }
-
-
 
 .dashboard .sales-card .card-icon {
   color: #4154f1;
@@ -1567,27 +1558,7 @@ hr .new1 {
   font-size: 12px;
   color: #00649b !important;
 }
-.p-tabview .p-tabview-nav li .p-tabview-nav-link {
-  font-size: 12px;
-}
-.p-tabview-nav {
-  background: #00649b !important;
-}
-.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-  background: #ffffff !important;
-  /* border-color: #22c55e !important; */
-  color: #00649b !important;
-  border-radius: 0px !important;
-  padding: 10px 25px !important;
-}
-.p-tabview .p-tabview-nav li .p-tabview-nav-link {
-  border: solid #dee2e6;
-  border-width: 0 0 2px 0;
-  border-color: transparent transparent #dee2e6 transparent;
-  background: #ffffff00 !important;
-  color: #ffffff !important;
-  padding: 0.6rem !important;
-}
+
 .h1,
 h1 {
   font-size: 1.5rem !important;
@@ -1730,17 +1701,12 @@ h1 {
  
  }
 
-
 /************************************************************************************************
                -- PARA CELULARES
 *************************************************************************************************/
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-
-    .banner_inicio {
-      background-size: cover;
-      height: 265px;
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .banner_inicio {
+    background-size: cover;
+    height: 265px;
   }
 }

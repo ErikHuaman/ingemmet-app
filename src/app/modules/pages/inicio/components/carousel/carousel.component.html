@@ -1,7 +1,13 @@
 <ng-container *ngIf="this.carousel.length !=0">
 
-<ng-container *ngIf="loadingNoticias">
-    <div class="spinner-grow text-primary" role="status"> <span class="visually-hidden">Loading...</span></div>
+  <ng-container *ngIf="loadingNoticias">
+    <div class="d-flex align-items-center justify-content-center">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span class="ml-2">
+        Cargando...
+      </span>
+    </div>
+    <!-- <div class="spinner-grow text-primary" role="status"> <span class="visually-hidden">Loading...</span></div> -->
   </ng-container>
   <ng-container *ngIf="!loadingNoticias">
     <p-carousel [value]="carousel" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"

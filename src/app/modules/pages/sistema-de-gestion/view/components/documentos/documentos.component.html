@@ -1,20 +1,53 @@
-<div class="card">
- 
-  <div  class="row">
-      <p-tree class="col-lg-12" [value]="nodes" selectionMode="single" [(selection)]="selectedNode">
+<!-- <div class="card">
+
+  <div class="row">
+    <p-tree *ngIf="nodes.length != 0" class="col-lg-12" [value]="nodes" selectionMode="single"
+      [(selection)]="selectedNode">
+      <ng-template let-node pTemplate="url">
+        <i> {{node.label}}</i>
+      </ng-template>
+      <ng-template let-node pTemplate="default">
+        <div class="d-flex justify-content-between">
+
+          <i> {{node.label}}</i> &nbsp; &nbsp; &nbsp;
+
+          <i (click)="descargar(node.data.ruta)" *ngIf="!node.data.esCarpeta" class="bi bi-cloud-download"></i>
+        </div>
+
+      </ng-template>
+    </p-tree>
+
+  </div>
+
+
+</div> -->
+<div class="container">
+  <p-tabView *ngIf="nodes.length != 0" class="mt-4" [(activeIndex)]="activeIndex1">
+    <p-tabPanel *ngFor="let tab of nodes;" [header]="tab.label">
+      <p-tree class="col-lg-12" [value]="tab.children" selectionMode="single" [(selection)]="selectedNode">
         <ng-template let-node pTemplate="url">
-          <i > {{node.label}}</i>
+          <span>{{node.label}}</span>
         </ng-template>
         <ng-template let-node pTemplate="default">
-          <div class="d-flex justify-content-between">
-            
-            <i > {{node.label}}</i> &nbsp; &nbsp; &nbsp; 
-           
-            <i (click)="descargar(node.data.ruta)" *ngIf="!node.data.esCarpeta" class="bi bi-cloud-download"></i>
+          <div class="block mb-2">
+            <div class="flex">
+              <div class="w-6">
+                <ng-container *ngIf="node.data.esCarpeta ; else elseTemplate">
+                  <i class="far fa-folder"></i>
+                </ng-container>
+                <ng-template #elseTemplate>
+                  <i [class]="getIcon(node.label)"></i>
+                </ng-template>
+              </div>
+              <span class="mr-4"> {{node.label}}</span>
+              <i (click)="descargar(node.data.ruta)" *ngIf="!node.data.esCarpeta" class="fas fa-download"></i>
+            </div>
+            <i *ngIf="!node.data.esCarpeta">
+              Descripción
+            </i>
           </div>
-            
         </ng-template>
       </p-tree>
-  
-    </div>
+    </p-tabPanel>
+  </p-tabView>
 </div>
