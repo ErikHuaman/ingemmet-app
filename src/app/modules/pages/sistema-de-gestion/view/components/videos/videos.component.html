@@ -1,37 +1,25 @@
-<div class="p-8">
-  <div class="grid grid-cols-2 gap-8">
-    <div class="relative">
-      <video id="remoteVideo" #remoteVideo autoplay="autoplay" [src]="this.videoActual"></video>
-      <!-- <video id="player" class="w-full max-w-full h-auto rounded-lg border border-gray-500 shadow-lg"
-        poster="assets/videos/preview/1.png">
-        <source src="https://www.youtube.com/watch?v=kmxzkizxKho" type="video/mp4">
-        Su navegador no soporta la etiqueta de vídeo.
-      </video> -->
-      <div class="absolute top-1/2 left-1/2">
-        <!-- <button id="playBtn" (click)="playVideo()"
-          class="w-14 h-14 rounded-full -translate-x-1/2 -translate-y-1/2 flex justify-center items-center border-2 border-gray-900">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-          </svg>
-        </button> -->
+<div class="container container_vid">
+
+    <div class="main-video-container">
+      <video  #remoteVideo autoplay="autoplay" [src]="this.videoActual" loop controls class="main-video"></video>
+      <h3 class="main-vid-title">house flood animation</h3>
+    </div>
+
+    <div class="video-list-container">
+      <div  *ngFor="let item of videos; let i = index" class="list {{item.active}}">
+          <video src="{{item.videos}}" (click)="verVideo(item)" class="list-video"></video>
+          <h3 class="list-title">{{item.label}}</h3>
       </div>
     </div>
-    <div class="text-lg p-8 xl:p-16">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quidem adipisci voluptas vel, voluptatibus
-      ipsa, sit optio sequi dolorum cum aspernatur tempore illo commodi ducimus nostrum harum aut. Totam, nulla.
-    </div>
-  </div>
-  <div class="grid grid-cols-4 gap-12 mt-8">
-    <div *ngFor="let item of videos" (click)="verVideo(item.data.ruta)" class="bg-gray-900 rounded-md text-white flex justify-center items-center p-8 xl:p-16">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="w-14 h-14">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-      </svg>
 
-    </div>
-  </div>
 </div>
+
+
+
+
+
+
+
+
+
+

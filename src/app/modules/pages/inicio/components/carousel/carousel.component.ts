@@ -51,10 +51,10 @@ export class CarouselComponent implements OnInit {
         if(response.code==201){
           var today = Date.parse(new Date().toString())/1000;
             response.data.banners.forEach(element => {
-               var tt_inicio = Date.parse(element.fechacaducidad + "T00:00:00") /1000;
-               this.carousel.push(element);
-               if(today > tt_inicio){
-                 
+               var tt_inicio = Date.parse(element.fechacaducidad) /1000;
+               
+               if(today < tt_inicio){
+                 this.carousel.push(element);
                }
                
             });
