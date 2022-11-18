@@ -8,10 +8,9 @@ import { IntranetService } from 'src/app/services/intranet.service';
   templateUrl: './inicio.component.html',
 })
 export class InicioComponent implements OnInit {
-
   listCumpleanio = [];
   listTrabajoArray = [];
-  loadingNoticias:boolean = true;
+  loadingNoticias: boolean = true;
   responsiveOptions = [
     {
       breakpoint: '1024px',
@@ -30,44 +29,49 @@ export class InicioComponent implements OnInit {
     },
   ];
   display: boolean = false;
-  popup:any = [];
-  constructor(private intranetService: IntranetService, ) {}
+  popup: any = [];
+  constructor(private intranetService: IntranetService) {}
 
   ngOnInit(): void {
-     this.getCumpleano();
-     this.getPopups();
+    this.getCumpleano();
+    this.getPopups();
   }
 
-  getCumpleano(){
-      this.loadingNoticias=true;
-      this.intranetService.get(Endpoint.Felicitaciones).subscribe(response => {
-         this.listCumpleanio = response.data.cumpleanios;
-         this.listTrabajoArray = response.data.nuevosTrabajadores;
-         this.loadingNoticias=false;
-         this.display = true;
-         console.log(response)
-      }, error=>{
-        console.log(error)
-      });
+  getCumpleano() {
+    this.loadingNoticias = true;
+    this.intranetService.get(Endpoint.Felicitaciones).subscribe(
+      (response) => {
+        this.listCumpleanio = response.data.cumpleanios;
+        this.listTrabajoArray = response.data.nuevosTrabajadores;
+        this.loadingNoticias = false;
+        this.display = true;
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-  
-  getPopups(){
-    this.loadingNoticias=true;
-    this.intranetService.get(Endpoint.Popup).subscribe(response => {
-       console.log(response.data.popups )
-       var today = Date.parse(new Date().toString())/1000;
-       response.data.popups.forEach(element => {
-        var tt_inicio = Date.parse(element.fechacaducidad) /1000;
-               
-        if(today < tt_inicio){
-          this.popup.push(element);
-        }
-       });
-       this.loadingNoticias=false;
-       console.log(response)
-    }, error=>{
-      console.log(error)
-    });
+
+  getPopups() {
+    this.loadingNoticias = true;
+    this.intranetService.get(Endpoint.Popup).subscribe(
+      (response) => {
+        console.log(response.data.popups);
+        var today = Date.parse(new Date().toString()) / 1000;
+        response.data.popups.forEach((element) => {
+          var tt_inicio = Date.parse(element.fechacaducidad) / 1000;
+
+          if (today < tt_inicio) {
+            this.popup.push(element);
+          }
+        });
+        this.loadingNoticias = false;
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-  
 }

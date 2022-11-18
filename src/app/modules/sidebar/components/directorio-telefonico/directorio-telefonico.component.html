@@ -32,42 +32,46 @@
 </div>
 -->
 
-<div class="mt-5 ml-2 mr-2" >
+<div class="mt-5 ml-2 mr-2">
   <div class="card pt-2 bg_blanco">
     <div class="col-lg-12 label mt-1">
       <h6 class="ml-3 pb-2" style="font-weight: 600;"><i class="bi bi-telephone-fill"></i> Directorio Telefónico</h6>
       <div class="row p-2 justify-content-center">
         <div class="col-lg-12 label">
-          <p class="ml-3 pb-2"><a href="#" style="font-weight: 500;">INGEMMENT</a> - Directorio telefónico</p>
-          <p class="ml-3 pb-2"><a href="#" style="font-weight: 500;">MINEM</a> - Directorio telefónico</p>
+          <p class="ml-3 pb-2"><a (click)="descargar(ingemmetDir)"
+              style="font-weight: 500; cursor: pointer;">INGEMMENT</a> - Directorio
+            telefónico</p>
+          <p class="ml-3 pb-2"><a (click)="descargar(minemDir)" style="font-weight: 500; cursor: pointer;">MINEM</a> -
+            Directorio
+            telefónico</p>
         </div>
       </div>
     </div>
 
     <div class="row p-2 justify-content-center">
-      <p-listbox [options]="directorio"  [filter]="true" [listStyle]="{'max-height':'250px'}"  optionLabel="nombre">
+      <p-listbox [options]="directorio" [filter]="true" [listStyle]="{'max-height':'250px'}" optionLabel="nombre">
         <ng-template let-country pTemplate="item">
-            <div class="country-item">
-             
-                <p class="ml-3" style="line-height: 11px;"> <strong>{{country.unidadOrganica}}: </strong>  <small class="small">{{country.nombre}} {{country.apellido}}</small></p>
-                <p class="ml-3" style="line-height: 11px;"> <strong>Sede: {{country.sede}}:   N° Anexo:  </strong>  <small class="small"> {{country.nroAnexo}} </small></p>
-            </div>
+          <div class="country-item">
+
+            <p class="ml-3" style="line-height: 11px;"> <strong>{{country.unidadOrganica}}: </strong> <small
+                class="small">{{country.nombre}} {{country.apellido}}</small></p>
+            <p class="ml-3" style="line-height: 11px;"> <strong>Sede: {{country.sede}}: N° Anexo: </strong> <small
+                class="small"> {{country.nroAnexo}} </small></p>
+          </div>
         </ng-template>
-    </p-listbox>
+      </p-listbox>
 
     </div>
     <div class="row p-2 justify-content-center">
       <div class="col-lg-12 label">
         <h6 class="ml-1 pb-2" style="font-weight: 600;"><i class="bi bi-link-45deg"></i>Enlaces de Interes</h6>
       </div>
-      <div  *ngFor="let item of listEnlaces" class="col-lg-12 label">
-         <p class="ml-3">  <a href="{{item.enlace}}" class="ml-2"  target="_blank">- {{item.nombre}}</a></p>
+      <div *ngFor="let item of listEnlaces" class="col-lg-12 label">
+        <p class="ml-3"> <a href="{{item.enlace}}" class="ml-2" target="_blank">- {{item.nombre}}</a></p>
       </div>
-     
+
     </div>
 
 
   </div>
 </div>
-
-

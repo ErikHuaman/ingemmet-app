@@ -41,19 +41,20 @@ export class DocumentosComponent implements OnInit {
         this.nodes = response.data.directorios
           .map(function (x: any) {
             return { ...x };
-          })[0]
-          .children.filter((n) => n.children);
-        this.nodes.forEach((item) => {
-          item.children
-            .sort((a, b) => {
-              if (a.children && !b.children) return -1;
-              else if (!a.children && b.children) return 1;
-              else return 0;
-            })
-            .sort((a, b) => (a.label > b.label ? -1 : 1));
-        });
+          })
+          .filter((d) => d.data.nombre != 'Directorio Telefonico')[0].children;
 
-        console.log(this.nodes);
+        this.nodes.forEach((item) => {
+          if (item.children) {
+            item.children
+              .sort((a, b) => {
+                if (a.children && !b.children) return -1;
+                else if (!a.children && b.children) return 1;
+                else return 0;
+              })
+              .sort((a, b) => (a.label > b.label ? -1 : 1));
+          }
+        });
         this.msj.loading(false);
       },
       (error) => {
@@ -66,7 +67,6 @@ export class DocumentosComponent implements OnInit {
 
   getIcon(label: string): string {
     let val = label.split('.');
-    console.log(val[val.length - 1]);
     if (val[val.length - 1] === 'pdf') {
       return 'text-red-700 pi pi-file-pdf';
     } else if (
@@ -99,9 +99,9 @@ export class DocumentosComponent implements OnInit {
     }
   }
 
-  descargar(ruta) {
+  descargar(data) {
     this.intranetService
-      .getFile(`${Endpoint.DocumentoDigitalesDescargar}?ruta=${ruta}`)
+      .getFile(`${Endpoint.DocumentoDigitalesDescargar}?id=${data.id}`)
       .subscribe(
         (event) => {
           if (event.type === HttpEventType.Response) {
@@ -109,7 +109,7 @@ export class DocumentosComponent implements OnInit {
             const a = document.createElement('a');
             a.setAttribute('style', 'display:none;');
             document.body.appendChild(a);
-            a.download = ruta;
+            a.download = `${data.nombre}.pdf`;
             a.href = URL.createObjectURL(downloadedFile);
             a.target = '_blank';
             a.click();

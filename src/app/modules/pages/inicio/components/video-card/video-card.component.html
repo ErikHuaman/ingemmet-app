@@ -1,11 +1,15 @@
 <!--autoplay-->
 <div class="grid grid-cols-3 gap-2 mb-4">
   <div class="col-span-3 relative">
-    <video id="player" class="w-full max-w-full h-auto rounded-lg border border-gray-500 shadow-sm p-1" 
-      poster="https://images.unsplash.com/photo-1622645636770-11fbf0611463?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWluYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" controls >
-      <source src="https://portal.ingemmet.gob.pe/documents/59082/1045818/SGP.mp4" type="video/mp4" >
+    <video *ngIf="!videoHome" id="player"
+      class="w-full max-w-full h-auto rounded-lg border border-gray-500 shadow-sm p-1"
+      poster="https://images.unsplash.com/photo-1622645636770-11fbf0611463?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWluYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+      controls>
+      <source src="https://portal.ingemmet.gob.pe/documents/59082/1045818/SGP.mp4" type="video/mp4">
       Su navegador no soporta la etiqueta de vídeo.
     </video>
+    <video *ngIf="videoHome" [src]="videoHome.video" id="player"
+      class="w-full max-w-full h-auto rounded-lg border border-gray-500 shadow-sm p-1" controls></video>
     <div class="absolute top-1/2 left-1/2">
       <button id="playBtn" (click)="playVideo()"
         class="w-14 h-14 rounded-full -translate-x-1/2 -translate-y-1/2 flex justify-center items-center border-2 border-gray-900">

@@ -1,25 +1,37 @@
-<div class="container container_vid">
+<p-tabView *ngIf="listCategorias.length != 0" class="mt-4" (onChange)="selectCategoria($event)">
+  <p-tabPanel *ngFor="let tab of listCategorias;" [header]="tab.nombre">
+    <div *ngIf="this.videos.length != 0">
+      <div class="container container_vid" *ngIf="this.cat == tab.id">
 
-    <div class="main-video-container">
-      <video  #remoteVideo autoplay="autoplay" [src]="this.videoActual" loop controls class="main-video"></video>
-      <h3 class="main-vid-title">house flood animation</h3>
-    </div>
+        <div class="main-video-container" *ngIf="this.videoActual">
+          <video #remoteVideo autoplay="autoplay" [src]="this.videoActual.videos" loop controls
+            class="main-video"></video>
+          <h3 class="main-vid-title">{{this.videoActual.nombre}}</h3>
+          <h4 class="main-vid-desc">{{this.videoActual.descripcion}}</h4>
+        </div>
 
-    <div class="video-list-container">
-      <div  *ngFor="let item of videos; let i = index" class="list {{item.active}}">
-          <video src="{{item.videos}}" (click)="verVideo(item)" class="list-video"></video>
-          <h3 class="list-title">{{item.label}}</h3>
+        <div class="video-list-container">
+          <div *ngFor="let item of videos; let i = index">
+            <div class="list {{item.active}}" (click)="verVideo(item)">
+              <div>
+                <ng-container *ngIf="item.active == ''; else elseTemplate">
+                  <i class="fas fa-play text-primary"></i>
+                </ng-container>
+                <ng-template #elseTemplate>
+                  <i class="fas fa-pause text-white"></i>
+                </ng-template>
+              </div>
+              <video src="{{item.videos}}" class="list-video"></video>
+              <h3 class="list-title">{{item.nombre}}</h3>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
+    <div *ngIf="this.videos.length == 0" class="d-flex justify-content-center py-4">
+      <h4>No se encontraron videos para esta categoría</h4>
+    </div>
+  </p-tabPanel>
+</p-tabView>

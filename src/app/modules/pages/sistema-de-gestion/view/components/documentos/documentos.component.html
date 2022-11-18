@@ -40,10 +40,10 @@
                 </ng-template>
               </div>
               <span class="mr-4"> {{node.label}}</span>
-              <i (click)="descargar(node.data.ruta)" *ngIf="!node.data.esCarpeta" class="fas fa-download"></i>
+              <i (click)="descargar(node.data)" *ngIf="!node.data.esCarpeta" class="fas fa-download"></i>
             </div>
-            <i *ngIf="!node.data.esCarpeta">
-              Descripción
+            <i *ngIf="node.data.esCarpeta">
+              {{node.data.descripcion}}
             </i>
           </div>
         </ng-template>
