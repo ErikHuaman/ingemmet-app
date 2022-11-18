@@ -101,10 +101,18 @@
                   </ul>
               </ng-container>
 
+             
               <ng-container *ngIf="menu.submenus.length == 0">
-                <a class="nav-link active"  [routerLink]="menu.route" routerLinkActive="active"> 
-                   <i class="{{menu.icono}}"></i> <span>{{menu.descModulo}}</span> 
-                </a>
+                <ng-container *ngIf="menu.idA == 'e'">
+                  <a class="nav-link "  href="{{menu.urlModulo}}"  target="_blank"> 
+                    <i class="{{menu.icono}}"></i> <span>{{ menu.descModulo }} ff</span> 
+                  </a>
+                </ng-container>
+                <ng-container *ngIf="menu.idA != 'e'">
+                  <a class="nav-link "  [routerLink]="menu.urlModulo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
+                    <i class="{{menu.icono}}"></i> <span>{{ menu.descModulo }}</span> 
+                  </a>
+                </ng-container>
               </ng-container>
          </li>
       </ul>

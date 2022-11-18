@@ -126,7 +126,7 @@ export class SidebarComponent implements OnInit {
       this.intranetService.get("menu").subscribe(response => {
           if (response.code == 201) {
              this.menus = response.data.menus;
-            
+             console.log(this.menus)
           }
       });
   }
