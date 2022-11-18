@@ -7,12 +7,12 @@
 
           <div class="card-body">
             <ng-container *ngIf="app.idSistema != null">
-              <a href="{{app.urlSistema}}" target="_blank">
+              <a (click)="Aplicaciones(app)">
                 <div class="row" >
                     <div class="col-lg-12">
                       <div class="align-items-center" >
                         <div   class="card-icon rounded-circle d-flex align-items-center justify-content-center"  style="margin: auto"> 
-                          <img src="https://cdn-icons-png.flaticon.com/512/4795/4795825.png" width="50" alt="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4795/4795825.png" width="50" alt="">
                         </div>
                       </div>
                       <strong class="text-center mt-2" style="display:block ;">{{app.codSistema}}</strong>

@@ -1,3 +1,4 @@
+
 <div class="relative h-full w-full p-4" >
   <div class="w-100p flex border items-center justify-between rounded-full py-2 px-4 bg-degrade">
     <h6 class="text-sm font-semibold ml-3 text-white">
@@ -24,12 +25,12 @@
         </h3>
         <div class="mt-4">
           <label class="font-bold" for="usuario">Usuario</label>
-          <input type="text" class="rounded-lg border border-gray-300 w-full mt-3" id="usuario"
+          <input type="text" [(ngModel)]="user.usuario" name="usuario" class="rounded-lg border border-gray-300 w-full mt-3" id="usuario"
             placeholder="Nombre de usuario" />
         </div>
         <div class="mt-4">
           <label class="font-bold" for="contraseña">Contraseña</label>
-          <input class="rounded-lg border border-gray-300 w-full mt-3" type="password" id="contraseña"
+          <input class="rounded-lg border border-gray-300 w-full mt-3" [(ngModel)]="user.pass" name="pass" type="password" id="contraseña"
             placeholder="Contraseña" />
         </div>
 
@@ -38,12 +39,17 @@
           <label class="px-3" for="recordar">Recúerdame</label>
         </div>
 
-        <div class="">
-          <button class="rounded-lg bg-degrade text-white w-full mt-4 py-2" type="button" routerLink="/inicio">
+        <div >
+          <button class="rounded-lg bg-degrade text-white w-full mt-4 py-2" (click)="login()" type="button" >
             INICIAR SESIÓN
           </button>
         </div>
       </form>
+      <div class="row">
+        <div class="col-lg-12">
+         
+        </div>
+      </div>
     </div>
     <div class="col-span-3">
       <img

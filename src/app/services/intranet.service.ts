@@ -32,6 +32,15 @@ export class IntranetService {
     return formData;
   }
 
+  login_cliente(data):Observable<any> {
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post(`${environment.urlApi}/Auth`,data,{headers:headers});
+  }
+  
+
   public getAll(controller:string): Observable<any> {
     return this.http.get(`${environment.urlApi}/${controller}`);
   }

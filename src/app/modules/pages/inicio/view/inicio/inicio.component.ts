@@ -50,8 +50,7 @@ export class InicioComponent implements OnInit {
         console.log(error)
       });
   }
-
-
+  
   getPopups(){
     this.loadingNoticias=true;
     this.intranetService.get(Endpoint.Popup).subscribe(response => {
@@ -70,6 +69,5 @@ export class InicioComponent implements OnInit {
       console.log(error)
     });
   }
-
-
+  
 }

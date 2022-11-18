@@ -46,4 +46,10 @@ export class AplicacionesCardComponent implements OnInit {
         }
     });
   }
+
+  Aplicaciones(item:any) {
+      this.intranetService.get("Auth/GetLinkApp?username=Migraintranet01&IdSistemaActual=16&IdSistemaRedirigir=9&IdUsuario=3384&MinutosExpira=1").subscribe(response => {
+        console.log(response)
+      });
+  }
 }

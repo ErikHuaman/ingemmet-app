@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Pipe, Sanitizer } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 declare var $;
@@ -11,7 +12,7 @@ declare var $;
 })
 export class SidebarComponent implements OnInit {
   user = {
-    name: 'Fulanito Men...',
+    name: 'Bruno Alba...',
   };
 
   menuOptions = [
@@ -103,6 +104,7 @@ export class SidebarComponent implements OnInit {
   ];
   menus:any = [];
   constructor(private sanitizer: DomSanitizer,
+    private _router: Router,
     public msj: GlobalMessageService,
     @Inject(DOCUMENT) private document: Document,private intranetService: IntranetService) {}
 
@@ -127,6 +129,13 @@ export class SidebarComponent implements OnInit {
             
           }
       });
+  }
+
+  cerrarSession(){
+    sessionStorage.clear();
+    setTimeout(() => {
+      this._router.navigate(['/login']);
+    },1000)
   }
 
   

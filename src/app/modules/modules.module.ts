@@ -14,22 +14,30 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { AllAplicacionComponent } from './pages/all-aplicacion/all-aplicacion.component';
 import { MenuNavegacionComponent } from './pages/menu-navegacion/menu-navegacion.component';
 import { ComponentsModule } from '../core/components/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [LoginComponent, MainComponent, AllAplicacionComponent, MenuNavegacionComponent],
   exports: [LoginComponent, MainComponent],
   imports: [
-    CoreModule,
+    CoreModule, 
     RouterModule,
     InicioModule,
+    BrowserAnimationsModule,
     InstitucionalModule,
     MineriaModule,
     GeologiaModule,
     AdministracionModule,
     SistemaDeGestionModule,
-    TecnologiaModule,
+    TecnologiaModule, 
     SidebarModule,
-    ComponentsModule
+    ComponentsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
     
   ],
 })
