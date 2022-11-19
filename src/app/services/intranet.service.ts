@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from "../../environments/environment";
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { C } from '../constante/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -70,5 +72,32 @@ export class IntranetService {
     this.http.get("https://www.gob.pe/busquedas.json",httpOptions).subscribe(data =>{
       console.log(data);      
     })
+  }
+
+  public isAuthenticated ():boolean{
+    const token = sessionStorage.getItem(C.STORAGE.TOKEN_KEY);
+
+    if(!token){ return false;}
+
+    try{
+      const helper = new JwtHelperService();
+      var decodedToken = helper.decodeToken(token);
+
+      if(helper.isTokenExpired(token)){
+        sessionStorage.clear();
+        return false;
+      }
+
+      if(!decodedToken){
+        sessionStorage.clear();
+        return false;
+      }
+      
+    } catch (error) {
+        sessionStorage.clear();
+        return false;
+    }
+    
+    return true;
   }
 }

@@ -24,9 +24,12 @@ export class LoginComponent implements OnInit {
     private _clienteService:IntranetService) {}
 
   ngOnInit(): void {
-    if(sessionStorage.getItem(C.STORAGE.TOKEN_KEY)){
+    /*if(sessionStorage.getItem(C.STORAGE.TOKEN_KEY)){
       this._router.navigate(['/inicio']);
     }else{ 
+      this._router.navigate(['/login']);
+    }*/
+    if(sessionStorage.getItem(C.STORAGE.TOKEN_KEY)){
       this._router.navigate(['/login']);
     }
   }

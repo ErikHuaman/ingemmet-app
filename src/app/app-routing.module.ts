@@ -19,7 +19,8 @@ import { InstitucionalComponent } from './modules/pages/institucional/view/insti
 import { TecnologiaComponent } from './modules/pages/tecnologia/view/tecnologia/tecnologia.component';
 import { AllAplicacionComponent } from './modules/pages/all-aplicacion/all-aplicacion.component';
 import { MenuNavegacionComponent } from './modules/pages/menu-navegacion/menu-navegacion.component';
-
+import { AuthGuard } from './guards/auth.guard';
+import { Error404Component } from './modules/error404/error404.component';
 const routes: Routes = [
   {
     path: 'login',
@@ -36,31 +37,31 @@ const routes: Routes = [
       },
       {
         path: 'inicio',
-        component: InicioComponent,
+        component: InicioComponent,  canActivate : [AuthGuard]
       },
       {
         path: 'institucional',
-        component: InstitucionalComponent,
+        component: InstitucionalComponent,canActivate : [AuthGuard]
       },
       {
         path: 'mineria',
-        component: MineriaComponent,
+        component: MineriaComponent,canActivate : [AuthGuard]
       },
       {
         path: 'geologia',
-        component: GeologiaComponent,
+        component: GeologiaComponent,canActivate : [AuthGuard]
       },
       {
         path: 'administracion',
-        component: AdministracionComponent,
+        component: AdministracionComponent,canActivate : [AuthGuard]
       },
       {
         path: 'aplicaciones',
-        component: AllAplicacionComponent,
+        component: AllAplicacionComponent,canActivate : [AuthGuard]
       },
       {
         path: 'pagina-dinamica/:id',
-        component: MenuNavegacionComponent,
+        component: MenuNavegacionComponent,canActivate : [AuthGuard]
       },
       {
         path: 'sistema-de-gestion',
@@ -73,41 +74,44 @@ const routes: Routes = [
           },
           {
             path: 'organigrama',
-            component: OrganigramaComponent,
+            component: OrganigramaComponent,canActivate : [AuthGuard]
           },
           {
             path: 'videos',
-            component: VideosComponent,
+            component: VideosComponent,canActivate : [AuthGuard]
           },
           {
             path: 'aplicaciones',
-            component: AllAplicacionComponent,
+            component: AllAplicacionComponent,canActivate : [AuthGuard]
           },
           {
             path: 'documentos',
-            component: DocumentosComponent,
+            component: DocumentosComponent,canActivate : [AuthGuard]
           },
           {
             path: 'infografia',
-            component: InfografiaComponent,
+            component: InfografiaComponent,canActivate : [AuthGuard]
           },
           {
             path: 'agenda',
-            component: AgendaComponent,
+            component: AgendaComponent,canActivate : [AuthGuard]
           },
           {
             path: 'redes-sociales',
-            component: RedesSocialesComponent,
+            component: RedesSocialesComponent,canActivate : [AuthGuard]
           },
           {
             path: 'noticias',
-            component: NoticiasComponent,
+            component: NoticiasComponent,canActivate : [AuthGuard]
           },
         ],
       },
       {
         path: 'tecnologia',
-        component: TecnologiaComponent,
+        component: TecnologiaComponent,canActivate : [AuthGuard]
+      },
+      {
+        path : '**',  pathMatch: 'full', component: Error404Component,canActivate : [AuthGuard]
       },
     ],
   },
