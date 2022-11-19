@@ -23,6 +23,7 @@ export class VideoCardComponent implements OnInit {
       }
       console.log('videohome', this.videoHome);
     });
+
   }
 
   playVideo() {
@@ -42,5 +43,6 @@ export class VideoCardComponent implements OnInit {
 
   obtenerVideo(id: number) {
     return `${environment.urlApi}/DocumentoVideo/play?id=${id}`;
+    
   }
 }

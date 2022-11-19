@@ -9,18 +9,30 @@ import { C } from '../constante/constants';
   providedIn: 'root'
 })
 export class IntranetService {
-  
-  constructor(private http:HttpClient) { }
+  token:any;
+  constructor(private http:HttpClient) { 
+    this.token = this.getToken();
+  }
 
   public get(endpoint:string): Observable<any> {
-    return this.http.get(`${environment.urlApi}/${endpoint}` );
+    let headers = new HttpHeaders({
+       'Content-Type': 'application/json',
+       'Authorization' : `Bearer ${this.token}`,
+    });
+    return this.http.get(`${environment.urlApi}/${endpoint}`,{headers:headers} );
   }
 
   public getFile(endpoint:string): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization' : `Bearer ${this.token}`,
+   });
+
     return this.http.get(`${environment.urlApi}/${endpoint}` , {
       reportProgress: true,
       observe: 'events',
-      responseType: 'blob'
+      responseType: 'blob',
+      headers:headers
     }); 
   }
 
@@ -37,14 +49,19 @@ export class IntranetService {
   login_cliente(data):Observable<any> {
 
     let headers = new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     });
     return this.http.post(`${environment.urlApi}/Auth`,data,{headers:headers});
   }
   
 
   public getAll(controller:string): Observable<any> {
-    return this.http.get(`${environment.urlApi}/${controller}`);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+       'Authorization' : this.token
+    });
+    return this.http.get(`${environment.urlApi}/${controller}`,{headers:headers});
   }
 
   public getNoticias(): Observable<any> {
@@ -99,5 +116,8 @@ export class IntranetService {
     }
     
     return true;
+  }
+  getToken(){
+    return sessionStorage.getItem(C.STORAGE.TOKEN_KEY);
   }
 }
