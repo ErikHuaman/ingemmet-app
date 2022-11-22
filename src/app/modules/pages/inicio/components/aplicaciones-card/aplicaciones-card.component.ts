@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { C } from 'src/app/constante/constants';
 import { IntranetService } from 'src/app/services/intranet.service';
 
 @Component({
@@ -35,21 +36,46 @@ export class AplicacionesCardComponent implements OnInit {
   mostraAplicacion(): void {
     this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
         if (response.code == 201) {
-             console.log(response)
             this.aplicaciones = response.data.aplicaciones;
-            this.listApp = this.aplicaciones;
-            /*for (var i = 0; i < 8; i++) {
+            //this.listApp = this.aplicaciones;
+            for (var i = 0; i < 8; i++) {
               this.listApp.push(this.aplicaciones[i]);
-            } */
+            } 
             this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
-            console.log(this.listApp)
+           
+            this.listApp.forEach(element => {
+               if(element.imagen){
+                  element.img =  `data:image/png;base64,${element.imagen}`;
+               }else{
+                  element.img ="https://cdn-icons-png.flaticon.com/512/4795/4795825.png";
+               }
+            }); 
+
         }
     });
   }
 
-  Aplicaciones(item:any) {
-      this.intranetService.get("Auth/GetLinkApp?username=Migraintranet01&IdSistemaActual=16&IdSistemaRedirigir=9&IdUsuario=3384&MinutosExpira=1").subscribe(response => {
-        console.log(response)
+  Aplicacionesss(item:any) {
+      console.log(item)
+      this.intranetService.post("Auth/GetLinkApp?username=Migraintranet01&IdSistemaActual=16&IdSistemaRedirigir=9&IdUsuario=3384&MinutosExpira=1").subscribe(response => {
+          console.log(response.data)
+          window.open(response.data.appLink, "_blank");
       });
+  }
+  Aplicaciones(item:any) {
+    if(sessionStorage.getItem(C.STORAGE.USERS)){
+      let usuario = sessionStorage.getItem(C.STORAGE.USERS);
+      let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
+      let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
+      this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
+          if(response.data){
+             window.open(response.data.appLink, "_blank");
+          }else{
+
+          }
+          
+      });
+    }
+      
   }
 }

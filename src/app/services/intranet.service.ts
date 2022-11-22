@@ -64,6 +64,14 @@ export class IntranetService {
     return this.http.get(`${environment.urlApi}/${controller}`,{headers:headers});
   }
 
+  public post(controller:string): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+       'Authorization' : this.token
+    });
+    return this.http.post(`${environment.urlApi}/${controller}`,{headers:headers});
+  }
+
   public getNoticias(): Observable<any> {
     const headers = new HttpHeaders();
     const utcOffset = -(new Date().getTimezoneOffset());

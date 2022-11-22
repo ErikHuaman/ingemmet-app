@@ -46,7 +46,10 @@ export class LoginComponent implements OnInit {
         if(response.code == 201){
             this.usuarios = response.data;
             sessionStorage.setItem(C.STORAGE.TOKEN_KEY, response.data.token);
+            sessionStorage.setItem(C.STORAGE.USERS, response.data.usuario);
             sessionStorage.setItem(C.STORAGE._ID, this.usuarios.id);
+            sessionStorage.setItem(C.STORAGE._ID_SISTEMA, this.usuarios.idSistemaActual);
+            sessionStorage.setItem(C.STORAGE.CORREO, this.usuarios.correoE);
             this.toastr.success('Bienvenido al Intranet');
             this._router.navigate(['/inicio']);
         }else{

@@ -45,10 +45,10 @@ export class InicioComponent implements OnInit {
         this.listTrabajoArray = response.data.nuevosTrabajadores;
         this.loadingNoticias = false;
         this.display = true;
-        console.log(response);
+        
       },
       (error) => {
-        console.log(error);
+      
       }
     );
   }
@@ -57,7 +57,7 @@ export class InicioComponent implements OnInit {
     this.loadingNoticias = true;
     this.intranetService.get(Endpoint.Popup).subscribe(
       (response) => {
-        console.log(response.data.popups);
+      
         var today = Date.parse(new Date().toString()) / 1000;
         response.data.popups.forEach((element) => {
           var tt_inicio = Date.parse(element.fechacaducidad) / 1000;
@@ -66,8 +66,9 @@ export class InicioComponent implements OnInit {
             this.popup.push(element);
           }
         });
+        
         this.loadingNoticias = false;
-        console.log(response);
+    
       },
       (error) => {
         console.log(error);

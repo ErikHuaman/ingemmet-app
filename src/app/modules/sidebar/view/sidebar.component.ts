@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, Pipe, Sanitizer } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { C } from 'src/app/constante/constants';
 import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 declare var $;
@@ -12,7 +13,8 @@ declare var $;
 })
 export class SidebarComponent implements OnInit {
   user = {
-    name: 'Bruno Alba...',
+    name: '',
+    correo:''
   };
 
   menuOptions = [
@@ -110,6 +112,10 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
      this.getMenus();
+      if(sessionStorage.getItem(C.STORAGE.USERS)){
+             this.user.name = sessionStorage.getItem(C.STORAGE.USERS);
+             this.user.correo = sessionStorage.getItem(C.STORAGE.CORREO);
+      }
   }
 
   svg(html: any) {

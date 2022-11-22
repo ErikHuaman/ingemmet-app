@@ -21,14 +21,14 @@
         <div class="card info-card sales-card p-2" pTooltip="{{app.descSistema}}"  tooltipPosition="Bottom">
   
           <div class="card-body">
-            <a href="{{app.urlSistema}}" target="_blank">
+            <a  (click)="Aplicaciones(app)">
               <div class="row" >
                   <div class="col-lg-12">
                     <div class="align-items-center" >
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"  
                            style="margin: auto"> 
                           <!--<i  class="{{app.icon}}"></i> <i class="bi bi-app"></i>-->
-                          <img src="https://cdn-icons-png.flaticon.com/512/4795/4795825.png" width="50" alt="">
+                          <img [src]="app.img" width="50" alt="">
                           
                       </div>
                     </div>

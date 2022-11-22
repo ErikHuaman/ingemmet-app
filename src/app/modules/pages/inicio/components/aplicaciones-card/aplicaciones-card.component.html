@@ -2,7 +2,7 @@
 
   <div class="container-fluid p-1 m-1">
     <div class="row">
-      <div class="col-xxl-3 col-md-3" *ngFor="let app of listApp">
+      <div class="col-xxl-4 col-md-4" *ngFor="let app of listApp">
         <div class="card info-card sales-card p-2" >
 
           <div class="card-body">
@@ -13,7 +13,9 @@
                     <div class="col-lg-12">
                       <div class="align-items-center" >
                         <div   class="card-icon rounded-circle d-flex align-items-center justify-content-center"  style="margin: auto"> 
-                            <img src="https://cdn-icons-png.flaticon.com/512/4795/4795825.png" width="50" alt="">
+                          <img [src]="app.img" width="50" alt="">
+                            
+                            
                         </div>
                       </div>
                       <strong class="text-center mt-2" style="display:block ;">{{app.codSistema}}</strong>

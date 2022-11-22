@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { C } from 'src/app/constante/constants';
 import { GlobalMessageService } from 'src/app/services/global-message.service';
 import { IntranetService } from 'src/app/services/intranet.service';
 
@@ -39,9 +40,15 @@ export class AllAplicacionComponent implements OnInit {
     this.msj.loading(true);
     this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
         if (response.code == 201) {
-           console.log(response)
-           
+    
            this.aplicaciones = response.data.aplicaciones;
+           this.aplicaciones.forEach(element => {
+            if(element.imagen){
+               element.img =  `data:image/png;base64,${element.imagen}`;
+            }else{
+               element.img ="https://cdn-icons-png.flaticon.com/512/4795/4795825.png";
+            }
+         }); 
            this.aplicacionesAux =  this.aplicaciones;
            this.msj.loading(false);
         }
@@ -50,5 +57,22 @@ export class AllAplicacionComponent implements OnInit {
 
   buscar(): void{
     this.aplicaciones = this.nombreBuscar == "" ? this.aplicacionesAux : this.aplicacionesAux.filter(x => x.codSistema.toUpperCase().includes(this.nombreBuscar.toUpperCase()));
+  }
+
+  Aplicaciones(item:any) {
+    if(sessionStorage.getItem(C.STORAGE.USERS)){
+      let usuario = sessionStorage.getItem(C.STORAGE.USERS);
+      let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
+      let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
+      this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
+          if(response.data){
+             window.open(response.data.appLink, "_blank");
+          }else{
+
+          }
+          
+      });
+    }
+      
   }
 }
