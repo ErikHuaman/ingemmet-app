@@ -33,8 +33,8 @@ export class InicioComponent implements OnInit {
   constructor(private intranetService: IntranetService) {}
 
   ngOnInit(): void {
-    this.getCumpleano();
-    this.getPopups();
+      this.getCumpleano();
+      this.getPopups();
   }
 
   getCumpleano() {

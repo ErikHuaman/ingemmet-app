@@ -51,10 +51,18 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem(C.STORAGE._ID_SISTEMA, this.usuarios.idSistemaActual);
             sessionStorage.setItem(C.STORAGE.CORREO, this.usuarios.correoE);
             this.toastr.success('Bienvenido al Intranet');
-            this._router.navigate(['/inicio']);
+    
+             
+              //this._router.navigate(['/inicio']);
+              this._router.navigate(['inicio'])
+            .then(() => {
+              window.location.reload();
+            });
+                     
         }else{
           this.toastr.info('Usuario o contraseña incorrecto');
           this._router.navigate(['/login']);
+          
         }
     },err =>{
         this.toastr.error('Error al ingresar');

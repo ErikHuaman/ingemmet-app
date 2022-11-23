@@ -132,6 +132,16 @@ export class SidebarComponent implements OnInit {
       this.intranetService.get("menu").subscribe(response => {
           if (response.code == 201) {
              this.menus = response.data.menus;
+             this.menus.sort(function(a,b){
+              if(a.idSistemaModulo > b.idSistemaModulo){
+                  return 1;
+              }
+    
+              if(a.idSistemaModulo < b.idSistemaModulo){
+                return -1;
+              }
+              return 0;
+            });
              console.log(this.menus)
           }
       });

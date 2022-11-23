@@ -14,6 +14,10 @@ export class IntranetService {
     this.token = this.getToken();
   }
 
+  getToken(){
+    return sessionStorage.getItem(C.STORAGE.TOKEN_KEY);
+  }
+
   public get(endpoint:string): Observable<any> {
     let headers = new HttpHeaders({
        'Content-Type': 'application/json',
@@ -125,7 +129,14 @@ export class IntranetService {
     
     return true;
   }
-  getToken(){
-    return sessionStorage.getItem(C.STORAGE.TOKEN_KEY);
-  }
+
+  estaAutenticado(): boolean {
+  
+
+    if (!this.token) {
+        return false;
+    }
+    return true;
+ } 
+ 
 }
