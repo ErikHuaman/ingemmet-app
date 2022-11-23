@@ -37,13 +37,22 @@ export class AplicacionesCardComponent implements OnInit {
     this.intranetService.get("Aplicacion/byRol").subscribe(response => {
         if (response.code == 201) {
             this.aplicaciones = response.data.aplicaciones;
+<<<<<<< Updated upstream
             if(this.aplicaciones.length > 8){
+=======
+            //this.listApp = this.aplicaciones;
+            if(this.aplicaciones.length < 7){
+>>>>>>> Stashed changes
               for (var i = 0; i < 8; i++) {
                 this.listApp.push(this.aplicaciones[i]);
               }
             }else{
               this.listApp = this.aplicaciones;
             }
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
 
             this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
            
