@@ -34,13 +34,17 @@ export class AplicacionesCardComponent implements OnInit {
   }
 
   mostraAplicacion(): void {
-    this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
+    this.intranetService.get("Aplicacion/byRol").subscribe(response => {
         if (response.code == 201) {
             this.aplicaciones = response.data.aplicaciones;
-            //this.listApp = this.aplicaciones;
-            for (var i = 0; i < 8; i++) {
-              this.listApp.push(this.aplicaciones[i]);
-            } 
+            if(this.aplicaciones.length > 8){
+              for (var i = 0; i < 8; i++) {
+                this.listApp.push(this.aplicaciones[i]);
+              }
+            }else{
+              this.listApp = this.aplicaciones;
+            }
+
             this.listApp.push({idSistema:null,codSistema:'MAS APLICACIONES',descSistema:'Más Aplicaciones',imagen:'bi bi-bookmark-plus',urlSistema:'/aplicaciones'})
            
             this.listApp.forEach(element => {

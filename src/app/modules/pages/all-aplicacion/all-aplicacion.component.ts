@@ -38,7 +38,7 @@ export class AllAplicacionComponent implements OnInit {
 
   mostraAplicacion(): void {
     this.msj.loading(true);
-    this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
+    this.intranetService.get("Aplicacion/ByRol").subscribe(response => {
         if (response.code == 201) {
     
            this.aplicaciones = response.data.aplicaciones;

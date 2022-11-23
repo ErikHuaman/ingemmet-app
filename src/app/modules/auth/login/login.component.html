@@ -40,9 +40,15 @@
         </div>
 
         <div >
-          <button class="rounded-lg bg-degrade text-white w-full mt-4 py-2" (click)="login()" type="button" >
+          <button class="rounded-lg bg-degrade text-white w-full mt-4 py-2" (click)="login()" type="button" [disabled]="cargando">
             INICIAR SESIÓN
           </button>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-2" *ngIf="cargando">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="ml-2">
+            Cargando...
+          </span>
         </div>
       </form>
       <div class="row">

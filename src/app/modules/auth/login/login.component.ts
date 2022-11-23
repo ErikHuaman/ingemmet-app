@@ -14,6 +14,7 @@ import { IntranetService } from 'src/app/services/intranet.service';
 })
 export class LoginComponent implements OnInit {
   checked: boolean = false;
+  cargando: boolean = false;
   formLoginWeb: FormGroup;
   usuarios: any = {};
   user: any = {};
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
   
   login(){
-   
+    this.cargando = true;
     this._clienteService.login_cliente(this.user).subscribe(response => {
         if(response.code == 201){
             this.usuarios = response.data;
@@ -64,7 +65,9 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/login']);
           
         }
+        this.cargando = false;
     },err =>{
+        this.cargando = false;
         this.toastr.error('Error al ingresar');
     });
     
