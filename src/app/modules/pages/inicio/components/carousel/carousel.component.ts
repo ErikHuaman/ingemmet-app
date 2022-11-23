@@ -58,7 +58,15 @@ export class CarouselComponent implements OnInit {
                }
                
             });
-            console.log(this.carousel)
+
+            this.carousel.forEach(element => {
+              if(element.archivo){
+                  element.img =  `data:image/png;base64,${element.archivo}`;
+              }else{
+                 element.img ="assets/img/carousel1.jpg";
+              }
+            }); 
+
             this.msj.loading(false);
             this.loadingNoticias=false;
         }

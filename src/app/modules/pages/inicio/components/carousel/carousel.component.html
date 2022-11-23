@@ -13,7 +13,7 @@
     <p-carousel [value]="carousel" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"
       [autoplayInterval]="7000">
       <ng-template let-carousel pTemplate="item">
-        <div class="product-item border_top banner_inicio" style="background-image: url('assets/img/carousel1.jpg')">
+        <div class="product-item border_top banner_inicio" [ngStyle]="{'background-image': 'url(' + carousel.img +')'}">
           <div class="product-item-content">
             <div class="mb-3 relative text-center">
               <h4 class="p-mb-1 mt-2">{{carousel.nombre}}</h4>
