@@ -9,7 +9,6 @@ import { IntranetService } from 'src/app/services/intranet.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
   providers: [MessageService]
 })
 export class LoginComponent implements OnInit {

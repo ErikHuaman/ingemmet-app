@@ -35,6 +35,16 @@ h6 {
   background: #eff9ff;
   color: #444444;
 }
+.footer_personalizado{
+    border-top: 11px solid #00649b;
+    padding-top: 27px !important;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    background: #fff;
+    height: auto;
+    width: 100%;
+}
 
 app-carousel
   .p-carousel-content
@@ -800,6 +810,7 @@ app-carousel .p-carousel-content .p-carousel-indicators {
   #main,
   #footer {
     margin-left: 300px;
+    margin-bottom: 50px;
   }
 }
 
@@ -1576,7 +1587,6 @@ h1 {
   padding: 20px 0;
   font-size: 14px;
   transition: all 0.3s;
-  border-top: 11px solid #00649b;
 }
 
 .footer .copyright {
