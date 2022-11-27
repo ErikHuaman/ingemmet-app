@@ -20,10 +20,10 @@ export class VideoCardComponent implements OnInit {
       this.videoHome = response.data.videos.find((v) => v.categoriaid == 1);
       if (this.videoHome) {
         this.videoHome.video = this.obtenerVideo(this.videoHome.id);
+        this.playVideo();
       }
       console.log('videohome', this.videoHome);
     });
-
   }
 
   playVideo() {
@@ -43,6 +43,5 @@ export class VideoCardComponent implements OnInit {
 
   obtenerVideo(id: number) {
     return `${environment.urlApi}/DocumentoVideo/play?id=${id}`;
-    
   }
 }
