@@ -300,31 +300,33 @@ app-carousel {
   font-size: 0.85rem !important;
 
   .p-tabview-nav {
-    background: #ffffff;
-    // background: #00649b !important;
-    border: 1px solid #00649b;
+    background: #DFEFFB;
+    border: 1px solid #ccc;
     border-width: 0 0 2px 0 !important;
+    padding-top: 12px;
   }
   .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-    background: #ffffff !important;
-    border-color: #00649b !important;
+    background: #00649b !important;
+    border-color: #ddd !important;
     text-decoration: none !important;
-    color: #00649b !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
   }
   .p-tabview-nav {
     li .p-tabview-nav-link:hover {
       cursor: pointer !important;
       text-decoration: none !important;
       // background: #00649b !important;
-      color: #00649b !important;
+      background: #00649b !important;
+      color: #fff !important;
     }
 
     li .p-tabview-nav-link {
       // border: 1px solid #00649b;
       border-width: 0.5px 1px 2px 1px !important;
-      border-color: #00649b #00649b #00649b #00649b !important;
-      background: #00649b;
-      color: #ffffff;
+      border-color: #ccc !important;
+      background: #fff;
+      color: #00649b;
       padding: 0.5rem 1rem;
       font-weight: 600;
       border-top-right-radius: 3px;

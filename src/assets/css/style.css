@@ -1679,7 +1679,7 @@ h1 {
   background-color: #eee;
   cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px !important;
 }
 
 .container_vid .video-list-container .list:last-child {
