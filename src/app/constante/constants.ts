@@ -7,6 +7,11 @@ export namespace C {
     export const _ID_SISTEMA = '_sistemas';
   }
 
+  export namespace ID_SISTEMA {
+    export const _ID = 41;
+
+  }
+
   export namespace IMGDEFAUL{
     export const imgProductoInicio = 'assets/img/default.jpg'
   }

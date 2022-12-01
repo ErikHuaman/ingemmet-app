@@ -61,24 +61,30 @@ export class AplicacionesCardComponent implements OnInit {
   Aplicacionesss(item:any) {
       console.log(item)
       this.intranetService.post("Auth/GetLinkApp?username=Migraintranet01&IdSistemaActual=16&IdSistemaRedirigir=9&IdUsuario=3384&MinutosExpira=1").subscribe(response => {
-          console.log(response.data)
           window.open(response.data.appLink, "_blank");
       });
   }
   Aplicaciones(item:any) {
-    if(sessionStorage.getItem(C.STORAGE.USERS)){
-      let usuario = sessionStorage.getItem(C.STORAGE.USERS);
-      let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
-      let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
-      this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
-          if(response.data){
-             window.open(response.data.appLink, "_blank");
-          }else{
-
-          }
-          
-      });
+    console.log(item)
+    if(item.idSistema == C.ID_SISTEMA._ID){
+      window.open('http://localhost:4200?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
+    }else{
+        if(sessionStorage.getItem(C.STORAGE.USERS)){
+            let usuario = sessionStorage.getItem(C.STORAGE.USERS);
+            let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
+            let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
+            this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
+                if(response.data){
+                   window.open(response.data.appLink, "_blank");
+                }else{
+      
+                }
+                
+            });
+        }
     }
+
+    
       
   }
 }
