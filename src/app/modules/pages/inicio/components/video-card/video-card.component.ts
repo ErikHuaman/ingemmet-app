@@ -22,7 +22,7 @@ export class VideoCardComponent implements OnInit {
         this.videoHome.video = this.obtenerVideo(this.videoHome.id);
         this.playVideo();
       }
-      console.log('videohome', this.videoHome);
+   
     });
   }
 

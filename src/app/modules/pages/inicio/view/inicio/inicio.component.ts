@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import * as moment from 'moment';
 import { Endpoint } from 'src/app/core/utils/endpointEnum';
 import { IntranetService } from 'src/app/services/intranet.service';
 
@@ -42,7 +42,14 @@ export class InicioComponent implements OnInit {
     this.intranetService.get(Endpoint.Felicitaciones).subscribe(
       (response) => {
         this.listCumpleanio = response.data.cumpleanios;
+        this.listCumpleanio.forEach(element => {
+          element.fecha =  element.fecha.substring(0, element.fecha.length - 8);
+        });
         this.listTrabajoArray = response.data.nuevosTrabajadores;
+        this.listTrabajoArray.forEach(element => {
+         
+          element.fecha =  element.fecha.substring(0, element.fecha.length - 8);
+        });
         this.loadingNoticias = false;
         this.display = true;
         

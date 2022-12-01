@@ -142,7 +142,7 @@ export class SidebarComponent implements OnInit {
               }
               return 0;
             });
-             console.log(this.menus)
+           
           }
       });
   }

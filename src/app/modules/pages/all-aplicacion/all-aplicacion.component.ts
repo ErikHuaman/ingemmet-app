@@ -60,19 +60,22 @@ export class AllAplicacionComponent implements OnInit {
   }
 
   Aplicaciones(item:any) {
-    if(sessionStorage.getItem(C.STORAGE.USERS)){
-      let usuario = sessionStorage.getItem(C.STORAGE.USERS);
-      let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
-      let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
-      this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
-          if(response.data){
-             window.open(response.data.appLink, "_blank");
-          }else{
-
-          }
-          
-      });
-    }
-      
+    if(item.idSistema == C.ID_SISTEMA._ID){
+      window.open(item.urlSistema +'?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
+    }else{
+        if(sessionStorage.getItem(C.STORAGE.USERS)){
+          let usuario = sessionStorage.getItem(C.STORAGE.USERS);
+          let sistema = sessionStorage.getItem(C.STORAGE._ID_SISTEMA);
+          let idUsuario = sessionStorage.getItem(C.STORAGE._ID);
+          this.intranetService.post("Auth/GetLinkApp?username="+usuario+"&IdSistemaActual="+sistema+"&IdSistemaRedirigir="+item.idSistema+"&IdUsuario="+idUsuario+"&MinutosExpira=2").subscribe(response => {
+              if(response.data){
+                 window.open(response.data.appLink, "_blank");
+              }else{
+    
+              }
+              
+          });
+        }
+    }    
   }
 }

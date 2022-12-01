@@ -58,7 +58,7 @@ export class DirectorioTelefonicoComponent implements OnInit {
           })
           .find((d) => d.data.nombre == 'Directorio Telefonico').children;
         // children.filter(n=>n.label === 'Directorio Telefonico');
-        console.log(this.directorioTelefonico);
+     
         this.ingemmetDir = this.directorioTelefonico.find(
           (i) => i.label === 'INGEMMET'
         ).children[0].data;
@@ -88,7 +88,7 @@ export class DirectorioTelefonicoComponent implements OnInit {
           }
         },
         (error) => {
-          console.log(error);
+          
           this.showError('Ocurrio error al descargar archivo');
         }
       );

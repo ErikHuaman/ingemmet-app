@@ -176,6 +176,15 @@ app-carousel .p-carousel-content .p-carousel-indicators {
   }
 }
 
+@media (max-width: 1199px) {
+  #main {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 120px;
+  }
+}
+
 /*--------------------------------------------------------------
   # Page Title
   --------------------------------------------------------------*/

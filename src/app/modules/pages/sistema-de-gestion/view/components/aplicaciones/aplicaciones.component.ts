@@ -19,9 +19,9 @@ export class AplicacionesComponent implements OnInit {
 
   mostraAplicacion(): void {
     this.intranetService.get("Aplicacion/ingemmet").subscribe(response => {
-      console.log(response)
+     
         if (response.code == 201) {
-           console.log(response)
+          
           
         }
     });

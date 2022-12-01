@@ -59,15 +59,15 @@ export class AplicacionesCardComponent implements OnInit {
   }
 
   Aplicacionesss(item:any) {
-      console.log(item)
+  
       this.intranetService.post("Auth/GetLinkApp?username=Migraintranet01&IdSistemaActual=16&IdSistemaRedirigir=9&IdUsuario=3384&MinutosExpira=1").subscribe(response => {
           window.open(response.data.appLink, "_blank");
       });
   }
   Aplicaciones(item:any) {
-    console.log(item)
+
     if(item.idSistema == C.ID_SISTEMA._ID){
-      window.open('http://localhost:4200?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
+      window.open(item.urlSistema +'?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
     }else{
         if(sessionStorage.getItem(C.STORAGE.USERS)){
             let usuario = sessionStorage.getItem(C.STORAGE.USERS);

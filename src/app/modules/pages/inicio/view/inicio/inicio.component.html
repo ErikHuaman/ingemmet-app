@@ -42,18 +42,18 @@
                 <ng-template let-carousel pTemplate="item">
                   <div class="row">
                     <div class="col-lg-12">
-                      <div class="card p-1 shadow-sm mr-2" style="background: #1d9bf012;">
+                      <div class="card p-1 shadow-sm mr-2" >
                         <div class="image d-flex flex-column justify-content-center align-items-center  pt-2 pb-4">
 
-                          <img src="{{carousel.foto}}" style="border-radius: 50%;" height="40" width="60" />
+                          <img src="assets/img/user.png" style="border-radius: 50%;" height="40" width="60" />
 
                           <span class="name mt-3"> {{carousel.nombre}} {{carousel.apellido}}</span>
-                          <span class="idd">{{carousel.cargo}}</span>
-                          <span class="idd">{{carousel.departamento}}</span>
+                          <span class="idd text-center">{{carousel.cargo}}</span>
+                          <span class="idd text-center">{{carousel.departamento}}</span>
 
 
                           <div class="px-2 rounded mt-4">
-                            <span class="btn btn-warning btn-sm">🎁</span>
+                            <span class="btn btn-light btn-sm">🎂 {{carousel.fecha}}</span>
                           </div>
                         </div>
                       </div>
@@ -74,11 +74,11 @@
                       <div class="card p-1 shadow-sm mr-2">
                         <div class="image d-flex flex-column justify-content-center align-items-center  pt-2 pb-4">
 
-                          <img src="assets/img/profile-img.jpg" style="border-radius: 50%;" height="60" width="60" />
+                          <img src="assets/img/user.png" style="border-radius: 50%;" height="60" width="60" />
 
                           <span class="name mt-3"> {{carousel.nombre}} {{carousel.apellido}}</span>
-                          <span class="idd">{{carousel.correo}}</span>
-                          <span class="idd">{{carousel.cargo}}</span>
+                          <span class="idd text-center">{{carousel.correo}}</span>
+                          <span class="idd text-center">{{carousel.cargo}}</span>
 
                           <div class="px-2 rounded mt-4">
                             <span class="btn btn-success  btn-sm">{{carousel.fecha}}</span>
@@ -140,25 +140,25 @@
               <ng-container *ngIf="!loadingNoticias">
 
                 <ng-container *ngIf="listCumpleanio.length !=0">
-                  <h4 class="text-xl font-bold my-2">CUMPLEAÑOS DE HOY</h4>
+                  <h4 class="text-xl font-bold my-2">CUMPLEAÑOS</h4>
                   <p-carousel [value]="listCumpleanio" [numVisible]="2" [numScroll]="1" [showNavigators]="false"
                     [circular]="false" [showIndicators]="false" [autoplayInterval]="7000"
                     [responsiveOptions]="responsiveOptions">
                     <ng-template let-carousel pTemplate="item">
                       <div class="row">
                         <div class="col-lg-12">
-                          <div class="card p-1 shadow-sm mr-2">
+                          <div class="card p-1 shadow-sm mr-2" >
                             <div class="image d-flex flex-column justify-content-center align-items-center  pt-2 pb-4">
-
-                              <img src="assets/img/profile-img.jpg" style="border-radius: 50%;" height="60"
-                                width="60" />
-
+    
+                              <img src="assets/img/user.png" style="border-radius: 50%;" height="40" width="60" />
+    
                               <span class="name mt-3"> {{carousel.nombre}} {{carousel.apellido}}</span>
-                              <span class="idd">{{carousel.correo}}</span>
-                              <span class="idd">{{carousel.cargo}}</span>
-
+                              <span class="idd text-center">{{carousel.cargo}}</span>
+                              <span class="idd text-center">{{carousel.departamento}}</span>
+    
+    
                               <div class="px-2 rounded mt-4">
-                                <span class="btn btn-warning btn-sm">{{carousel.fecha}}</span>
+                                <span class="btn btn-light btn-sm">🎂 {{carousel.fecha}}</span>
                               </div>
                             </div>
                           </div>
@@ -167,9 +167,9 @@
                     </ng-template>
                   </p-carousel>
                 </ng-container>
-
+    
                 <ng-container *ngIf="listTrabajoArray.length !=0">
-                  <h4 class="text-xl font-bold my-2">NUEVOS INTEGRANTES</h4>
+                  <h4 class="text-xl font-bold my-2">NUEVOS TRABAJADORES</h4>
                   <p-carousel [value]="listTrabajoArray" [numVisible]="2" [numScroll]="1" [showNavigators]="false"
                     [circular]="false" [showIndicators]="false" [autoplayInterval]="7000"
                     [responsiveOptions]="responsiveOptions">
@@ -178,14 +178,13 @@
                         <div class="col-lg-12">
                           <div class="card p-1 shadow-sm mr-2">
                             <div class="image d-flex flex-column justify-content-center align-items-center  pt-2 pb-4">
-
-                              <img src="assets/img/profile-img.jpg" style="border-radius: 50%;" height="60"
-                                width="60" />
-
+    
+                              <img src="assets/img/user.png" style="border-radius: 50%;" height="60" width="60" />
+    
                               <span class="name mt-3"> {{carousel.nombre}} {{carousel.apellido}}</span>
-                              <span class="idd">{{carousel.correo}}</span>
-                              <span class="idd">{{carousel.cargo}}</span>
-
+                              <span class="idd text-center">{{carousel.correo}}</span>
+                              <span class="idd text-center">{{carousel.cargo}}</span>
+    
                               <div class="px-2 rounded mt-4">
                                 <span class="btn btn-success  btn-sm">{{carousel.fecha}}</span>
                               </div>
@@ -203,50 +202,8 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4">
 
-
-      <!--<div class="card">
-        <div class="row">
-            <div class="col-lg-4 bg_amarillo">
-              <img src="https://cdn.pixabay.com/photo/2020/10/06/21/54/cake-5633461__480.png" alt="birthday" class="birthday">
-            </div>
-            <div class="col-lg-8 bg_negrito">
-              <div class="text ">
-                <h4 class="p-2 text-center letra_cumple">Happy Birthday!</h4>
-                <h5 class="text-center text-white"><i class="bi bi-person-bounding-box"></i> <strong class="ml-3">Jose Luis</strong> </h5>
-                <p  class="text-center  text-white">ASISTENTE TÉCNICO </p>
-                <div class="text-center  text-white">Te desea todo el equipo <span style="color:tomato">❤</span></div>
-              </div>
-
-            </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="row">
-            <div class="col-lg-4 bg_amarillo">
-              <img src="https://cdn.pixabay.com/photo/2020/10/06/21/54/cake-5633461__480.png" alt="birthday" class="birthday">
-            </div>
-            <div class="col-lg-8 bg_negrito">
-              <div class="text ">
-                <h4 class="p-2 text-center letra_cumple">Happy Birthday!</h4>
-                <h5 class="text-center text-white">
-                  <i class="bi bi-person-bounding-box"></i>
-                  <strong class="ml-3">Alexis Dias</strong>
-                </h5>
-                <p  class="text-center  text-white">ASISTENTE TÉCNICO </p>
-                <div class="text-center  text-white">Te desea todo el equipo <span style="color:tomato">❤</span></div>
-              </div>
-
-            </div>
-        </div>
-      </div>-->
-
-
-    </div>
   </div>
-
 
 
 

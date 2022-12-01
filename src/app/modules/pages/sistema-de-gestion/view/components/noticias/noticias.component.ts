@@ -31,7 +31,7 @@ export class NoticiasComponent implements OnInit {
         this.msj.loading(true);
         this.loadingNoticias=true;
         this._intranetService.get(Endpoint.Evento+"/GetNoticias").subscribe(response => {
-           console.log(response)
+          
           if(response.code==201){
             this.noticias = response.data;
             this.total = this.noticias.length;
