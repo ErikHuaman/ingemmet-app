@@ -65,9 +65,10 @@ export class AplicacionesCardComponent implements OnInit {
       });
   }
   Aplicaciones(item:any) {
-
+    var str = item.urlSistema.slice(0, item.urlSistema .length - 1);
+    //console.log('http://localhost:4300?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY))
     if(item.idSistema == C.ID_SISTEMA._ID){
-      window.open(item.urlSistema +'?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
+      window.open(str+'?token='+ sessionStorage.getItem(C.STORAGE.TOKEN_KEY), "_blank");
     }else{
         if(sessionStorage.getItem(C.STORAGE.USERS)){
             let usuario = sessionStorage.getItem(C.STORAGE.USERS);

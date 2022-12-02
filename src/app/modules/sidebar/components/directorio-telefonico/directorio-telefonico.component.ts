@@ -44,6 +44,10 @@ export class DirectorioTelefonicoComponent implements OnInit {
     this.intranetService.get(Endpoint.DirectorioTelefonico).subscribe(
       (response) => {
         this.directorio = response.data;
+        this.directorio.forEach(element => {
+          element.nombresCompleto = element.nombre + ' ' + element.apellido;
+        });
+
       },
       (error) => {}
     );
